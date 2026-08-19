@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bejulo — PV and BESS: Reliable. Sustainable. Profitable.</title>
+<meta name="description" content="bejulo develops, builds and operates turnkey solar PV and battery energy storage projects worldwide — reliable, sustainable and profitable.">
+<link rel="preload" href="assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/favicon.svg">
+</head>
+<!-- English copy is written inline so the page reads correctly without JS and
+     for crawlers; assets/js/content.js is authoritative once JS runs and is
+     what the EN/DE switcher swaps. Keep the two in step when editing copy. -->
+<body data-page="home" data-header="overlay">
+
+<div id="site-header"></div>
+
+<main id="main">
+
+  <!-- Hero: full-bleed still with a play affordance (video to be supplied) -->
+  <section class="hero hero--home">
+    <img class="hero__media" src="assets/img/hero-home.jpg" width="2160" height="846"
+         alt="Aerial view of a large bejulo solar photovoltaic plant"
+         data-i18n-attr="alt:home.hero.alt" fetchpriority="high">
+    <span class="hero__scrim"></span>
+    <button class="hero__play" type="button" id="hero-play">
+      <span class="sr-only" data-i18n="home.play">Play the bejulo company video</span>
+    </button>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <h1 class="h1" data-i18n-html="home.h1">PV and BESS&nbsp;–<br>Reliable. Sustainable. Profitable.</h1>
+
+      <p class="lede" data-i18n-html="home.lede">
+        <span class="be">be</span><span class="be-lead"> ready.</span>
+        The future is renewable. As a trusted partner for photovoltaic and battery
+        energy storage projects, we develop sustainable energy solutions with
+        long-term commercial benefits. Together with landowners and investors, we
+        create lasting value – for local businesses, communities and the
+        environment. Ready for the future?
+        <br>We’re here to help you make it happen.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn" href="contact.html" data-i18n="btn.contact">Get in touch!</a>
+        <a class="btn" href="international.html" data-i18n="btn.international">Explore our international competence</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/layout.js"></script>
+<script>
+  // The hero video asset is not part of the Figma file. Until bejulo supplies
+  // it the play button announces itself rather than failing silently.
+  document.getElementById('hero-play').addEventListener('click', function () {
+    this.setAttribute('title', window.BejuloI18n
+      ? (window.BejuloI18n.get() === 'de' ? 'Video folgt in Kürze' : 'Company video coming soon')
+      : 'Company video coming soon');
+  });
+</script>
+
+</body>
+</html>

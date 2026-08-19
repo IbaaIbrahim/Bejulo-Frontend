@@ -1,0 +1,856 @@
+/* ==========================================================================
+   bejulo — design system
+   Single source of truth for every page. Values taken from the Figma file
+   (channel fi7cys1x), 1440px artboard.
+   ========================================================================== */
+
+/* --- Fonts -----------------------------------------------------------------
+   The Figma file specifies "Myriad Web Pro", a licensed Adobe typeface that
+   cannot be redistributed. It is listed first so a licensed install is picked
+   up automatically; Source Sans 3 (Adobe, open source, same humanist skeleton
+   and near-identical metrics) is bundled as the fallback.
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('../fonts/source-sans-3-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url('../fonts/source-sans-3-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* --- Tokens --------------------------------------------------------------- */
+:root {
+  /* Brand */
+  --orange: #f47b20;         /* buttons, "be" prefix, accents */
+  --orange-chevron: #ed7703; /* chevron mark + timeline rail */
+  --orange-hover: #d96a15;
+
+  /* Ink */
+  --ink: #000000;
+  --ink-footer: #1a202c;
+  --icon: #333333;
+
+  /* Surfaces */
+  --white: #ffffff;
+  --surface-card: #d9d9d9;   /* service cards */
+  --surface-panel: #e7e7e7;  /* accordion shells, callout boxes */
+  --footer-bg: #bdbfc1;
+  --hairline: #cccccc;
+  --pin-ghost: #fdebde;      /* contact-page watermark pin */
+
+  /* Geometry */
+  --radius: 15px;
+  --container: 1216px;       /* 1440 − 2 × 112 gutter */
+  --gutter: 112px;
+  --header-h: 122px;
+  --footer-h: 123px;
+  --nav-h: 48px;
+  --logo-w: 194px;
+
+  /* Type */
+  --font: 'Myriad Web Pro', 'Myriad Pro', 'Source Sans 3', 'Segoe UI', system-ui,
+    -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --fs-h1: 60px;   --lh-h1: 76px;
+  --fs-h2: 40px;   --lh-h2: 50px;
+  --fs-h3: 28px;   --lh-h3: 40px;
+  --fs-sub: 24px;  --lh-sub: 32px;
+  --fs-body: 20px; --lh-body: 32px;
+  --fs-ui: 16px;   --lh-ui: 24px;
+}
+
+/* --- Reset ---------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: 0.5px;
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img, svg { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+h1, h2, h3, h4, p, ul, ol, figure, blockquote { margin: 0; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+
+/* Skip link */
+.skip-link {
+  position: absolute; left: 16px; top: -100px; z-index: 2000;
+  background: var(--white); color: var(--ink);
+  padding: 12px 20px; border-radius: var(--radius); font-weight: 700;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 16px; }
+
+/* --- Layout primitives ---------------------------------------------------- */
+/* max-width = 1216 content + 2 × 24 gutter, so at the 1440 artboard the content
+   box starts at exactly x=112 as in Figma, and narrow screens keep a gutter. */
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + 48px);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* Vertical rhythm.
+   Figma's hero-to-heading gap drifts between pages (37 / 73 / 78 / 92 / 104px).
+   It is normalised to one scale here so every page reads identically. */
+.section { padding-block: 80px 56px; }
+.section--tight { padding-block: 48px 40px; }
+.section--flush { padding-block: 0 56px; }
+.stack > * + * { margin-top: var(--stack-gap, 40px); }
+
+/* ==========================================================================
+   Header
+   Logo at x=98 / y=30 (194×75). Orange nav pill 880×48, radius 15.
+   ========================================================================== */
+.site-header {
+  position: relative;
+  z-index: 1000;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+.site-header__inner {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 98px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.site-header__logo { flex: 0 0 auto; }
+.site-header__logo img { width: var(--logo-w); height: auto; }
+
+.nav {
+  margin-left: auto;
+  height: var(--nav-h);
+  background: var(--orange);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-inline: 20px;
+}
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding-inline: 14px;
+  font-size: var(--fs-ui);
+  line-height: var(--lh-ui);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  color: var(--white);
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 8px;
+  transition: background-color .15s ease;
+}
+.nav__link:hover { background: rgba(255, 255, 255, .16); }
+.nav__link[aria-current='page'] { font-weight: 700; }
+
+.nav__search {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  margin-left: 6px;
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color .15s ease;
+}
+.nav__search:hover { background: rgba(255, 255, 255, .16); }
+.nav__search img { width: 21px; height: 21px; }
+
+/* Language switcher (EN / DE) — lives inside the orange nav pill */
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 6px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, .45);
+}
+.lang__btn {
+  background: none;
+  border: 0;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, .78);
+  cursor: pointer;
+  transition: color .15s ease, background-color .15s ease;
+}
+.lang__btn:hover { color: var(--white); background: rgba(255, 255, 255, .16); }
+.lang__btn.is-active { color: var(--white); font-weight: 700; }
+.lang__sep { color: rgba(255, 255, 255, .5); font-size: 14px; }
+
+/* Mobile nav toggle — hidden on desktop */
+.nav-toggle {
+  display: none;
+  margin-left: auto;
+  width: 48px; height: 48px;
+  align-items: center; justify-content: center;
+  background: var(--orange);
+  border: 0; border-radius: var(--radius);
+  cursor: pointer;
+}
+.nav-toggle__bar,
+.nav-toggle__bar::before,
+.nav-toggle__bar::after {
+  display: block; width: 22px; height: 2px;
+  background: var(--white); content: '';
+  position: relative;
+}
+.nav-toggle__bar::before { top: -7px; }
+.nav-toggle__bar::after { top: 5px; }
+
+/* On hero pages the bar floats over the image and takes no flow space. */
+.site-header--overlay { position: absolute; inset-inline: 0; top: 0; }
+/* Pages without a hero use a solid white bar and the dark logo. */
+.site-header:not(.site-header--overlay) { background: var(--white); }
+
+/* Placeholders reserve the chrome's height so nothing shifts while layout.js
+   swaps them out. Overlay headers are out of flow, so they reserve nothing. */
+#site-header { min-height: var(--header-h); }
+body[data-header='overlay'] #site-header { min-height: 0; }
+#site-footer { min-height: var(--footer-h); background: var(--footer-bg); }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  min-height: var(--footer-h);
+  background: var(--footer-bg);
+  display: flex;
+  align-items: center;
+  padding-block: 24px;
+}
+.site-footer__inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.site-footer__copy {
+  font-size: var(--fs-ui);
+  line-height: var(--lh-ui);
+  letter-spacing: -0.32px;
+  color: var(--ink-footer);
+}
+.site-footer__nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 68px;
+  flex-wrap: wrap;
+}
+.site-footer__nav a {
+  font-size: var(--fs-ui);
+  line-height: var(--lh-ui);
+  letter-spacing: -0.32px;
+  color: var(--ink-footer);
+  text-decoration: none;
+}
+.site-footer__nav a:hover { text-decoration: underline; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+.h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); font-weight: 700; letter-spacing: 0.5px; }
+.h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: 700; letter-spacing: 0.5px; }
+.h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 700; letter-spacing: 0; }
+.subhead { font-size: var(--fs-sub); line-height: var(--lh-sub); font-weight: 400; }
+.lede { font-size: var(--fs-body); line-height: var(--lh-body); }
+.center { text-align: center; }
+
+/* Orange "be" prefix — <span class="be">be</span> strong. */
+.be { color: var(--orange); font-weight: 700; }
+/* The bold lead-in that follows the prefix: "be strong." */
+.be-lead { font-weight: 700; }
+
+/* Display headline where line 2 is regular weight (International, 40px) */
+.headline-duo { font-size: var(--fs-h2); line-height: var(--lh-h2); letter-spacing: 0.5px; font-weight: 700; }
+.headline-duo span { display: block; font-weight: 400; }
+
+/* Body lists inside rich text */
+.rich p + p { margin-top: var(--lh-body); }
+.rich ul { margin-top: 0; padding-left: 1.15em; list-style: disc; }
+.rich strong { font-weight: 700; }
+
+/* ==========================================================================
+   Buttons
+   48px tall, radius 15, 20px inline padding, bold 16/24, ls 0.5
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--nav-h);
+  padding: 12px 20px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: var(--fs-ui);
+  line-height: var(--lh-ui);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color .15s ease, transform .15s ease;
+}
+.btn:hover { background: var(--orange-hover); }
+.btn:active { transform: translateY(1px); }
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.btn-row--center { justify-content: center; }
+
+/* ==========================================================================
+   Hero
+   Full-bleed image, 724px tall in the design (686 on Home, 636 on Services).
+   The header sits on top of it.
+   ========================================================================== */
+.hero {
+  position: relative;
+  height: 724px;
+  background: #2b2f36 center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero--home { height: 686px; }
+.hero--services { height: 636px; }
+.hero__media {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.hero__scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, .38) 0%, rgba(0, 0, 0, .10) 34%, rgba(0, 0, 0, 0) 60%);
+  pointer-events: none;
+}
+
+/* Video play affordance — white disc 157px, dark triangle at 46% opacity */
+.hero__play {
+  position: relative;
+  width: 157px; height: 157px;
+  border: 0; border-radius: 50%;
+  background: var(--white);
+  display: grid; place-items: center;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .25);
+}
+.hero__play:hover { transform: scale(1.05); }
+.hero__play::before {
+  content: '';
+  width: 0; height: 0;
+  margin-left: 14px;
+  border-left: 58px solid rgba(0, 0, 0, .46);
+  border-top: 42px solid transparent;
+  border-bottom: 42px solid transparent;
+}
+.hero__play .sr-only { position: absolute; }
+
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+
+/* ==========================================================================
+   Service cards — grey panel 1241×N, photo 401 wide, alternating sides
+   ========================================================================== */
+.card {
+  background: var(--surface-card);
+  border-radius: var(--radius);
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: 1fr 401px;
+  gap: 48px;
+  align-items: start;
+}
+.card--media-left { grid-template-columns: 401px 1fr; }
+.card--media-left .card__media { order: -1; }
+.card__media {
+  border-radius: var(--radius);
+  overflow: hidden;
+  align-self: stretch;
+  min-height: 351px;
+}
+.card__media img { width: 100%; height: 100%; object-fit: cover; }
+.card__body > * + * { margin-top: 16px; }
+.card__title { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 700; }
+.card__title > span { display: block; }
+/* second line of a card heading is the lighter, smaller strapline */
+.card__title > span + span {
+  font-size: var(--fs-sub);
+  line-height: var(--lh-sub);
+  font-weight: 400;
+}
+
+/* Closing CTA paragraph sits in a narrow measure, as in Figma (484px) */
+.cta-copy { max-width: 484px; }
+.card-stack { display: grid; gap: 48px; }
+
+/* Wide card used on the International landing page (text only, panel bg) */
+.panel {
+  background: var(--surface-panel);
+  border-radius: var(--radius);
+  padding: 32px 48px;
+}
+.panel__title { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 700; }
+.panel > * + * { margin-top: 8px; }
+
+/* ==========================================================================
+   Accordion
+   Shell: --surface-panel, radius 15. Row: white, 1px --hairline, radius 15,
+   min-height 62px. Header type 28/700. Icon 24×24 plus / minus.
+   ========================================================================== */
+.accordion {
+  background: var(--surface-panel);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: grid;
+  gap: 20px;
+}
+.accordion__item {
+  background: var(--white);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.accordion__trigger {
+  width: 100%;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 24px 16px 35px;
+  background: none;
+  border: 0;
+  text-align: left;
+  font-size: var(--fs-h3);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+.accordion__trigger:hover { background: #fafafa; }
+.accordion__label { flex: 1 1 auto; }
+.accordion__icon {
+  flex: 0 0 auto;
+  width: 24px; height: 24px;
+  position: relative;
+}
+/* plus / minus drawn in CSS so it can animate; matches the 24×24 Figma icon */
+.accordion__icon::before,
+.accordion__icon::after {
+  content: '';
+  position: absolute;
+  background: var(--icon);
+  transition: transform .2s ease, opacity .2s ease;
+}
+.accordion__icon::before {
+  left: 4.9px; right: 4.9px; top: 11.1px; height: 1.78px; /* horizontal bar */
+}
+.accordion__icon::after {
+  top: 4.9px; bottom: 4.9px; left: 11.1px; width: 1.78px; /* vertical bar */
+}
+.accordion__trigger[aria-expanded='true'] .accordion__icon::after {
+  transform: scaleY(0);
+  opacity: 0;
+}
+.accordion__panel { display: none; padding: 0 35px 35px; }
+.accordion__item.is-open .accordion__panel { display: block; }
+.accordion__panel > * + * { margin-top: 24px; }
+.accordion__figure {
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.accordion__figure img { width: 100%; height: auto; }
+
+/* ==========================================================================
+   Timeline (International → be expert)
+   Rebuilt from the Figma raster so the copy stays selectable and responsive.
+   Years alternate above / below a horizontal rail.
+   ========================================================================== */
+.timeline-wrap { overflow-x: auto; padding-bottom: 8px; }
+.timeline {
+  --rail: 2px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(148px, 1fr);
+  align-items: center;
+  min-width: 1000px;
+  position: relative;
+  padding-block: 8px;
+}
+.timeline__step {
+  position: relative;
+  min-height: 420px;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  align-items: center;
+  padding-inline: 8px;
+}
+/* the rail */
+.timeline__step::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  top: 50%;
+  height: var(--rail);
+  background: var(--ink);
+  transform: translateY(-50%);
+}
+/* node: chevron for even steps, ring for odd — mirrors the Figma rhythm */
+.timeline__node {
+  position: relative;
+  z-index: 1;
+  grid-row: 2;
+  justify-self: start;
+  display: grid;
+  place-items: center;
+  width: 26px; height: 26px;
+  margin-left: -13px;
+  background: var(--white);
+  border: var(--rail) solid var(--orange-chevron);
+  border-radius: 50%;
+}
+.timeline__step--chevron .timeline__node {
+  border: 0;
+  width: 34px; height: 24px;
+  background: none;
+  margin-left: -6px;
+}
+.timeline__step--chevron .timeline__node img { width: 34px; height: auto; }
+
+.timeline__card {
+  position: relative;
+  padding-left: 16px;
+}
+.timeline__card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 4px; bottom: 4px;
+  border-left: 2px dashed var(--ink);
+}
+.timeline__step--above .timeline__card { grid-row: 1; align-self: end; padding-bottom: 24px; }
+.timeline__step--below .timeline__card { grid-row: 3; align-self: start; padding-top: 24px; }
+.timeline__year {
+  color: var(--orange);
+  font-size: var(--fs-sub);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-bottom: 10px;
+}
+.timeline__list {
+  list-style: none;
+  margin: 0; padding: 0;
+  font-size: var(--fs-ui);
+  line-height: 22px;
+  letter-spacing: 0;
+}
+.timeline__note { margin-top: 8px; }
+.timeline__note .chev {
+  display: inline-block;
+  width: 22px;
+  vertical-align: -2px;
+  margin-right: 10px;
+}
+
+/* ==========================================================================
+   Chevron mark (the standalone ">>" used above CTA copy)
+   ========================================================================== */
+.chevron-mark { width: 66px; height: auto; }
+
+/* ==========================================================================
+   Projects map (Leaflet + OpenStreetMap)
+   Muted grey basemap to match the Figma world map; orange outline pins.
+   ========================================================================== */
+.map-panel {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #f4f4f4;
+}
+#projects-map {
+  height: 630px;
+  width: 100%;
+  background: var(--white);
+}
+.map-panel__hint {
+  position: absolute;
+  left: 16px; bottom: 16px;
+  z-index: 500;
+  background: rgba(255, 255, 255, .92);
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #555;
+  pointer-events: none;
+}
+
+/* Orange outline pin, drawn to match the Figma marker */
+.bejulo-pin {
+  background: none;
+  border: 0;
+}
+.bejulo-pin svg { width: 100%; height: 100%; overflow: visible; }
+.bejulo-pin__shape {
+  fill: var(--white);
+  stroke: var(--orange-chevron);
+  stroke-width: 2.6;
+  transition: fill .15s ease, transform .15s ease;
+  transform-origin: 50% 100%;
+}
+.bejulo-pin:hover .bejulo-pin__shape,
+.bejulo-pin.is-active .bejulo-pin__shape {
+  fill: var(--orange-chevron);
+}
+
+/* Leaflet popup restyled to the bejulo card language */
+.leaflet-popup-content-wrapper {
+  border-radius: var(--radius);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .18);
+  padding: 0;
+}
+.leaflet-popup-content {
+  margin: 0;
+  width: 274px !important;
+  font-family: var(--font);
+}
+.leaflet-popup-tip { box-shadow: none; }
+.pin-card { padding: 18px 20px; }
+.pin-card__country {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.pin-card__meta {
+  margin-top: 2px;
+  font-size: var(--fs-ui);
+  line-height: 22px;
+  letter-spacing: 0;
+  color: var(--orange);
+  font-weight: 700;
+}
+.pin-card__text {
+  margin-top: 10px;
+  font-size: var(--fs-ui);
+  line-height: 22px;
+  letter-spacing: 0;
+  color: #333;
+}
+.leaflet-container { font-family: var(--font); }
+.leaflet-container a.leaflet-popup-close-button { color: #888; }
+
+/* ==========================================================================
+   Contact page
+   Watermark pin: 424×658 outline, stroke 29, ring hole ⌀145, colour --pin-ghost
+   ========================================================================== */
+.contact-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 467px 1fr;
+  gap: 0;
+  align-items: start;
+  padding-block: 60px 40px;
+}
+.contact-pin {
+  position: absolute;
+  left: 172px; top: 0;
+  width: 424px;
+  z-index: 0;
+  pointer-events: none;
+}
+.contact-pin svg { width: 100%; height: auto; }
+.contact-card {
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+  padding-top: 60px;
+}
+.contact-card address { font-style: normal; }
+.contact-card__social { margin-top: 130px; }
+.contact-card__social img { width: 54px; height: 50px; }
+.contact-card__social p { margin-top: 22px; }
+.contact-photo {
+  grid-column: 1 / -1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+/* ==========================================================================
+   Prose blocks (About) and misc page pieces
+   ========================================================================== */
+.prose > p + p { margin-top: var(--lh-body); }
+
+/* Careers heading sits in orange, centred, above the vacancy list */
+.vacancies-title { color: var(--orange); }
+
+/* Centred page variant (Careers) — buttons and text align to the middle */
+.center .btn-row { justify-content: center; }
+.center .accordion { text-align: left; }
+.center .callout { text-align: center; }
+
+/* Timeline block inside the "be expert" accordion */
+.timeline-figure { margin: 0; }
+.timeline-summary { margin-top: 24px; }
+.timeline-summary > p + p { margin-top: 4px; }
+
+/* Contact address block */
+.contact-card address p { margin: 0; }
+.contact-card address .contact-card__tel { margin-top: var(--lh-body); }
+.contact-card address p:last-child { margin-top: var(--lh-body); }
+.contact-card a { text-decoration: none; }
+.contact-card a:hover { text-decoration: underline; }
+
+/* ==========================================================================
+   Careers
+   ========================================================================== */
+.callout {
+  background: var(--surface-panel);
+  border-radius: var(--radius);
+  padding: 32px 48px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Responsive
+   The artboard is 1440 wide; below that everything reflows to a single column.
+   ========================================================================== */
+@media (max-width: 1180px) {
+  :root {
+    --fs-h1: 44px; --lh-h1: 54px;
+    --fs-h2: 32px; --lh-h2: 40px;
+    --fs-h3: 24px; --lh-h3: 32px;
+    --fs-sub: 20px; --lh-sub: 28px;
+    --fs-body: 18px; --lh-body: 29px;
+    --header-h: 96px;
+  }
+  .site-header__inner { padding-inline: 24px; }
+  .nav { gap: 0; padding-inline: 12px; }
+  .nav__link { padding-inline: 10px; font-size: 15px; }
+  .hero, .hero--home, .hero--services { height: 520px; }
+  .card, .card--media-left { grid-template-columns: 1fr; gap: 28px; }
+  .card--media-left .card__media { order: 0; }
+  .card__media { min-height: 260px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-card { grid-column: 1; padding-top: 0; }
+  .contact-card__social { margin-top: 56px; }
+  .contact-pin { left: -40px; width: 300px; opacity: .8; }
+  #projects-map { height: 520px; }
+}
+
+@media (max-width: 900px) {
+  .site-header { position: relative; }
+  .nav-toggle { display: inline-flex; }
+  .nav {
+    position: absolute;
+    top: calc(100% - 8px);
+    right: 24px;
+    left: 24px;
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 14px 12px;
+    display: none;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .22);
+  }
+  .nav.is-open { display: flex; }
+  .nav__link { height: 44px; padding-inline: 14px; font-size: 16px; }
+  .nav__search { width: 44px; height: 44px; margin-left: 0; align-self: flex-start; }
+  .lang {
+    order: -1;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .35);
+    padding-bottom: 8px;
+    margin-bottom: 6px;
+  }
+  .lang__btn { padding: 8px 10px; font-size: 16px; }
+  .card { padding: 28px 24px; }
+  .panel, .callout { padding: 24px; }
+  .accordion { padding: 14px; gap: 14px; }
+  .accordion__trigger { padding: 14px 16px; gap: 16px; }
+  .accordion__panel { padding: 0 16px 24px; }
+  .site-footer__inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .site-footer__nav { margin-left: 0; gap: 20px 28px; }
+  .section { padding-block: 40px; }
+  .hero, .hero--home, .hero--services { height: 380px; }
+  .hero__play { width: 96px; height: 96px; }
+  .hero__play::before {
+    margin-left: 8px;
+    border-left-width: 34px;
+    border-top-width: 25px;
+    border-bottom-width: 25px;
+  }
+  .timeline { min-width: 760px; }
+  #projects-map { height: 440px; }
+  .btn-row { gap: 14px; }
+  .btn { width: 100%; }
+  .btn-row .btn { width: auto; flex: 1 1 220px; }
+}
+
+@media (max-width: 560px) {
+  :root { --fs-h1: 34px; --lh-h1: 42px; --fs-h2: 26px; --lh-h2: 34px; }
+  .container { padding-inline: 18px; }
+  .btn-row .btn { flex: 1 1 100%; }
+}
+
+/* --- Motion preferences --------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+/* --- Print --------------------------------------------------------------- */
+@media print {
+  .site-header, .site-footer, .hero__play { display: none; }
+  .accordion__panel { display: block !important; }
+}

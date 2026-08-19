@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Our projects speak for themselves | bejulo</title>
+<meta name="description" content="More than 65 PV projects with around 700 MWp installed capacity across three continents.">
+<link rel="preload" href="assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/favicon.svg">
+</head>
+<body data-page="projects" data-header="overlay">
+
+<div id="site-header"></div>
+
+<main id="main">
+
+  <section class="hero">
+    <img class="hero__media" src="assets/img/hero-projects.jpg" width="2160" height="903"
+         alt="Rows of solar modules stretching towards the horizon"
+         data-i18n-attr="alt:projects.hero.alt" fetchpriority="high">
+    <span class="hero__scrim"></span>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <h1 class="h2" data-i18n="projects.h2">Our projects speak for themselves</h1>
+
+      <p class="lede" data-i18n-html="projects.lede"><span class="be">be</span><span class="be-lead"> international.</span> We operate internationally – and we’re proud of it. Today, bejulo projects can be found across three continents. Since our company was founded, we’ve successfully completed more than 65 PV projects with a total installed capacity of around 700 MWp. Numerous additional projects are currently under construction, with further developments already in the pipeline. Wherever solar energy creates opportunities, we deliver sustainable solutions that cross borders and exceed expectations – bejulo follows the sun!</p>
+
+      <!-- Interactive replacement for the static world map in Figma.
+           Markers and their descriptions are defined in assets/js/map.js. -->
+      <div class="map-panel">
+        <div id="projects-map" role="application"
+             aria-label="Map of bejulo project locations worldwide"
+             data-i18n-attr="aria-label:projects.map.label"></div>
+        <p class="map-panel__hint" data-i18n="projects.map.hint">Hover a marker for project details · Ctrl + scroll to zoom</p>
+      </div>
+
+      <p data-i18n="projects.map.note">The orange markers highlight a selection of our flagship projects, showcasing the breadth of our international activities.</p>
+
+      <div class="btn-row">
+        <a class="btn" href="international.html" data-i18n="btn.intlprojects">Explore our international projects</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container stack">
+      <h2 class="h2" data-i18n="projects.customers.h2">Satisfied customers are our greatest success</h2>
+      <p class="lede" data-i18n-html="projects.customers.body"><span class="be">be</span><span class="be-lead"> happy.</span> We work with customers across a broad range of industries, with many placing their trust in our expertise and commercial performance for years. They choose bejulo because we combine technical expertise, commercial efficiency and a fully integrated approach to project delivery. Built on quality, transparency and fairness, our partnerships are designed to create lasting value for everyone involved.</p>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/js/map.js"></script>
+
+</body>
+</html>

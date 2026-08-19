@@ -1,0 +1,593 @@
+
+========== PAGE: Unsere Leistungen / Group 5 (67886:56) origin=(1718,6) size=1440x3527 ==========
+[0,3404 1440x123] FRAM Footer #bdbfc1
+  [929,3444 130x43] GROU Socials 
+    [929,3444 130x43] TEXT Terms & Conditions #1a202c | 400@16/24 ls-0.32 L | "Terms & Conditions"
+  [1117,3444 72x43] GROU Socials 
+    [1117,3444 72x43] TEXT Cookies #1a202c | 400@16/24 ls-0.32 L | "Cookies"
+  [776,3444 169x43] GROU Community 
+    [776,3444 169x43] TEXT Privacy Policy #1a202c | 400@16/24 ls-0.32 L | "Privacy Policy"
+  [622,3444 86x43] GROU About 
+    [622,3444 86x43] TEXT Legal Notice #1a202c | 400@16/24 ls-0.32 L | "Legal Notice"
+  [112,3444 115x43] GROU About 
+    [112,3444 115x43] TEXT © bejulo 2026 #1a202c | 400@16/24 ls-0.32 L | "© bejulo 2026"
+[0,0 1440x3404] FRAM Content Section 7 #ffffff
+  [112,3286 326x48] r15 INST Style=Filled #f47b20
+    [214,3298 123x24] TEXT Do something #ffffff | 700@20/24 ls0.5 L | "Get in touch!"
+  [112,3147 484x110] TEXT Whether you’re a landowner, looking to #000000 | 400@20/32 ls0 L | "Whether you’re a landowner, looking to sell project rights or seeking a trusted delivery p"
+  [112,3064 66x47] GROU Ebene 1 
+  [112,2565 1241x437] r15 RECT Rectangle 4 #d9d9d9
+  [624,2720 696x192] TEXT be independent. Energy is at the heart #8ca2c0 | 400@20/32 ls0.5 L | "be  independent. Energy is at the heart of a sustainable future. As an independent power p"
+  [622,2614 424x77] TEXT IPP energy marketing Greater independe #000000 | 700@28/32 ls0 L | "IPP energy marketing ¶ Greater independence. Greater flexibility."
+  [160,2607 401x351] r15 INST Placeholder image IMG
+  [112,2078 1241x437] r15 RECT Rectangle 3 #d9d9d9
+  [910,2120 401x351] r15 INST Placeholder image IMG
+  [164,2211 712x149] TEXT be responsible. Our experienced team o #8ca2c0 | 400@20/32 ls0.5 L | "be  responsible. Our experienced team operates and maintains renewable energy assets with "
+  [164,2115 370x81] TEXT Operations and maintenance Looking aft #000000 | 700@28/40 ls0 L | "Operations and maintenance ¶ Looking after what matters"
+  [112,1591 1241x437] r15 RECT Rectangle 2 #d9d9d9
+  [615,1726 697x128] TEXT be successful. As your trusted PV and  #8ca2c0 | 400@20/32 ls0.5 L | "be successful. As your trusted PV and BESS project partner, we draw on many years of exper"
+  [615,1633 426x77] TEXT PV and BESS project construction Built #000000 | 700@28/32 ls0 L | "PV and BESS project construction ¶ Built for success"
+  [160,1633 401x351] r15 INST Placeholder image IMG
+  [110,809 1241x732] r15 RECT Rectangle 1 #d9d9d9
+  [911,848 401x410] r15 INST Placeholder image IMG
+  [160,1369 1152x128] TEXT be in touch. We purchase PV and BESS p #000000 | 400@20/32 ls0 L | "be in touch. We purchase PV and BESS project rights at every stage of development – from e"
+  [160,944 734x389] TEXT be strong. Great energy projects start #000000 | 400@20/32 ls0 L | "be strong. Great energy projects start with the right foundations. That’s why we develop P"
+  [160,851 434x77] TEXT PV and BESS project development Poweri #000000 | 700@28/32 ls0 L | "PV and BESS project development ¶ Powering performance"
+  [112,705 635x50] TEXT End-to-end PV and BESS solutions #000000 | 700@40/50 ls0.5 L | "End-to-end PV and BESS solutions"
+  [0,-4 1440x636] RECT Bildschirmfoto 2026-04-21 um 11.02.26  IMG
+[0,0 1440x122] FRAM Header 2 
+  [480,42 880x48] GROU Group 4 
+    [485,55 145x24] TEXT Unsere Leistungen #ffffff | 700@16/24 ls0.5 C | "Unsere Leistungen"
+    [678,55 95x24] TEXT International #ffffff | 400@16/24 ls0.5 C | "International"
+    [821,55 61x24] TEXT Projekte #ffffff | 400@16/24 ls0.5 C | "Projekte"
+    [930,55 66x24] TEXT Über uns #ffffff | 400@16/24 ls0.5 C | "Über uns"
+    [1044,55 58x24] TEXT Karriere #ffffff | 400@16/24 ls0.5 C | "Karriere"
+    [1150,55 58x24] TEXT Kontakt #ffffff | 400@16/24 ls0.5 C | "Kontakt"
+    [480,42 880x48] GROU Group 4 
+      [480,42 880x48] r15 INST Style=Filled #f47b20
+        [500,54 166x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Kontaktieren Sie uns!"
+      [518,55 97x24] TEXT Our Services #ffffff | 700@16/24 ls0.5 C | "Our Services"
+      [661,55 95x24] TEXT International #ffffff | 400@16/24 ls0.5 C | "International"
+      [805,55 59x24] TEXT Projects #ffffff | 400@16/24 ls0.5 C | "Projects"
+      [913,55 67x24] TEXT About us #ffffff | 400@16/24 ls0.5 C | "About us"
+      [1029,55 55x24] TEXT Careers #ffffff | 400@16/24 ls0.5 C | "Careers"
+      [1129,55 83x24] TEXT Downloads #ffffff | 400@16/24 ls0.5 C | "Downloads"
+  [98,30 194x75] GROU Group 
+    [98,30 194x75] RECT bejulo_Logo 1 IMG
+
+========== PAGE: International / Content 4 (67885:92) origin=(4854,4397) size=1440x1952 ==========
+[0,1829 1440x123] FRAM Footer #bdbfc1
+  [929,1869 130x43] GROU Socials 
+    [929,1869 130x43] TEXT Terms & Conditions #1a202c | 400@16/24 ls-0.32 L | "Terms & Conditions"
+  [1117,1869 72x43] GROU Socials 
+    [1117,1869 72x43] TEXT Cookies #1a202c | 400@16/24 ls-0.32 L | "Cookies"
+  [776,1869 169x43] GROU Community 
+    [776,1869 169x43] TEXT Privacy Policy #1a202c | 400@16/24 ls-0.32 L | "Privacy Policy"
+  [622,1869 86x43] GROU About 
+    [622,1869 86x43] TEXT Legal Notice #1a202c | 400@16/24 ls-0.32 L | "Legal Notice"
+  [112,1869 115x43] GROU About 
+    [112,1869 115x43] TEXT © bejulo 2026 #1a202c | 400@16/24 ls-0.32 L | "© bejulo 2026"
+[0,122 1440x1707] FRAM Hintergrund #ffffff
+[108,951 1220x822] r15 RECT Rectangle 1 IMG
+[124,375 342x342] ELLI Ellipse 1 #ff4ab6
+[151,501 288x90] TEXT Bitte Inhalte für die "international"- #ffffff | 700@20/30 ls0.5 C | "Bitte Inhalte für die "international"-Kontaktseite grundsätzlich klären"
+[590,764 199x64] TEXT Follow us and  never miss an update! #000000 | 400@20/32 ls0.5 L | "Follow us and  never miss an update!"
+[589,692 54x50] RECT InBug-Black 1 IMG
+[579,306 283x256] TEXT bejulo GmbH Dekan-Laist-Straße 15a 551 #000000 | 400@20/32 ls0.5 L | "bejulo GmbH Dekan-Laist-Straße 15a 55129 Mainz ¶ Germany ¶  ¶ Tel.: +49 6131 – 2151-400 ¶ "
+[0,0 1440x122] FRAM Header 2 #ffffff
+  [98,30 194x75] GROU Group 
+    [98,30 194x75] RECT bejulo_Logo 1 IMG
+  [489,42 880x48] GROU Group 4 
+    [489,42 880x48] r15 INST Style=Filled #f47b20
+      [509,54 166x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Kontaktieren Sie uns!"
+    [529,55 92x24] TEXT Our Services #ffffff | 400@16/24 ls0.5 C | "Our Services"
+    [666,55 102x24] TEXT International #ffffff | 700@16/24 ls0.5 C | "International"
+    [814,55 59x24] TEXT Projects #ffffff | 400@16/24 ls0.5 C | "Projects"
+    [922,55 67x24] TEXT About us #ffffff | 400@16/24 ls0.5 C | "About us"
+    [1038,55 55x24] TEXT Careers #ffffff | 400@16/24 ls0.5 C | "Careers"
+    [1138,55 83x24] TEXT Downloads #ffffff | 400@16/24 ls0.5 C | "Downloads"
+
+========== PAGE: International / Content 3.1 (67885:91) origin=(4854,1119) size=1440x2984 ==========
+[0,2861 1440x123] FRAM Footer #bdbfc1
+  [929,2901 130x43] GROU Socials 
+    [929,2901 130x43] TEXT Terms & Conditions #1a202c | 400@16/24 ls-0.32 L | "Terms & Conditions"
+  [1117,2901 72x43] GROU Socials 
+    [1117,2901 72x43] TEXT Cookies #1a202c | 400@16/24 ls-0.32 L | "Cookies"
+  [776,2901 169x43] GROU Community 
+    [776,2901 169x43] TEXT Privacy Policy #1a202c | 400@16/24 ls-0.32 L | "Privacy Policy"
+  [622,2901 86x43] GROU About 
+    [622,2901 86x43] TEXT Legal Notice #1a202c | 400@16/24 ls-0.32 L | "Legal Notice"
+  [112,2901 115x43] GROU About 
+    [112,2901 115x43] TEXT © bejulo 2026 #1a202c | 400@16/24 ls-0.32 L | "© bejulo 2026"
+[0,724 1440x2137] FRAM Hintergrund #ffffff
+[656,2776 131x48] r15 INST Style=Filled #f47b20
+  [680,2788 82x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Contact us"
+[410,2776 201x48] r15 INST Style=Filled #f47b20
+  [432,2788 158x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Explore our projects"
+[126,2776 239x48] r15 INST Style=Filled #f47b20
+  [168,2788 156x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Explore our services"
+[124,904 1192x1825] r15 INST Placeholder image #e7e7e7
+[170,1844 1102x829] r15 RECT Frame #ffffff
+[212,2382 1034x256] TEXT dd/mm/yyyy #000000 | 400@20/32 ls0 L | "Energy projects are becoming increasingly demanding from a regulatory, technical and comme"
+[205,1928 1032x425] r15 INST Placeholder image IMG
+[1215,1875 24x24] GROU Plus Icon 
+  [1215,1875 24x24] GROU Plus Icon 
+    [1215,1875 24x24] RECT Frame #fff0f2
+    [1220,1886 14x2] GROU Group 104017 
+[205,1875 947x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "be supportive – Reducing complexity. Maximising returns."
+[170,953 1102x860] r15 RECT Frame #ffffff
+[212,1491 1034x288] TEXT dd/mm/yyyy #000000 | 400@20/32 ls0 L | "Our end-to-end service covers every stage of your project – from initial design and engine"
+[205,1034 1032x423] r15 INST Placeholder image IMG
+[1215,983 24x24] GROU Plus Icon 
+  [1215,983 24x24] GROU Plus Icon 
+    [1215,983 24x24] RECT Frame #fff0f2
+    [1220,994 14x2] GROU Group 104017 
+[205,984 933x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "be holistic – Your one-stop shop for PV, BESS and revamping"
+[124,771 1199x86] TEXT Operating globally. Taking responsibil #000000 | 400@40/50 ls0.5 L | "Operating globally. Taking responsibility. Building the future. ¶ bejulo: your one-stop sh"
+[0,0 1440x724] RECT Bildschirmfoto 2026-04-21 um 11.02.26  IMG
+[124,381 228x228] ELLI Ellipse 1 #ff4ab6
+[142,450 192x90] TEXT Seite erscheint  bei Klick auf “Leistu #ffffff | 700@20/30 ls0.5 C | "Seite erscheint  bei Klick auf “Leistungs-spektrum”"
+[0,0 1440x122] FRAM Header 2 
+  [98,30 194x75] GROU Group 
+    [98,30 194x75] RECT bejulo_Logo 1 IMG
+  [469,42 880x48] GROU Group 4 
+    [485,55 137x24] TEXT Unsere Leistungen #ffffff | 400@16/24 ls0.5 C | "Unsere Leistungen"
+    [670,55 102x24] TEXT International #ffffff | 700@16/24 ls0.5 C | "International"
+    [820,55 61x24] TEXT Projekte #ffffff | 400@16/24 ls0.5 C | "Projekte"
+    [929,55 66x24] TEXT Über uns #ffffff | 400@16/24 ls0.5 C | "Über uns"
+    [1043,55 58x24] TEXT Karriere #ffffff | 400@16/24 ls0.5 C | "Karriere"
+    [1150,55 58x24] TEXT Kontakt #ffffff | 400@16/24 ls0.5 C | "Kontakt"
+    [469,42 880x48] GROU Group 4 
+      [469,42 880x48] r15 INST Style=Filled #f47b20
+        [489,54 166x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Kontaktieren Sie uns!"
+      [509,55 92x24] TEXT Our Services #ffffff | 400@16/24 ls0.5 C | "Our Services"
+      [646,55 102x24] TEXT International #ffffff | 700@16/24 ls0.5 C | "International"
+      [794,55 59x24] TEXT Projects #ffffff | 400@16/24 ls0.5 C | "Projects"
+      [902,55 67x24] TEXT About us #ffffff | 400@16/24 ls0.5 C | "About us"
+      [1018,55 55x24] TEXT Careers #ffffff | 400@16/24 ls0.5 C | "Careers"
+      [1118,55 83x24] TEXT Downloads #ffffff | 400@16/24 ls0.5 C | "Downloads"
+
+========== PAGE: International / Content 3.0 (67885:90) origin=(4854,-492) size=1440x1388 ==========
+[0,1265 1440x123] FRAM Footer #bdbfc1
+  [929,1305 130x43] GROU Socials 
+    [929,1305 130x43] TEXT Terms & Conditions #1a202c | 400@16/24 ls-0.32 L | "Terms & Conditions"
+  [1117,1305 72x43] GROU Socials 
+    [1117,1305 72x43] TEXT Cookies #1a202c | 400@16/24 ls-0.32 L | "Cookies"
+  [776,1305 169x43] GROU Community 
+    [776,1305 169x43] TEXT Privacy Policy #1a202c | 400@16/24 ls-0.32 L | "Privacy Policy"
+  [622,1305 86x43] GROU About 
+    [622,1305 86x43] TEXT Legal Notice #1a202c | 400@16/24 ls-0.32 L | "Legal Notice"
+  [112,1305 115x43] GROU About 
+    [112,1305 115x43] TEXT © bejulo 2026 #1a202c | 400@16/24 ls-0.32 L | "© bejulo 2026"
+[0,724 1440x541] FRAM Hintergrund #ffffff
+[658,1182 131x48] r15 INST Style=Filled #f47b20
+  [682,1194 82x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Contact us"
+[412,1182 201x48] r15 INST Style=Filled #f47b20
+  [434,1194 158x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Explore our projects"
+[128,1182 239x48] r15 INST Style=Filled #f47b20
+  [170,1194 156x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Explore our services"
+[124,904 1192x236] r15 INST Placeholder image #e7e7e7
+[170,1031 1102x62] r15 RECT Frame #ffffff
+[1233,1052 24x24] GROU Plus Icon 
+  [1233,1052 24x24] GROU Plus Icon 
+    [1233,1052 24x24] RECT Frame #fff0f2
+    [1238,1057 14x14] GROU Group 104017 
+[205,1052 933x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "be supportive – Reducing complexity. Maximising returns."
+[170,949 1102x62] r15 RECT Frame #ffffff
+[1238,973 14x15] GROU Group 104017 
+[205,971 947x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "be holistic – Your one-stop shop for PV, BESS and revamping"
+[124,759 1199x86] TEXT Operating globally. Taking responsibil #000000 | 400@40/50 ls0.5 L | "Operating globally. Taking responsibility. Building the future. ¶ bejulo: your one-stop sh"
+[0,0 1440x724] RECT Bildschirmfoto 2026-04-21 um 11.02.26  IMG
+[124,374 228x228] GROU Group 104028 
+  [124,374 228x228] ELLI Ellipse 1 #ff4ab6
+  [142,443 192x90] TEXT Seite erscheint  bei Klick auf “Leistu #ffffff | 700@20/30 ls0.5 C | "Seite erscheint  bei Klick auf “Leistungs-spektrum”"
+[0,0 1440x122] FRAM Header 2 
+  [98,30 194x75] GROU Group 
+    [98,30 194x75] RECT bejulo_Logo 1 IMG
+  [469,43 880x48] GROU Group 4 
+    [485,56 137x24] TEXT Unsere Leistungen #ffffff | 400@16/24 ls0.5 C | "Unsere Leistungen"
+    [670,56 102x24] TEXT International #ffffff | 700@16/24 ls0.5 C | "International"
+    [820,56 61x24] TEXT Projekte #ffffff | 400@16/24 ls0.5 C | "Projekte"
+    [929,56 66x24] TEXT Über uns #ffffff | 400@16/24 ls0.5 C | "Über uns"
+    [1043,56 58x24] TEXT Karriere #ffffff | 400@16/24 ls0.5 C | "Karriere"
+    [1150,56 58x24] TEXT Kontakt #ffffff | 400@16/24 ls0.5 C | "Kontakt"
+    [469,43 880x48] GROU Group 4 
+      [469,43 880x48] r15 INST Style=Filled #f47b20
+        [489,55 166x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Kontaktieren Sie uns!"
+      [509,56 92x24] TEXT Our Services #ffffff | 400@16/24 ls0.5 C | "Our Services"
+      [646,56 102x24] TEXT International #ffffff | 700@16/24 ls0.5 C | "International"
+      [794,56 59x24] TEXT Projects #ffffff | 400@16/24 ls0.5 C | "Projects"
+      [902,56 67x24] TEXT About us #ffffff | 400@16/24 ls0.5 C | "About us"
+      [1018,56 55x24] TEXT Careers #ffffff | 400@16/24 ls0.5 C | "Careers"
+      [1118,56 83x24] TEXT Downloads #ffffff | 400@16/24 ls0.5 C | "Downloads"
+
+========== PAGE: International / Content 2.2 (67885:89) origin=(3260,4999) size=1440x2132 ==========
+[0,2009 1440x123] FRAM Footer #bdbfc1
+  [929,2049 130x43] GROU Socials 
+    [929,2049 130x43] TEXT Terms & Conditions #1a202c | 400@16/24 ls-0.32 L | "Terms & Conditions"
+  [1117,2049 72x43] GROU Socials 
+    [1117,2049 72x43] TEXT Cookies #1a202c | 400@16/24 ls-0.32 L | "Cookies"
+  [776,2049 169x43] GROU Community 
+    [776,2049 169x43] TEXT Privacy Policy #1a202c | 400@16/24 ls-0.32 L | "Privacy Policy"
+  [622,2049 86x43] GROU About 
+    [622,2049 86x43] TEXT Legal Notice #1a202c | 400@16/24 ls-0.32 L | "Legal Notice"
+  [112,2049 115x43] GROU About 
+    [112,2049 115x43] TEXT © bejulo 2026 #1a202c | 400@16/24 ls-0.32 L | "© bejulo 2026"
+[0,128 1440x1881] FRAM Hintergrund #ffffff
+[652,1916 131x48] r15 INST Style=Filled #f47b20
+  [676,1928 82x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Contact us"
+[406,1916 201x48] r15 INST Style=Filled #f47b20
+  [428,1928 158x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Explore our projects"
+[122,1916 239x48] r15 INST Style=Filled #f47b20
+  [164,1928 156x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Explore our services"
+[124,904 1192x961] r15 INST Placeholder image #e7e7e7
+[170,1749 1102x71] r15 RECT Frame #ffffff
+[205,1780 947x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "be reliable – Quality you can trust"
+[170,1654 1102x75] r15 RECT Frame #ffffff
+[205,1685 859x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "be sustainable – Driving the energy transition"
+[170,950 1102x678] r15 RECT Frame #ffffff
+[112,1017 1154x453] RECT Bildschirmfoto 2026-04-21 um 11.02.26  IMG
+[212,1497 1034x96] TEXT dd/mm/yyyy #000000 | 400@20/32 ls0 L | "Thanks to our international project portfolio, we have valuable experience and expertise i"
+[1220,976 24x24] GROU Plus Icon 
+  [1220,976 24x24] GROU Plus Icon 
+    [1220,976 24x24] RECT Frame #fff0f2
+    [1225,987 14x2] GROU Group 104017 
+[205,981 947x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "be expert – International experience. Local expertise."
+[124,771 1199x86] TEXT Operating globally. Taking responsibil #000000 | 400@40/50 ls0.5 L | "Operating globally. Taking responsibility. Building the future. ¶ bejulo: your one-stop sh"
+[0,0 1440x724] RECT Bildschirmfoto 2026-04-21 um 11.02.26  IMG
+[146,354 228x228] ELLI Ellipse 1 #ff4ab6
+[164,423 192x90] TEXT Seite erscheint  bei Klick auf “Erfahr #ffffff | 700@20/30 ls0.5 C | "Seite erscheint  bei Klick auf “Erfahrung”"
+[0,0 1440x122] FRAM Header 2 
+  [98,30 194x75] GROU Group 
+    [98,30 194x75] RECT bejulo_Logo 1 IMG
+  [469,42 880x48] GROU Group 4 
+    [485,55 137x24] TEXT Unsere Leistungen #ffffff | 400@16/24 ls0.5 C | "Unsere Leistungen"
+    [670,55 102x24] TEXT International #ffffff | 700@16/24 ls0.5 C | "International"
+    [820,55 61x24] TEXT Projekte #ffffff | 400@16/24 ls0.5 C | "Projekte"
+    [929,55 66x24] TEXT Über uns #ffffff | 400@16/24 ls0.5 C | "Über uns"
+    [1043,55 58x24] TEXT Karriere #ffffff | 400@16/24 ls0.5 C | "Karriere"
+    [1150,55 58x24] TEXT Kontakt #ffffff | 400@16/24 ls0.5 C | "Kontakt"
+    [469,42 880x48] GROU Group 4 
+      [469,42 880x48] r15 INST Style=Filled #f47b20
+        [489,54 166x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Kontaktieren Sie uns!"
+      [509,55 92x24] TEXT Our Services #ffffff | 400@16/24 ls0.5 C | "Our Services"
+      [646,55 102x24] TEXT International #ffffff | 700@16/24 ls0.5 C | "International"
+      [794,55 59x24] TEXT Projects #ffffff | 400@16/24 ls0.5 C | "Projects"
+      [902,55 67x24] TEXT About us #ffffff | 400@16/24 ls0.5 C | "About us"
+      [1018,55 55x24] TEXT Careers #ffffff | 400@16/24 ls0.5 C | "Careers"
+      [1118,55 83x24] TEXT Downloads #ffffff | 400@16/24 ls0.5 C | "Downloads"
+
+========== PAGE: International / Content 2.1 (67885:88) origin=(3260,1119) size=1440x3364 ==========
+[0,3241 1440x123] FRAM Footer #bdbfc1
+  [929,3281 130x43] GROU Socials 
+    [929,3281 130x43] TEXT Terms & Conditions #1a202c | 400@16/24 ls-0.32 L | "Terms & Conditions"
+  [1117,3281 72x43] GROU Socials 
+    [1117,3281 72x43] TEXT Cookies #1a202c | 400@16/24 ls-0.32 L | "Cookies"
+  [776,3281 169x43] GROU Community 
+    [776,3281 169x43] TEXT Privacy Policy #1a202c | 400@16/24 ls-0.32 L | "Privacy Policy"
+  [622,3281 86x43] GROU About 
+    [622,3281 86x43] TEXT Legal Notice #1a202c | 400@16/24 ls-0.32 L | "Legal Notice"
+  [112,3281 115x43] GROU About 
+    [112,3281 115x43] TEXT © bejulo 2026 #1a202c | 400@16/24 ls-0.32 L | "© bejulo 2026"
+[0,128 1440x3113] FRAM Hintergrund #ffffff
+[654,3134 131x48] r15 INST Style=Filled #f47b20
+  [678,3146 82x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Contact us"
+[408,3134 201x48] r15 INST Style=Filled #f47b20
+  [430,3146 158x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Explore our projects"
+[124,3134 239x48] r15 INST Style=Filled #f47b20
+  [166,3146 156x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Explore our services"
+[124,904 1192x2171] r15 INST Placeholder image #e7e7e7
+[170,2365 1102x666] r15 RECT Frame #ffffff
+[212,2903 1034x96] TEXT dd/mm/yyyy #000000 | 400@20/32 ls0 L | "Open communication, uncompromising safety standards and close collaboration are at the hea"
+[205,2446 1032x424] r15 INST Placeholder image IMG
+[1215,2394 24x24] GROU Plus Icon 
+  [1215,2394 24x24] GROU Plus Icon 
+    [1215,2394 24x24] RECT Frame #fff0f2
+    [1220,2405 14x2] GROU Group 104017 
+[205,2396 947x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "be reliable – Quality you can trust"
+[170,1667 1102x660] r15 RECT Frame #ffffff
+[212,2205 1034x96] TEXT dd/mm/yyyy #000000 | 400@20/32 ls0 L | "We’re committed to accelerating the transition to renewable energy. We develop PV plants t"
+[205,1748 1032x424] r15 INST Placeholder image IMG
+[1215,1699 24x24] GROU Plus Icon 
+  [1215,1699 24x24] GROU Plus Icon 
+    [1215,1699 24x24] RECT Frame #fff0f2
+    [1220,1710 14x2] GROU Group 104017 
+[205,1698 933x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "be sustainable – Driving the energy transition"
+[170,949 1102x680] r15 RECT Frame #ffffff
+[212,1497 1034x96] TEXT dd/mm/yyyy #000000 | 400@20/32 ls0 L | "Thanks to our international project portfolio, we have valuable experience and expertise i"
+[112,1017 1154x453] RECT Bildschirmfoto 2026-04-21 um 11.02.26  IMG
+[1220,976 24x24] GROU Plus Icon 
+  [1220,976 24x24] GROU Plus Icon 
+    [1220,976 24x24] RECT Frame #fff0f2
+    [1225,987 14x2] GROU Group 104017 
+[205,981 947x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "be expert – International experience. Local expertise."
+[124,771 1199x86] TEXT Operating globally. Taking responsibil #000000 | 400@40/50 ls0.5 L | "Operating globally. Taking responsibility. Building the future. ¶ bejulo: your one-stop sh"
+[0,0 1440x724] RECT Bildschirmfoto 2026-04-21 um 11.02.26  IMG
+[146,399 228x228] GROU Group 104028 
+  [146,399 228x228] ELLI Ellipse 1 #ff4ab6
+  [164,468 192x90] TEXT Seite erscheint  bei Klick auf “Erfahr #ffffff | 700@20/30 ls0.5 C | "Seite erscheint  bei Klick auf “Erfahrung”"
+[0,0 1440x122] FRAM Header 2 
+  [98,30 194x75] GROU Group 
+    [98,30 194x75] RECT bejulo_Logo 1 IMG
+  [469,42 880x48] GROU Group 4 
+    [485,55 616x24] FRAM Auto Layout Horizontal 
+      [485,55 137x24] TEXT Unsere Leistungen #ffffff | 400@16/24 ls0.5 C | "Unsere Leistungen"
+      [670,55 102x24] TEXT International #ffffff | 700@16/24 ls0.5 C | "International"
+      [820,55 61x24] TEXT Projekte #ffffff | 400@16/24 ls0.5 C | "Projekte"
+      [929,55 66x24] TEXT Über uns #ffffff | 400@16/24 ls0.5 C | "Über uns"
+      [1043,55 58x24] TEXT Karriere #ffffff | 400@16/24 ls0.5 C | "Karriere"
+    [1150,55 58x24] TEXT Kontakt #ffffff | 400@16/24 ls0.5 C | "Kontakt"
+    [1300,56 21x21] FRAM Isolationsmodus 
+    [469,42 880x48] GROU Group 4 
+      [469,42 880x48] r15 INST Style=Filled #f47b20
+        [489,54 166x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Kontaktieren Sie uns!"
+      [509,55 92x24] TEXT Our Services #ffffff | 400@16/24 ls0.5 C | "Our Services"
+      [646,55 102x24] TEXT International #ffffff | 700@16/24 ls0.5 C | "International"
+      [794,55 59x24] TEXT Projects #ffffff | 400@16/24 ls0.5 C | "Projects"
+      [902,55 67x24] TEXT About us #ffffff | 400@16/24 ls0.5 C | "About us"
+      [1018,55 55x24] TEXT Careers #ffffff | 400@16/24 ls0.5 C | "Careers"
+      [1118,55 83x24] TEXT Downloads #ffffff | 400@16/24 ls0.5 C | "Downloads"
+
+========== PAGE: International / Content 2.0 (67885:87) origin=(3260,-492) size=1441x1468 ==========
+[1,1345 1440x123] FRAM Footer #bdbfc1
+  [930,1385 130x43] GROU Socials 
+    [930,1385 130x43] TEXT Terms & Conditions #1a202c | 400@16/24 ls-0.32 L | "Terms & Conditions"
+  [1118,1385 72x43] GROU Socials 
+    [1118,1385 72x43] TEXT Cookies #1a202c | 400@16/24 ls-0.32 L | "Cookies"
+  [777,1385 169x43] GROU Community 
+    [777,1385 169x43] TEXT Privacy Policy #1a202c | 400@16/24 ls-0.32 L | "Privacy Policy"
+  [623,1385 86x43] GROU About 
+    [623,1385 86x43] TEXT Legal Notice #1a202c | 400@16/24 ls-0.32 L | "Legal Notice"
+  [113,1385 115x43] GROU About 
+    [113,1385 115x43] TEXT © bejulo 2026 #1a202c | 400@16/24 ls-0.32 L | "© bejulo 2026"
+[1,724 1440x621] RECT Rectangle 3 #ffffff
+[652,1258 131x48] r15 INST Style=Filled #f47b20
+  [676,1270 82x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Contact us"
+[406,1258 201x48] r15 INST Style=Filled #f47b20
+  [428,1270 158x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Explore our projects"
+[122,1258 239x48] r15 INST Style=Filled #f47b20
+  [164,1270 156x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Explore our services"
+[124,904 1192x310] r15 INST Placeholder image #e7e7e7
+[170,1113 1102x62] r15 RECT Frame #ffffff
+[1233,1135 24x24] GROU Plus Icon 
+  [1233,1135 24x24] GROU Plus Icon 
+    [1233,1135 24x24] RECT Frame #fff0f2
+    [1238,1140 14x14] GROU Group 104017 
+[205,1134 947x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "be reliable – Quality you can trust"
+[170,1031 1102x62] r15 RECT Frame #ffffff
+[1233,1052 24x24] GROU Plus Icon 
+  [1233,1052 24x24] GROU Plus Icon 
+    [1233,1052 24x24] RECT Frame #fff0f2
+    [1238,1057 14x14] GROU Group 104017 
+[205,1052 933x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "be sustainable – Driving the energy transition"
+[170,949 1102x62] r15 RECT Frame #ffffff
+[205,971 947x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "be expert – International experience. Local expertise."
+[124,759 1199x86] TEXT Operating globally. Taking responsibil #000000 | 400@40/50 ls0.5 L | "Operating globally. Taking responsibility. Building the future. ¶ bejulo: your one-stop sh"
+[0,0 1440x724] RECT Bildschirmfoto 2026-04-21 um 11.02.26  IMG
+[146,374 228x228] GROU Group 104028 
+  [146,374 228x228] ELLI Ellipse 1 #ff4ab6
+  [164,443 192x90] TEXT Seite erscheint  bei Klick auf “Erfahr #ffffff | 700@20/30 ls0.5 C | "Seite erscheint  bei Klick auf “Erfahrung”"
+[0,0 1440x122] FRAM Header 2 
+  [98,30 194x75] GROU Group 
+    [98,30 194x75] RECT bejulo_Logo 1 IMG
+  [469,42 880x48] GROU Group 4 
+    [485,55 616x24] FRAM Auto Layout Horizontal 
+      [485,55 137x24] TEXT Unsere Leistungen #ffffff | 400@16/24 ls0.5 C | "Unsere Leistungen"
+      [670,55 102x24] TEXT International #ffffff | 700@16/24 ls0.5 C | "International"
+      [820,55 61x24] TEXT Projekte #ffffff | 400@16/24 ls0.5 C | "Projekte"
+      [929,55 66x24] TEXT Über uns #ffffff | 400@16/24 ls0.5 C | "Über uns"
+      [1043,55 58x24] TEXT Karriere #ffffff | 400@16/24 ls0.5 C | "Karriere"
+    [1150,55 58x24] TEXT Kontakt #ffffff | 400@16/24 ls0.5 C | "Kontakt"
+    [1300,56 21x21] FRAM Isolationsmodus 
+    [469,42 880x48] GROU Group 4 
+      [469,42 880x48] r15 INST Style=Filled #f47b20
+        [489,54 166x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Kontaktieren Sie uns!"
+      [509,55 92x24] TEXT Our Services #ffffff | 400@16/24 ls0.5 C | "Our Services"
+      [646,55 102x24] TEXT International #ffffff | 700@16/24 ls0.5 C | "International"
+      [794,55 59x24] TEXT Projects #ffffff | 400@16/24 ls0.5 C | "Projects"
+      [902,55 67x24] TEXT About us #ffffff | 400@16/24 ls0.5 C | "About us"
+      [1018,55 55x24] TEXT Careers #ffffff | 400@16/24 ls0.5 C | "Careers"
+      [1118,55 83x24] TEXT Downloads #ffffff | 400@16/24 ls0.5 C | "Downloads"
+
+========== PAGE: International / Content 1 (67885:86) origin=(1666,-492) size=1440x2099 ==========
+[0,1976 1440x123] FRAM Footer #bdbfc1
+  [929,2016 130x43] GROU Socials 
+    [929,2016 130x43] TEXT Terms & Conditions #1a202c | 400@16/24 ls-0.32 L | "Terms & Conditions"
+  [1117,2016 72x43] GROU Socials 
+    [1117,2016 72x43] TEXT Cookies #1a202c | 400@16/24 ls-0.32 L | "Cookies"
+  [776,2016 169x43] GROU Community 
+    [776,2016 169x43] TEXT Privacy Policy #1a202c | 400@16/24 ls-0.32 L | "Privacy Policy"
+  [622,2016 86x43] GROU About 
+    [622,2016 86x43] TEXT Legal Notice #1a202c | 400@16/24 ls-0.32 L | "Legal Notice"
+  [112,2016 115x43] GROU About 
+    [112,2016 115x43] TEXT © bejulo 2026 #1a202c | 400@16/24 ls-0.32 L | "© bejulo 2026"
+[0,724 1440x1252] RECT Rectangle 2 #ffffff
+[1015,1876 131x48] r15 INST Style=Filled #f47b20
+  [1040,1888 82x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Contact us"
+[747,1876 215x48] r15 INST Style=Filled #f47b20
+  [776,1888 158x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Explore our projects"
+[455,1876 239x48] r15 INST Style=Filled #f47b20
+  [496,1888 156x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Explore our services"
+[124,1876 278x48] r15 INST Style=Filled #f47b20
+  [170,1888 187x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Discover our experience"
+[124,1544 1192x285] r15 INST Placeholder image #e7e7e7
+[177,1581 1039x200] TEXT Your project. Our responsibility.  be  #000000 | 700@28/40 ls0 L | "Your project. Our responsibility. ¶  be responsible. We believe the best projects are buil"
+[124,1214 1192x283] r15 INST Placeholder image #e7e7e7
+[177,1255 969x190] TEXT One partner for every project phase.   #000000 | 700@28/40 ls0 L | "One partner for every project phase. ¶  be integrated. You’ll have one dedicated partner c"
+[124,904 1192x271] r15 INST Placeholder image #e7e7e7
+[171,937 1045x197] TEXT From planning to operation & maintenan #000000 | 700@28/40 ls0 L | "From planning to operation & maintenance – we’re with you every step of the way. ¶  be com"
+[125,761 1199x86] TEXT Operating globally. Taking responsibil #000000 | 400@40/50 ls0.5 L | "Operating globally. Taking responsibility. Building the future. ¶ bejulo: your one-stop sh"
+[0,0 1440x724] RECT Bildschirmfoto 2026-04-21 um 11.02.26  IMG
+[0,0 1440x122] FRAM Header 2 
+  [98,30 194x75] GROU Group 
+    [98,30 194x75] RECT bejulo_Logo 1 IMG
+  [489,42 880x48] GROU Group 4 
+    [489,42 880x48] r15 INST Style=Filled #f47b20
+      [509,54 166x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Kontaktieren Sie uns!"
+    [529,55 92x24] TEXT Our Services #ffffff | 400@16/24 ls0.5 C | "Our Services"
+    [666,55 102x24] TEXT International #ffffff | 700@16/24 ls0.5 C | "International"
+    [814,55 59x24] TEXT Projects #ffffff | 400@16/24 ls0.5 C | "Projects"
+    [922,55 67x24] TEXT About us #ffffff | 400@16/24 ls0.5 C | "About us"
+    [1038,55 55x24] TEXT Careers #ffffff | 400@16/24 ls0.5 C | "Careers"
+    [1138,55 83x24] TEXT Downloads #ffffff | 400@16/24 ls0.5 C | "Downloads"
+
+========== PAGE: Projekte / Group 5 (67886:61) origin=(-10,-100) size=1448x2523 ==========
+[2,2400 1440x123] FRAM Footer #bdbfc1
+  [931,2440 130x43] GROU Socials 
+    [931,2440 130x43] TEXT Terms & Conditions #1a202c | 400@16/24 ls-0.32 L | "Terms & Conditions"
+  [1119,2440 72x43] GROU Socials 
+    [1119,2440 72x43] TEXT Cookies #1a202c | 400@16/24 ls-0.32 L | "Cookies"
+  [778,2440 169x43] GROU Community 
+    [778,2440 169x43] TEXT Privacy Policy #1a202c | 400@16/24 ls-0.32 L | "Privacy Policy"
+  [624,2440 86x43] GROU About 
+    [624,2440 86x43] TEXT Legal Notice #1a202c | 400@16/24 ls-0.32 L | "Legal Notice"
+  [114,2440 115x43] GROU About 
+    [114,2440 115x43] TEXT © bejulo 2026 #1a202c | 400@16/24 ls-0.32 L | "© bejulo 2026"
+[2,724 1446x1676] GROU Content 
+  [2,724 1438x1676] RECT Rectangle 2 #ffffff
+  [195,2137 1079x205] TEXT Satisfied customers are our greatest s #000000 | 400@20/32 ls0.5 L | "Satisfied customers are our greatest success ¶  ¶ be happy. We work with customers across "
+  [195,1942 303x48] r15 INST Style=Filled #f47b20
+    [215,1954 263x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Explore our international projects"
+  [195,1849 1053x64] TEXT The orange markers highlight a selecti #000000 | 400@20/32 ls0.5 L | "The orange markers highlight a selection of our flagship projects, showcasing the breadth "
+  [2,1147 1446x630] RECT Bildschirmfoto 2026-04-21 um 11.02.26  IMG
+  [1023,1126 417x62] RECT Rectangle 1 #ffffff
+  [1017,1001 342x342] ELLI Ellipse 1 #ff4ab6
+  [1044,1127 288x90] TEXT bejulo klärt mit Programmierung die Da #ffffff | 700@20/30 ls0.5 C | "bejulo klärt mit Programmierung die Darstellung der Projekte inkl. Projektbeschreibungen."
+  [190,891 854x192] TEXT be international. We operate internati #000000 | 400@20/32 ls0.5 L | "be international. We operate internationally – and we’re proud of it. Today, bejulo projec"
+  [190,802 636x50] TEXT Our projects speak for themselves #000000 | 700@40/50 ls0.5 L | "Our projects speak for themselves"
+[0,0 1440x724] RECT Bildschirmfoto 2026-04-21 um 11.02.26  IMG
+[98,30 1257x75] GROU Header 
+  [475,42 880x48] GROU Group 4 
+    [485,55 614x24] FRAM Auto Layout Horizontal 
+      [485,55 137x24] TEXT Unsere Leistungen #ffffff | 400@16/24 ls0.5 C | "Unsere Leistungen"
+      [670,55 95x24] TEXT International #ffffff | 400@16/24 ls0.5 C | "International"
+      [813,55 66x24] TEXT Projekte #ffffff | 700@16/24 ls0.5 C | "Projekte"
+      [927,55 66x24] TEXT Über uns #ffffff | 400@16/24 ls0.5 C | "Über uns"
+      [1041,55 58x24] TEXT Karriere #ffffff | 400@16/24 ls0.5 C | "Karriere"
+    [1150,55 58x24] TEXT Kontakt #ffffff | 400@16/24 ls0.5 C | "Kontakt"
+    [1300,56 21x21] FRAM Isolationsmodus 
+    [475,42 880x48] GROU Group 4 
+      [475,42 880x48] r15 INST Style=Filled #f47b20
+        [495,54 166x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Kontaktieren Sie uns!"
+      [515,55 92x24] TEXT Our Services #ffffff | 400@16/24 ls0.5 C | "Our Services"
+      [656,55 95x24] TEXT International #ffffff | 400@16/24 ls0.5 C | "International"
+      [798,55 63x24] TEXT Projects #ffffff | 700@16/24 ls0.5 C | "Projects"
+      [908,55 67x24] TEXT About us #ffffff | 400@16/24 ls0.5 C | "About us"
+      [1024,55 55x24] TEXT Careers #ffffff | 400@16/24 ls0.5 C | "Careers"
+      [1124,55 83x24] TEXT Downloads #ffffff | 400@16/24 ls0.5 C | "Downloads"
+  [98,30 194x75] GROU Group 
+    [98,30 194x75] RECT bejulo_Logo 1 IMG
+
+========== PAGE: Über Uns / Group 1 (67889:54) origin=(0,-702) size=1440x1571 ==========
+[0,1448 1440x123] FRAM Footer #bdbfc1
+  [929,1488 130x43] GROU Socials 
+    [929,1488 130x43] TEXT Terms & Conditions #1a202c | 400@16/24 ls-0.32 L | "Terms & Conditions"
+  [1117,1488 72x43] GROU Socials 
+    [1117,1488 72x43] TEXT Cookies #1a202c | 400@16/24 ls-0.32 L | "Cookies"
+  [776,1488 169x43] GROU Community 
+    [776,1488 169x43] TEXT Privacy Policy #1a202c | 400@16/24 ls-0.32 L | "Privacy Policy"
+  [622,1488 86x43] GROU About 
+    [622,1488 86x43] TEXT Legal Notice #1a202c | 400@16/24 ls-0.32 L | "Legal Notice"
+  [112,1488 115x43] GROU About 
+    [112,1488 115x43] TEXT © bejulo 2026 #1a202c | 400@16/24 ls-0.32 L | "© bejulo 2026"
+[0,724 1440x724] GROU Content 
+  [0,724 1440x724] RECT Rectangle 1 #ffffff
+  [156,921 1072x502] TEXT be passionate. be with us. Since 2012, #f47b20 | 700@20/32 ls0.5 L | "be passionate. be with us. ¶  ¶ Since 2012, bejulo has been creating a more sustainable fu"
+  [156,816 715x50] TEXT The people behind sustainable energy #000000 | 700@40/50 ls0.5 L | "The people behind sustainable energy"
+[0,0 1440x724] RECT Bildschirmfoto 2026-04-21 um 11.02.26  IMG
+[98,30 1257x75] GROU Header 
+  [98,30 194x75] RECT bejulo_Logo 1 IMG
+  [475,42 880x48] GROU Group 4 
+    [475,42 880x48] r15 INST Style=Filled #f47b20
+      [495,54 166x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Kontaktieren Sie uns!"
+    [515,55 92x24] TEXT Our Services #ffffff | 400@16/24 ls0.5 C | "Our Services"
+    [800,55 59x24] TEXT Projects #ffffff | 400@16/24 ls0.5 C | "Projects"
+    [906,55 70x24] TEXT About us #ffffff | 700@16/24 ls0.5 C | "About us"
+    [1024,55 55x24] TEXT Careers #ffffff | 400@16/24 ls0.5 C | "Careers"
+    [1124,55 83x24] TEXT Downloads #ffffff | 400@16/24 ls0.5 C | "Downloads"
+  [670,55 95x24] TEXT International #ffffff | 400@16/24 ls0.5 C | "International"
+
+========== PAGE: Karriere / Group 104018 (67891:53) origin=(0,-100) size=1440x1339 ==========
+[0,1216 1440x123] FRAM Footer #bdbfc1
+  [929,1256 130x43] GROU Socials 
+    [929,1256 130x43] TEXT Terms & Conditions #1a202c | 400@16/24 ls-0.32 L | "Terms & Conditions"
+  [1117,1256 72x43] GROU Socials 
+    [1117,1256 72x43] TEXT Cookies #1a202c | 400@16/24 ls-0.32 L | "Cookies"
+  [776,1256 169x43] GROU Community 
+    [776,1256 169x43] TEXT Privacy Policy #1a202c | 400@16/24 ls-0.32 L | "Privacy Policy"
+  [622,1256 86x43] GROU About 
+    [622,1256 86x43] TEXT Legal Notice #1a202c | 400@16/24 ls-0.32 L | "Legal Notice"
+  [112,1256 115x43] GROU About 
+    [112,1256 115x43] TEXT © bejulo 2026 #1a202c | 400@16/24 ls-0.32 L | "© bejulo 2026"
+[0,122 1440x1104] GROU Content 
+  [0,122 1440x1094] RECT Rectangle 2 #ffffff
+  [139,911 1167x207] r15 RECT Rectangle 1 #e7e7e7
+  [170,1024 1102x62] r15 RECT Frame #ffffff
+  [1233,1045 24x24] GROU Plus Icon 
+    [1233,1045 24x24] GROU Plus Icon 
+      [1233,1045 24x24] RECT Frame #fff0f2
+      [1238,1050 14x14] GROU Group 104017 
+  [205,1045 933x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "Ingenieur:in (m/w/d)"
+  [170,942 1102x62] r15 RECT Frame #ffffff
+  [1233,961 24x25] GROU Plus Icon 
+    [1233,961 24x25] GROU Plus Icon 
+      [1233,961 24x25] RECT Frame #fff0f2
+      [1238,966 14x15] GROU Group 104017 
+  [205,964 947x19] TEXT dd/mm/yyyy #000000 | 700@28/19 ls0 L | "Projektleiter:in (m/w/d)"
+  [296,824 883x50] TEXT Vacancies: #f47b20 | 700@40/50 ls0.5 C | "Vacancies:"
+  [231,599 1013x134] r15 RECT Rectangle 3 #e7e7e7
+  [296,409 882x296] TEXT be part of the team! If you share our  #000000 | 400@20/32 ls0.5 C | "be part of the team! ¶ If you share our passion for renewable energy, we’d love to have yo"
+  [392,286 688x76] TEXT Build your career with us #000000 | 700@60/76 ls0.5 C | "Build your career with us"
+  [672,884 342x342] ELLI Ellipse 1 #ff4ab6
+  [699,978 288x150] TEXT Darstellung beispielhaft: bejulo klärt #ffffff | 700@20/30 ls0.5 C | "Darstellung beispielhaft: ¶ bejulo klärt mit Programmierung wie Stellenanzeigen leicht akt"
+[0,0 1440x122] FRAM Header 2 #ffffff
+  [489,42 880x48] GROU Group 4 
+    [489,42 880x48] r15 INST Style=Filled #f47b20
+      [509,54 166x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Kontaktieren Sie uns!"
+    [529,55 92x24] TEXT Our Services #ffffff | 400@16/24 ls0.5 C | "Our Services"
+    [670,55 95x24] TEXT International #ffffff | 400@16/24 ls0.5 C | "International"
+    [814,55 59x24] TEXT Projects #ffffff | 400@16/24 ls0.5 C | "Projects"
+    [922,55 67x24] TEXT About us #ffffff | 400@16/24 ls0.5 C | "About us"
+    [1036,55 59x24] TEXT Careers #ffffff | 700@16/24 ls0.5 C | "Careers"
+    [1138,55 83x24] TEXT Downloads #ffffff | 400@16/24 ls0.5 C | "Downloads"
+  [670,55 95x24] TEXT International #ffffff | 400@16/24 ls0.5 C | "International"
+  [98,30 194x75] GROU Group 
+    [98,30 194x75] RECT bejulo_Logo 1 IMG
+
+========== PAGE: Kontakt / Group 5 (67886:62) origin=(1440,-124) size=1440x1951 ==========
+[0,122 1440x1706] GROU Content 
+  [0,122 1440x1706] RECT Rectangle 2 #ffffff
+  [108,951 1220x822] r15 RECT Rectangle 1 IMG
+  [590,764 199x64] TEXT Follow us and  never miss an update! #000000 | 400@20/32 ls0.5 L | "Follow us and  never miss an update!"
+  [589,692 54x50] RECT InBug-Black 1 IMG
+  [579,306 229x256] TEXT bejulo GmbH Dekan-Laist-Straße 15a 551 #000000 | 400@20/32 ls0.5 L | "bejulo GmbH Dekan-Laist-Straße 15a 55129 Mainz ¶ Germany ¶  ¶ Tel.: +49 6131 – 2151-400 ¶ "
+[0,0 1440x122] FRAM Header 2 #ffffff
+  [476,42 880x48] GROU Group 4 
+    [485,55 137x24] TEXT Unsere Leistungen #ffffff | 400@16/24 ls0.5 C | "Unsere Leistungen"
+    [670,55 95x24] TEXT International #ffffff | 400@16/24 ls0.5 C | "International"
+    [813,55 61x24] TEXT Projekte #ffffff | 400@16/24 ls0.5 C | "Projekte"
+    [922,55 66x24] TEXT Über uns #ffffff | 400@16/24 ls0.5 C | "Über uns"
+    [1036,55 58x24] TEXT Karriere #ffffff | 400@16/24 ls0.5 C | "Karriere"
+    [1148,55 62x24] TEXT Kontakt #ffffff | 700@16/24 ls0.5 C | "Kontakt"
+    [476,42 880x48] GROU Group 4 
+      [476,42 880x48] r15 INST Style=Filled #f47b20
+        [496,54 166x24] TEXT Do something #ffffff | 700@16/24 ls0.5 L | "Kontaktieren Sie uns!"
+      [516,55 92x24] TEXT Our Services #ffffff | 400@16/24 ls0.5 C | "Our Services"
+      [657,55 95x24] TEXT International #ffffff | 400@16/24 ls0.5 C | "International"
+      [801,55 59x24] TEXT Projects #ffffff | 400@16/24 ls0.5 C | "Projects"
+      [909,55 67x24] TEXT About us #ffffff | 400@16/24 ls0.5 C | "About us"
+      [1025,55 55x24] TEXT Careers #ffffff | 400@16/24 ls0.5 C | "Careers"
+      [1125,55 83x24] TEXT Downloads #ffffff | 400@16/24 ls0.5 C | "Downloads"
+  [98,30 194x75] GROU Group 
+    [98,30 194x75] RECT bejulo_Logo 1 IMG
+[0,1828 1440x123] FRAM Footer #bdbfc1
+  [929,1868 130x43] GROU Socials 
+    [929,1868 130x43] TEXT Terms & Conditions #1a202c | 400@16/24 ls-0.32 L | "Terms & Conditions"
+  [1117,1868 72x43] GROU Socials 
+    [1117,1868 72x43] TEXT Cookies #1a202c | 400@16/24 ls-0.32 L | "Cookies"
+  [776,1868 169x43] GROU Community 
+    [776,1868 169x43] TEXT Privacy Policy #1a202c | 400@16/24 ls-0.32 L | "Privacy Policy"
+  [622,1868 86x43] GROU About 
+    [622,1868 86x43] TEXT Legal Notice #1a202c | 400@16/24 ls-0.32 L | "Legal Notice"
+  [112,1868 115x43] GROU About 
+    [112,1868 115x43] TEXT © bejulo 2026 #1a202c | 400@16/24 ls-0.32 L | "© bejulo 2026"

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>International contact | bejulo</title>
+<meta name="description" content="Get in touch with the bejulo international team in Mainz, Germany.">
+<link rel="preload" href="assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/favicon.svg">
+</head>
+<body data-page="international" data-meta="international-contact" data-header="solid">
+
+<div id="site-header"></div>
+
+<!-- NOTE: the Figma file flags this page as "Bitte Inhalte für die
+     international-Kontaktseite grundsätzlich klären" — bejulo still has to
+     confirm what this page should say. It currently mirrors the main contact
+     page with the international@ address. A ready-to-use banner string is in
+     content.js under the key "contact.pending". -->
+
+<main id="main">
+
+  <section class="section section--flush">
+    <div class="container contact-grid">
+      <div class="contact-pin" aria-hidden="true">
+        <svg viewBox="0 0 424 658" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outline teardrop: centreline r=197.5 about (212,212), tangent
+               lines converging on the tip at (212,643.5); stroke 29 -->
+          <path d="M36.4 302.4 A197.5 197.5 0 1 1 387.6 302.4 L212 643.5 Z"
+                fill="none" stroke="var(--pin-ghost)" stroke-width="29"
+                stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="212" cy="212" r="87" fill="none"
+                  stroke="var(--pin-ghost)" stroke-width="29"/>
+        </svg>
+      </div>
+
+      <div class="contact-card">
+        <address>
+          <p data-i18n-html="contact.company"><span class="be">be</span>julo GmbH</p>
+          <p data-i18n="contact.street">Dekan-Laist-Straße 15a</p>
+          <p data-i18n="contact.city">55129 Mainz</p>
+          <p data-i18n="contact.country">Germany</p>
+          <p class="contact-card__tel">
+            <span data-i18n="contact.tel.label">Tel.:</span>
+            <a href="tel:+4961312151400" data-i18n="contact.tel">+49 6131 – 2151-400</a>
+          </p>
+          <p>
+            <span data-i18n="contact.email.label">E-Mail:</span>
+            <a href="mailto:international@bejulo.de" data-i18n="contact.email.intl">international@bejulo.de</a>
+          </p>
+        </address>
+
+        <div class="contact-card__social">
+          <a href="https://www.linkedin.com/company/bejulo" target="_blank" rel="noopener noreferrer">
+            <img src="assets/img/linkedin.png" width="54" height="50"
+                 alt="bejulo on LinkedIn" data-i18n-attr="alt:contact.linkedin.alt">
+          </a>
+          <p data-i18n-html="contact.follow">Follow us and<br>never miss an update!</p>
+        </div>
+      </div>
+
+      <figure class="contact-photo">
+        <img src="assets/img/building.jpg" width="1830" height="1233" loading="lazy"
+             alt="The bejulo head office in Mainz, Germany"
+             data-i18n-attr="alt:contact.photo.alt">
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/layout.js"></script>
+
+</body>
+</html>
