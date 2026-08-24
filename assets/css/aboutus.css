@@ -1,0 +1,25 @@
+.hero {
+  position: relative;
+  max-height: 100vh;
+  height: auto;
+  background: #2b2f36 center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .hero--home {
+  height: 686px;
+}
+
+.hero--services {
+  height: 636px;
+} */
+
+.hero__media {
+  position: relative;
+  inset: 0;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}

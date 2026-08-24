@@ -25,7 +25,12 @@
     { key: 'careers',       href: 'careers.html',       i18n: 'nav.careers' },
     // No Downloads page exists in the Figma file yet — target still to be
     // supplied by bejulo. Kept in the nav because the design shows it.
-    { key: 'downloads',     href: '#',                  i18n: 'nav.downloads' }
+    { key: 'downloads',     href: '#',                  i18n: 'nav.downloads' },
+    // Figma's German nav layer ends with "Kontakt" while the English layer ends
+    // with "Downloads". Both items are shown in both languages so the two
+    // versions stay consistent; split this array per language if they should
+    // genuinely differ.
+    { key: 'contact',       href: 'contact.html',       i18n: 'nav.contact' }
   ];
 
   var FOOTER_LINKS = [

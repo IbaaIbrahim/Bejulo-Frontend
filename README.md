@@ -5,11 +5,16 @@ Static, dependency-free front end built from the Figma design (channel
 through any static server.
 
 ```bash
-python3 -m http.server 4173
+python3 serve.py 4173
 ```
 
-Verified at 1440 px (the artboard width), 768 px and 375 px: no horizontal
-overflow, no console errors, and all 35 asset references resolve.
+`serve.py` is `http.server` plus `Cache-Control: no-store`, so CSS/JS edits show
+up on a plain reload. Development only — serve with real caching headers (ideally
+hashed filenames) in production.
+
+Verified in both languages at 1440, 1280, 1220, 1219, 768 and 375 px: no
+horizontal overflow at any width, no console errors, and every asset reference
+resolves.
 
 ## Pages
 
@@ -113,6 +118,13 @@ every page reads identically, which is what was asked for.
    they are optically centred here.
 5. **Pink circles** are the designer's German review notes, not content, and are
    not rendered. Their instructions were carried out (see below).
+6. **Nav items** — Figma's English nav layer ends with *Downloads* and omits
+   Contact; its German layer ends with *Kontakt* and omits Downloads. Both items
+   appear in both languages so the two versions match. Split the `NAV` array in
+   `layout.js` per language if they should genuinely differ. The pill therefore
+   carries seven items plus search and the language switcher, which is wider than
+   the six-item pill in Figma: the header gutter and link padding tighten below
+   1440 px, and the nav collapses to a menu below 1220 px.
 
 ## Still needed from bejulo
 

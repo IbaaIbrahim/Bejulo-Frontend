@@ -33,6 +33,7 @@ window.BEJULO_CONTENT = {
     'nav.about': 'About us',
     'nav.careers': 'Careers',
     'nav.downloads': 'Downloads',
+    'nav.contact': 'Contact',
     'nav.search': 'Search',
     'nav.menu.open': 'Open menu',
     'nav.menu.close': 'Close menu',
@@ -155,7 +156,7 @@ window.BEJULO_CONTENT = {
     'intl.svc.a2.li3': 'Higher energy yields and stronger returns',
 
     /* --- contact (both variants) --- */
-    'contact.company': '<span class="be">be</span>julo GmbH',
+    'contact.company': '<strong><span class="be">be</span>julo GmbH</strong>',
     'contact.street': 'Dekan-Laist-Straße 15a',
     'contact.city': '55129 Mainz',
     'contact.country': 'Germany',
@@ -209,6 +210,7 @@ window.BEJULO_CONTENT = {
     'nav.about': 'Über uns',
     'nav.careers': 'Karriere',
     'nav.downloads': 'Downloads',
+    'nav.contact': 'Kontakt',
     'nav.search': 'Suche',
     'nav.menu.open': 'Menü öffnen',
     'nav.menu.close': 'Menü schließen',
@@ -331,7 +333,7 @@ window.BEJULO_CONTENT = {
     'intl.svc.a2.li3': 'Höhere Energieerträge und stärkere Renditen',
 
     /* --- contact --- */
-    'contact.company': '<span class="be">be</span>julo GmbH',
+    'contact.company': '<strong><span class="be">be</span>julo GmbH</strong>',
     'contact.street': 'Dekan-Laist-Straße 15a',
     'contact.city': '55129 Mainz',
     'contact.country': 'Deutschland',
