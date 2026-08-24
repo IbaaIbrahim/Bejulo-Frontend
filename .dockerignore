@@ -1,0 +1,15 @@
+.git
+.gitignore
+.claude
+.mcp.json
+logs/
+*.log
+docs/
+Makefile
+run.sh
+kill.sh
+README.md
+.DS_Store
+Dockerfile
+docker-compose.yml
+docker-compose*.yml
