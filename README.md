@@ -5,7 +5,18 @@ Static, dependency-free front end built from the Figma design (channel
 through any static server.
 
 ```bash
-python3 serve.py 4173
+# Serve locally for development
+python3 -m http.server 4173
+
+# Option 1: Run with Docker (recommended)
+make up              # Start container in background (http://localhost:4173)
+make restart-docker  # Rebuild and restart container
+make down            # Stop container
+
+# Option 2: Run locally with Python
+make run             # Start Python server
+make restart         # Restart Python server
+make stop            # Stop Python server
 ```
 
 `serve.py` is `http.server` plus `Cache-Control: no-store`, so CSS/JS edits show
@@ -19,7 +30,7 @@ resolves.
 ## Pages
 
 | File | Figma source | Header |
-|---|---|---|
+| --------------------------------- | --------------------------------- | ----------- |
 | `index.html` | Startseite | over hero |
 | `services.html` | Unsere Leistungen | over hero |
 | `international.html` | International → Content 1 | over hero |
