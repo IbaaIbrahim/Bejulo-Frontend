@@ -115,12 +115,12 @@ Panning is disabled on coarse-pointer (touch) devices: the map is full-bleed on
 phones, and a drag-to-pan map there swallows the swipe used to scroll the page.
 Flip `DISABLE_PAN_ON_TOUCH` in `map.js` to change that.
 
-**Layout.** On desktop the inset overhangs the top edge of the world map by
-70px (with a matching 70px top margin on the panel) so it reads as a separate
-plane and covers less of the world behind it. Below 900px the inset stops being
-an overlay and stacks underneath the world map: an overlay wide enough to be
-useful on a phone would cover the Iran pin, and one narrow enough to avoid that
-is too small to read, so each map gets the full width instead.
+**Layout.** The inset overhangs the top edge of the world map — 70px on
+desktop, 90px below 900px — with a matching top margin on the panel, so it
+reads as a separate plane and covers less of the world behind it. That overhang
+is what lets it grow to 92% width on small screens while its lower edge still
+stays clear of the Iran pin (~46px of headroom at the tightest width, tablet).
+`.map-panel` must keep `overflow: visible` or the overhang is clipped.
 
 Seven pins: five on the Europe inset (Ireland, United Kingdom, Netherlands,
 Germany, Italy) plus Iran and South Africa on the world map. Markers are the
