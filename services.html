@@ -38,12 +38,16 @@
             </h3>
             <p data-i18n-html="services.c1.body"><span class="be">be</span><span class="be-lead"> strong.</span> Great energy projects start with the right foundations. That’s why we develop PV and BESS projects that are commercially sound, environmentally responsible and built for long-term success. As an independent, privately financed company, every one of our projects is selected for its location, planning certainty and financial strength – ensuring confidence for landowner, local authorities and investors.</p>
             <p data-i18n-html="services.c1.body2">For us, working in partnership means acting transparently, reliably and with commercial foresight. Through clear contractual structures, early stakeholder engagement and regional value creation, we build trusting partnerships with businesses, municipal utilities, local authorities and investors. Our independently financed projects deliver stable returns, long-term operational performance and sustainable energy solutions built to last.</p>
-            <p data-i18n-html="services.c1.body3"><span class="be">be</span><span class="be-lead"> in touch.</span> We purchase PV and BESS project rights at every stage of development – from early pipeline opportunities to shovel-ready projects. Our fast and collaborative decision-making processes are complemented by fair and reliable business terms. Our independent financing creates commercially robust energy projects that drive the energy transition while delivering long-term value, reliable returns and lasting benefits for local communities.</p>
           </div>
           <div class="card__media">
             <img src="assets/img/card-development.jpg" width="802" height="820" loading="lazy"
                  alt="High-voltage transmission towers at dusk"
                  data-i18n-attr="alt:services.c1.alt">
+          </div>
+          <!-- In Figma this paragraph runs the full width of the card, below
+               both the text column and the photo. -->
+          <div class="card__full">
+            <p data-i18n-html="services.c1.body3"><span class="be">be</span><span class="be-lead"> in touch.</span> We purchase PV and BESS project rights at every stage of development – from early pipeline opportunities to shovel-ready projects. Our fast and collaborative decision-making processes are complemented by fair and reliable business terms. Our independent financing creates commercially robust energy projects that drive the energy transition while delivering long-term value, reliable returns and lasting benefits for local communities.</p>
           </div>
         </article>
 
@@ -99,12 +103,19 @@
     </div>
   </section>
 
-  <!-- Closing call to action, led by the bejulo chevron mark -->
+  <!-- Closing call to action. Client review 2026-08-24 §2b: the chevron mark
+       sits beside the copy rather than above it, with the button below and
+       left-aligned to the chevron. -->
   <section class="section section--tight">
-    <div class="container stack" style="--stack-gap: 24px;">
-      <img class="chevron-mark" src="assets/icons/chevrons.svg" width="66" height="47" alt="" loading="lazy">
-      <p class="cta-copy" data-i18n-html="services.cta">Whether you’re a landowner, looking to sell project rights or seeking a trusted delivery partner, <strong>bejulo is here to help.</strong></p>
-      <div class="btn-row">
+    <div class="container">
+      <div class="cta">
+        <img class="cta__mark" src="assets/icons/chevrons.svg" width="66" height="47" alt="" loading="lazy">
+        <p class="cta__copy">
+          <span data-i18n="services.cta.line1">Whether you’re a landowner, looking to sell project rights or seeking a trusted delivery partner.</span><br>
+          <strong data-i18n="services.cta.line2">bejulo is here to help.</strong>
+        </p>
+      </div>
+      <div class="btn-row cta__actions">
         <a class="btn" href="contact.html" data-i18n="btn.contact">Get in touch!</a>
       </div>
     </div>

@@ -1,0 +1,231 @@
+
+
+########## International / Content 1 ##########
+
+--- [67860:174] 400@40 y=269
+Operating globally. Taking responsibility. Building the future.
+bejulo: your one-stop shop for PV, BESS & revamping
+
+--- [67862:577] 700@28 y=445
+From planning to operation & maintenance – we’re with you every step of the way.
+ be committed. We deliver turnkey solar PV, battery energy storage and revamping projects around the world. For you, that means maximum reliability, minimal complexity and sustainable returns.
+
+--- [67867:419] 700@28 y=763
+One partner for every project phase.
+ be integrated. You’ll have one dedicated partner coordinating every aspect of your project. We coordinate all processes, interfaces and project partners, allowing you to focus on what matters most – your investment.
+
+--- [67867:421] 700@28 y=1089
+Your project. Our responsibility.
+ be responsible. We believe the best projects are built on long-term partnerships. That’s why we stay committed beyond completion, helping your investment deliver lasting technical performance, commercial value and operational reliability.
+
+--- [I67874:51;1402:730] 700@16 y=1396
+Contact us
+
+--- [I67867:430;1402:730] 700@16 y=1396
+Explore our projects
+
+--- [I67867:426;1402:730] 700@16 y=1396
+Explore our services
+
+--- [I67867:423;1402:730] 700@16 y=1396
+Discover our experience
+
+--- [67890:192] 400@16 y=1524
+© bejulo 2026
+
+
+########## International / Content 2.0 ##########
+
+--- [67874:69] 700@20 y=-49
+Seite erscheint  bei Klick auf “Erfahrung”
+
+--- [67869:50] 400@40 y=267
+Operating globally. Taking responsibility. Building the future.
+bejulo: your one-stop shop for PV, BESS & revamping
+
+--- [67868:536] 700@28 y=479
+be expert – International experience. Local expertise.
+
+--- [67868:568] 700@28 y=560
+be sustainable – Driving the energy transition
+
+--- [67868:576] 700@28 y=642
+be reliable – Quality you can trust
+
+--- [I67874:53;1402:730] 700@16 y=778
+Contact us
+
+--- [I67869:57;1402:730] 700@16 y=778
+Explore our projects
+
+--- [I67869:56;1402:730] 700@16 y=778
+Explore our services
+
+--- [67890:204] 400@16 y=893
+© bejulo 2026
+
+
+########## International / Content 2.1 ##########
+
+--- [67874:73] 700@20 y=1587
+Seite erscheint  bei Klick auf “Erfahrung”
+
+--- [67869:52] 400@40 y=1890
+Operating globally. Taking responsibility. Building the future.
+bejulo: your one-stop shop for PV, BESS & revamping
+
+--- [67868:592] 700@28 y=2100
+be expert – International experience. Local expertise.
+
+--- [67868:657] 400@20 y=2616
+Thanks to our international project portfolio, we have valuable experience and expertise in a range of regulatory, climatic and technical environments. By building close local partnerships, we make sure every project is delivered efficiently and sustainably.
+
+--- [67868:593] 700@28 y=2817
+be sustainable – Driving the energy transition
+
+--- [67868:661] 400@20 y=3324
+We’re committed to accelerating the transition to renewable energy. We develop PV plants that combine environmental responsibility with strong commercial performance. Using proven technology and efficient processes, we maximise energy generation while safeguarding long-term investment returns.
+
+--- [67868:594] 700@28 y=3515
+be reliable – Quality you can trust
+
+--- [67868:665] 400@20 y=4022
+Open communication, uncompromising safety standards and close collaboration are at the heart of everything we do. Whether working with investors, energy providers or industrial clients, we build lasting partnerships through expertise, reliability and consistent project delivery.
+
+--- [I67890:281;1402:730] 700@16 y=4265
+Contact us
+
+--- [I67890:282;1402:730] 700@16 y=4265
+Explore our projects
+
+--- [I67890:283;1402:730] 700@16 y=4265
+Explore our services
+
+--- [67890:240] 400@16 y=4400
+© bejulo 2026
+
+
+########## International / Content 2.2 ##########
+
+--- [67876:55] 700@20 y=5422
+Seite erscheint  bei Klick auf “Erfahrung”
+
+--- [67869:135] 400@40 y=5770
+Operating globally. Taking responsibility. Building the future.
+bejulo: your one-stop shop for PV, BESS & revamping
+
+--- [67869:83] 700@28 y=5980
+be expert – International experience. Local expertise.
+
+--- [67869:85] 400@20 y=6496
+Thanks to our international project portfolio, we have valuable experience and expertise in a range of regulatory, climatic and technical environments. By building close local partnerships, we make sure every project is delivered efficiently and sustainably.
+
+--- [67869:84] 700@28 y=6684
+be sustainable – Driving the energy transition
+
+--- [67869:88] 700@28 y=6779
+be reliable – Quality you can trust
+
+--- [I67890:302;1402:730] 700@16 y=6927
+Contact us
+
+--- [I67890:303;1402:730] 700@16 y=6927
+Explore our projects
+
+--- [I67890:304;1402:730] 700@16 y=6927
+Explore our services
+
+--- [67890:252] 400@16 y=7048
+© bejulo 2026
+
+
+########## International / Content 3.0 ##########
+
+--- [67874:77] 700@20 y=-49
+Seite erscheint  bei Klick auf “Leistungs-spektrum”
+
+--- [67869:55] 400@40 y=267
+Operating globally. Taking responsibility. Building the future.
+bejulo: your one-stop shop for PV, BESS & revamping
+
+--- [67868:715] 700@28 y=479
+be holistic – Your one-stop shop for PV, BESS and revamping
+
+--- [67868:716] 700@28 y=560
+be supportive – Reducing complexity. Maximising returns.
+
+--- [I67890:288;1402:730] 700@16 y=702
+Contact us
+
+--- [I67890:289;1402:730] 700@16 y=702
+Explore our projects
+
+--- [I67890:290;1402:730] 700@16 y=702
+Explore our services
+
+--- [67890:228] 400@16 y=813
+© bejulo 2026
+
+
+########## International / Content 3.1 ##########
+
+--- [67874:79] 700@20 y=1569
+Seite erscheint  bei Klick auf “Leistungs-spektrum”
+
+--- [67869:54] 400@40 y=1890
+Operating globally. Taking responsibility. Building the future.
+bejulo: your one-stop shop for PV, BESS & revamping
+
+--- [67868:800] 700@28 y=2103
+be holistic – Your one-stop shop for PV, BESS and revamping
+
+--- [67868:802] 400@20 y=2610
+Our end-to-end service covers every stage of your project – from initial design and engineering to delivery and long-term operational management. By bringing everything under one roof, we reduce complexity, mitigate risk and deliver high-performance energy solutions optimised for long-term commercial success, wherever your projects are located.
+
+Our services include:
+Engineering, procurement and construction (EPC): technical design and turnkey delivery of your installation
+BESS integration: proven, tailored battery energy storage solutions for maximum flexibility and enhanced returns
+Revamping: upgrading and enhancing the performance of existing PV systems
+Operations and maintenance (O&M): technical asset management to ensure long-term performance
+
+--- [67868:804] 700@28 y=2994
+be supportive – Reducing complexity. Maximising returns.
+
+--- [67868:803] 400@20 y=3501
+Energy projects are becoming increasingly demanding from a regulatory, technical and commercial perspective. We simplify that complexity with an integrated approach designed to streamline collaboration, reduce friction and provide complete transparency throughout the project lifecycle.
+
+Your benefits:
+Increased planning confidence
+Optimised project delivery times
+Higher energy yields and stronger returns
+
+--- [I67890:295;1402:730] 700@16 y=3907
+Contact us
+
+--- [I67890:296;1402:730] 700@16 y=3907
+Explore our projects
+
+--- [I67890:297;1402:730] 700@16 y=3907
+Explore our services
+
+--- [67890:264] 400@16 y=4020
+© bejulo 2026
+
+
+########## International / Content 4 ##########
+
+--- [67874:89] 400@20 y=4703
+bejulo GmbH Dekan-Laist-Straße 15a 55129 Mainz
+Germany
+
+Tel.: +49 6131 – 2151-400
+ E-Mail: international@bejulo.de
+
+--- [67874:125] 700@20 y=4898
+Bitte Inhalte für die "international"-Kontaktseite grundsätzlich klären
+
+--- [67874:92] 400@20 y=5161
+Follow us and  never miss an update!
+
+--- [67890:276] 400@16 y=6266
+© bejulo 2026

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project detail | bejulo</title>
+<meta name="description" content="Detail page for a bejulo photovoltaic project.">
+<link rel="preload" href="assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/favicon.svg">
+</head>
+<!-- Placeholder. The client has flagged project detail pages as a separate
+     change request; the design is still pending. This page keeps the
+     "Read more…" links in the map popups from being dead ends, and shows the
+     project name so the routing can be reviewed. -->
+<body data-page="projects" data-meta="project" data-header="solid">
+
+<div id="site-header"></div>
+
+<main id="main">
+  <section class="section">
+    <div class="container stack">
+      <h1 class="h2" id="project-title">Project</h1>
+      <p class="lede" data-i18n="project.pending">The detail page for this project is still being designed. Please get in touch if you would like more information in the meantime.</p>
+      <div class="btn-row">
+        <a class="btn" href="projects.html" data-i18n="project.back">Back to all projects</a>
+        <a class="btn" href="contact.html" data-i18n="btn.contact">Get in touch!</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/layout.js"></script>
+<script>
+  // Show the requested project's name, taken from the ?id= in the popup link.
+  (function () {
+    var NAMES = {
+      'ireland': { en: 'Ireland', de: 'Irland' },
+      'united-kingdom': { en: 'United Kingdom', de: 'Vereinigtes Königreich' },
+      'netherlands': { en: 'Kingdom of the Netherlands', de: 'Königreich der Niederlande' },
+      'germany': { en: 'Germany', de: 'Deutschland' },
+      'italy': { en: 'Italy', de: 'Italien' },
+      'iran': { en: 'Iran', de: 'Iran' },
+      'south-africa': { en: 'South Africa', de: 'Südafrika' }
+    };
+    function render() {
+      var id = new URLSearchParams(location.search).get('id');
+      var lang = (window.BejuloI18n && window.BejuloI18n.get()) || 'en';
+      var entry = NAMES[id];
+      var el = document.getElementById('project-title');
+      if (el && entry) el.textContent = entry[lang] || entry.en;
+    }
+    render();
+    document.addEventListener('bejulo:langchange', render);
+  })();
+</script>
+
+</body>
+</html>

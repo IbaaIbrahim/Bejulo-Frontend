@@ -66,6 +66,8 @@
   --footer-h: 123px;
   --nav-h: 48px;
   --logo-w: 194px;
+  --container-pad: 24px;
+  /* gutter inside .container; full-bleed blocks negate exactly this */
 
   /* Type */
   --font: 'Myriad Web Pro', 'Myriad Pro', 'Source Sans 3', 'Segoe UI', system-ui,
@@ -165,7 +167,7 @@ blockquote {
   width: 100%;
   max-width: calc(var(--container) + 48px);
   margin-inline: auto;
-  padding-inline: 24px;
+  padding-inline: var(--container-pad);
 }
 
 /* Vertical rhythm.
@@ -181,6 +183,17 @@ blockquote {
 
 .section--flush {
   padding-block: 0 56px;
+}
+
+/* Client review 2026-08-24 §3a — exactly 60px between the projects button and
+   the "Satisfied customers" heading. The preceding section drops its bottom
+   padding so the 60px below is the whole gap, not an addition to it. */
+.section--flush-bottom {
+  padding-bottom: 0;
+}
+
+.section--gap60 {
+  padding-block: 60px 56px;
 }
 
 .stack>*+* {
@@ -660,6 +673,16 @@ body[data-header='overlay'] #site-header {
   margin-top: 16px;
 }
 
+/* A row that spans the whole card, under both the text column and the photo
+   (Figma: the "be in touch" paragraph on the project-development card). */
+.card__full {
+  grid-column: 1 / -1;
+}
+
+.card__full>*+* {
+  margin-top: 16px;
+}
+
 .card__title {
   font-size: var(--fs-h3);
   line-height: var(--lh-h3);
@@ -678,8 +701,33 @@ body[data-header='overlay'] #site-header {
 }
 
 /* Closing CTA paragraph sits in a narrow measure, as in Figma (484px) */
-.cta-copy {
-  max-width: 484px;
+/* ==========================================================================
+   Closing call to action (Services)
+   Client review 2026-08-24 §2b — per the supplied screenshot the chevron mark
+   sits to the LEFT of the copy, which runs as two lines (regular, then bold).
+   The button sits below, left-aligned with the chevron.
+   ========================================================================== */
+.cta {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.cta__mark {
+  flex: 0 0 auto;
+  width: 66px;
+  height: auto;
+  margin-top: 4px;
+  /* optical alignment with the cap height of the first line */
+}
+
+.cta__copy {
+  margin: 0;
+  /* no narrow measure here — the first sentence runs on one line at desktop */
+}
+
+.cta__actions {
+  margin-top: 38px;
 }
 
 .card-stack {
@@ -935,28 +983,56 @@ body[data-header='overlay'] #site-header {
   margin-right: 10px;
 }
 
-/* ==========================================================================
-   Chevron mark (the standalone ">>" used above CTA copy)
-   ========================================================================== */
+/* Standalone chevron mark, kept for reuse elsewhere */
 .chevron-mark {
   width: 66px;
   height: auto;
 }
 
 /* ==========================================================================
-   Projects map (Leaflet + OpenStreetMap)
-   Muted grey basemap to match the Figma world map; orange outline pins.
+   Projects map (Leaflet, vector basemap)
+   Flat grey landmasses on white to match the Figma/PDF artwork — no tiles, no
+   labels, no graticule. Orange outline pins.
    ========================================================================== */
 .map-panel {
   position: relative;
   border-radius: var(--radius);
-  overflow: hidden;
-  background: #f4f4f4;
+  /* visible so the popup card and the overhanging inset are never clipped */
+  overflow: visible;
+  background: var(--white);
+  /* room for the detail box, which is pulled 70px above the world map */
+  margin-top: 115px;
 }
 
 #projects-map {
   height: 630px;
   width: 100%;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* Europe inset in the foreground of the world map, as in the PDF. */
+.map-inset {
+  position: absolute;
+  /* Figma places this box at 28%/36.5%. It is nudged left and narrowed here so
+     it cannot cover the Iran pin the client added in review §3b — an inset over
+     Europe and a pin just east of Europe compete for the same space. */
+  left: 33%;
+  /* lifted above the world map's top edge so the detail box reads as a
+     separate plane and covers less of the world behind it */
+  top: -70px;
+  width: 38%;
+  height: 46%;
+  z-index: 400;
+  border: 1px solid var(--ink);
+  background: var(--white);
+  overflow: hidden;
+}
+
+.map-inset #projects-map-europe {
+  width: 100%;
+  height: 100%;
   background: var(--white);
 }
 
@@ -991,34 +1067,58 @@ body[data-header='overlay'] #site-header {
   fill: var(--white);
   stroke: var(--orange-chevron);
   stroke-width: 2.6;
-  transition: fill .15s ease, transform .15s ease;
-  transform-origin: 50% 100%;
+  transition: fill .15s ease;
 }
 
 .bejulo-pin:hover .bejulo-pin__shape,
-.bejulo-pin.is-active .bejulo-pin__shape {
+.bejulo-pin:focus .bejulo-pin__shape {
   fill: var(--orange-chevron);
 }
 
-/* Leaflet popup restyled to the bejulo card language */
-.leaflet-popup-content-wrapper {
+/* --------------------------------------------------------------------------
+   Popup card.
+   Not a Leaflet popup: the inset clips its own overflow, so a popup opened
+   inside it would be cut in half. One shared card lives in .map-panel and is
+   positioned by map.js over whichever pin is active.
+   -------------------------------------------------------------------------- */
+.pin-card {
+  position: absolute;
+  z-index: 600;
+  width: 274px;
+  padding: 18px 20px;
+  background: var(--white);
   border-radius: var(--radius);
   box-shadow: 0 12px 32px rgba(0, 0, 0, .18);
-  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity .14s ease, transform .14s ease, visibility .14s;
 }
 
-.leaflet-popup-content {
-  margin: 0;
-  width: 274px !important;
-  font-family: var(--font);
+.pin-card.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-.leaflet-popup-tip {
-  box-shadow: none;
+/* little tail pointing at the pin */
+.pin-card::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  background: var(--white);
+  transform: rotate(45deg);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, .06);
 }
 
-.pin-card {
-  padding: 18px 20px;
+.pin-card.is-below::after {
+  bottom: auto;
+  top: -7px;
+  box-shadow: -3px -3px 6px rgba(0, 0, 0, .06);
 }
 
 .pin-card__country {
@@ -1045,12 +1145,60 @@ body[data-header='overlay'] #site-header {
   color: #333;
 }
 
-.leaflet-container {
-  font-family: var(--font);
+.pin-card__more {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: var(--fs-ui);
+  line-height: 22px;
+  letter-spacing: 0;
+  font-weight: 700;
+  color: var(--orange);
+  text-decoration: none;
 }
 
-.leaflet-container a.leaflet-popup-close-button {
-  color: #888;
+.pin-card__more:hover {
+  color: var(--orange-hover);
+  text-decoration: underline;
+}
+
+.leaflet-container {
+  font-family: var(--font);
+  background: var(--white);
+}
+
+/* Zoom buttons, restyled from Leaflet's default chrome */
+.leaflet-control-zoom {
+  border: 0 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .14);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 8px !important;
+}
+
+/* the inset is draggable — say so on hover */
+.map-inset #projects-map-europe {
+  cursor: grab;
+}
+
+.map-inset .leaflet-dragging #projects-map-europe,
+.map-inset #projects-map-europe.leaflet-dragging {
+  cursor: grabbing;
+}
+
+.leaflet-control-zoom a {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 16px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, .95);
+  border-bottom-color: #e6e6e6;
+  font-weight: 700;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--white);
+  color: var(--orange);
 }
 
 /* ==========================================================================
@@ -1184,9 +1332,10 @@ body[data-header='overlay'] #site-header {
    Responsive
    The artboard is 1440 wide; below that everything reflows to a single column.
    ========================================================================== */
-/* The nav pill carries 7 items plus search and the language switcher, so it
-   needs more room than the 6-item pill in Figma. Between 1220 and 1439 the
-   header gutter and link padding tighten; below 1220 it becomes a menu. */
+/* The nav pill carries 6 items plus the language switcher. Between 1140 and
+   1439 the header gutter and link padding tighten; below 1140 it becomes a
+   menu. (Downloads and search were removed at the client's request, so the
+   pill is narrower than before and the horizontal nav survives further down.) */
 @media (max-width: 1439px) {
   .site-header__inner {
     padding-inline: 40px;
@@ -1206,61 +1355,7 @@ body[data-header='overlay'] #site-header {
   }
 }
 
-@media (max-width: 1219px) {
-  .site-header {
-    position: relative;
-  }
 
-  .nav-toggle {
-    display: inline-flex;
-  }
-
-  .nav {
-    position: absolute;
-    top: calc(100% - 8px);
-    right: 24px;
-    left: 24px;
-    height: auto;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 2px;
-    padding: 14px 12px;
-    display: none;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, .22);
-  }
-
-  .nav.is-open {
-    display: flex;
-  }
-
-  .nav__link {
-    height: 44px;
-    padding-inline: 14px;
-    font-size: 16px;
-  }
-
-  .nav__search {
-    width: 44px;
-    height: 44px;
-    margin-left: 0;
-    align-self: flex-start;
-  }
-
-  .lang {
-    order: -1;
-    margin-left: 0;
-    padding-left: 0;
-    border-left: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, .35);
-    padding-bottom: 8px;
-    margin-bottom: 6px;
-  }
-
-  .lang__btn {
-    padding: 8px 10px;
-    font-size: 16px;
-  }
-}
 
 @media (max-width: 1180px) {
   :root {
@@ -1335,6 +1430,62 @@ body[data-header='overlay'] #site-header {
   }
 }
 
+@media (max-width: 1139px) {
+  .site-header {
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: calc(100% - 8px);
+    right: 24px;
+    left: 24px;
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 14px 12px;
+    display: none;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .22);
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav__link {
+    height: 44px;
+    padding-inline: 14px;
+    font-size: 16px;
+  }
+
+  .nav__search {
+    width: 44px;
+    height: 44px;
+    margin-left: 0;
+    align-self: flex-start;
+  }
+
+  .lang {
+    order: -1;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .35);
+    padding-bottom: 8px;
+    margin-bottom: 6px;
+  }
+
+  .lang__btn {
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 900px) {
   .card {
     padding: 28px 24px;
@@ -1400,6 +1551,47 @@ body[data-header='overlay'] #site-header {
     height: 440px;
   }
 
+  /* Give the map the full viewport width on small screens by pulling it out
+     through the container gutter. Capped at the gutter (24px) rather than the
+     suggested 35px, which would push 11px past the viewport on each side and
+     create a horizontal scrollbar. */
+  .map-panel {
+    margin-inline: calc(-1 * var(--container-pad));
+    border-radius: 0;
+  }
+
+  #projects-map {
+    border-radius: 0;
+  }
+
+  /* The detail box stays an overlay on small screens, and gets nearly the full
+     width. It is lifted further above the world map so that its lower edge
+     stays clear of the Iran pin behind it (that pin sits ~36% down the world
+     map) — the overhang is what buys the extra width without hiding anything. */
+  .map-panel {
+    margin-top: 90px;
+  }
+
+  .map-inset {
+    left: 4%;
+    top: -90px;
+    width: 92%;
+    /* 200px puts the lower edge ~110px into the world map, comfortably above
+       the Iran pin (~156px at tablet width, lower still on phones). */
+    height: 200px;
+  }
+
+  /* Keep the client's 60px gap (review §3a) at every width. */
+  .section--flush-bottom {
+    padding-bottom: 0;
+  }
+
+  .section--gap60 {
+    padding-block: 60px 40px;
+  }
+
+
+
   .btn-row {
     gap: 14px;
   }
@@ -1412,10 +1604,25 @@ body[data-header='overlay'] #site-header {
     width: auto;
     flex: 1 1 220px;
   }
+
+  /* The chevron/copy pair gets cramped on a phone — stack it. */
+  .cta {
+    gap: 18px;
+  }
+
+  .cta__mark {
+    width: 48px;
+    margin-top: 2px;
+  }
+
+  .cta__actions {
+    margin-top: 28px;
+  }
 }
 
 @media (max-width: 560px) {
   :root {
+    --container-pad: 18px;
     --fs-h1: 34px;
     --lh-h1: 42px;
     --fs-h2: 26px;
@@ -1423,7 +1630,7 @@ body[data-header='overlay'] #site-header {
   }
 
   .container {
-    padding-inline: 18px;
+    padding-inline: var(--container-pad);
   }
 
   .btn-row .btn {

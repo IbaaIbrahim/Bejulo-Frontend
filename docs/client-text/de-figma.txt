@@ -1,0 +1,363 @@
+
+
+########## Karriere / Content ##########
+
+--- [67849:700] 700@60 y=186
+Bei uns können Sie Karriere machen!
+
+--- [67849:701] 400@20 y=309
+be part of the team!
+Wenn Sie Energie leben und lieben,  sind Sie bei uns richtig!
+
+
+Wir sind gespannt auf Sie. Senden Sie Ihre Bewerbung an: bewerbung@bejulo.de
+
+--- [67877:136] 700@40 y=724
+Offene Stellen:
+
+--- [67877:114] 700@28 y=864
+Projektleiter:in (m/w/d)
+
+--- [67880:88] 700@20 y=878
+Darstellung beispielhaft:
+bejulo klärt mit Programmierung wie Stellenanzeigen leicht aktualisiert werden können.
+
+--- [67877:116] 700@28 y=945
+Ingenieur:in (m/w/d)
+
+
+########## Karriere / Footer ##########
+
+--- [67849:824] 400@16 y=1156
+© bejulo 2026
+
+--- [67849:822] 400@16 y=1156
+Impressum
+
+--- [67849:820] 400@16 y=1156
+Datenschutzerklärung
+
+--- [67849:816] 400@16 y=1156
+AGB
+
+--- [67849:818] 400@16 y=1156
+Cookies
+
+
+########## Karriere / Header 2 ##########
+
+--- [I67867:384;1402:730] 700@16 y=-46
+Kontaktieren Sie uns!
+
+--- [67867:386] 400@16 y=-45
+Unsere Leistungen
+
+--- [67867:387] 400@16 y=-45
+International
+
+--- [67867:388] 400@16 y=-45
+Projekte
+
+--- [67867:389] 400@16 y=-45
+Über uns
+
+--- [67867:390] 700@16 y=-45
+Karriere
+
+--- [67867:391] 400@16 y=-45
+Kontakt
+
+
+########## Kontakt / Group 5 ##########
+
+--- [I67878:94;1402:730] 700@16 y=-70
+Kontaktieren Sie uns!
+
+--- [67878:96] 400@16 y=-69
+Unsere Leistungen
+
+--- [67878:97] 400@16 y=-69
+International
+
+--- [67878:98] 400@16 y=-69
+Projekte
+
+--- [67878:99] 400@16 y=-69
+Über uns
+
+--- [67878:100] 400@16 y=-69
+Karriere
+
+--- [67878:101] 700@16 y=-69
+Kontakt
+
+--- [67878:69] 400@20 y=182
+bejulo GmbH Dekan-Laist-Straße 15a 55129 Mainz
+Deutschland
+
+Tel.: +49 6131 2151-400
+ E-Mail:  info@bejulo.de
+
+--- [67878:72] 400@20 y=640
+Jetzt folgen und  nichts verpassen!
+
+--- [67878:84] 400@16 y=1745
+© bejulo 2026
+
+--- [67878:82] 400@16 y=1745
+Impressum
+
+--- [67878:80] 400@16 y=1745
+Datenschutzerklärung
+
+--- [67878:76] 400@16 y=1745
+AGB
+
+--- [67878:78] 400@16 y=1745
+Cookies
+
+
+########## Projekte / Group 5 ##########
+
+--- [I67867:339;1402:730] 700@16 y=-46
+Kontaktieren Sie uns!
+
+--- [67867:341] 400@16 y=-45
+Unsere Leistungen
+
+--- [67867:342] 400@16 y=-45
+International
+
+--- [67867:343] 700@16 y=-45
+Projekte
+
+--- [67867:344] 400@16 y=-45
+Über uns
+
+--- [67867:345] 400@16 y=-45
+Karriere
+
+--- [67867:346] 400@16 y=-45
+Kontakt
+
+--- [67845:512] 700@40 y=702
+Unsere Projekte – unsere Visitenkarte
+
+--- [67845:513] 400@20 y=791
+be international. Wir sind international tätig – und darauf sind wir stolz: bejulo-Projekte sind mittlerweile auf drei Kontinenten vertreten. Seit unserer Gründung haben wir mehr als  65 Photovoltaikprojekte mit einer Gesamtleistung von rund 700 Megawattpeak erfolgreich umgesetzt. Weitere Projekte befinden sich derzeit im Bau, zusätzliche Vorhaben sind bereits in der Planung. Nachhaltige Energielösungen über Ländergrenzen hinweg realisieren und Kunden begeistern - wo Sonne wartet, wird bejulo sein.
+
+--- [67880:64] 700@20 y=1027
+bejulo klärt mit Programmierung die Darstellung der Projekte inkl. Projektbeschreibungen.
+
+--- [67860:180] 400@20 y=1749
+Die orange markierten Standorte zeigen eine Auswahl unserer Großprojekte. Sie bilden einen Auszug unserer internationalen Projektaktivitäten.
+
+--- [I67869:177;1402:730] 700@16 y=1854
+International
+
+--- [67845:590] 400@20 y=2037
+Zufriedene Kunden sind unser größter Erfolg
+
+be happy. Unsere Kunden stammen aus den unterschiedlichsten Branchen und vertrauen zum Teil bereits seit vielen Jahren auf unsere Leistungsfähigkeit und Wirtschaftlichkeit. Dabei schätzen sie uns als zuverlässigen und kompetenten Komplettdienstleister, der Projekte ganzheitlich und effizient umsetzt. Qualität, Transparenz und Fairness bilden die Grundlage für unseren nachhaltigen gemeinsamen Erfolg.
+
+--- [67883:73] 400@16 y=2340
+© bejulo 2026
+
+--- [67883:71] 400@16 y=2340
+Impressum
+
+--- [67883:69] 400@16 y=2340
+Datenschutzerklärung
+
+--- [67883:65] 400@16 y=2340
+AGB
+
+--- [67883:67] 400@16 y=2340
+Cookies
+
+
+########## Startseite / Group 5 ##########
+
+--- [I67863:270;1402:730] 700@16 y=192
+Kontaktieren Sie uns!
+
+--- [67863:272] 400@16 y=193
+Unsere Leistungen
+
+--- [67863:273] 400@16 y=193
+International
+
+--- [67863:274] 400@16 y=193
+Projekte
+
+--- [67863:275] 400@16 y=193
+Über uns
+
+--- [67863:276] 400@16 y=193
+Karriere
+
+--- [67863:277] 400@16 y=193
+Kontakt
+
+--- [67859:131] 700@60 y=928
+Photovoltaik und BESS –  zuverlässig, nachhaltig, wirtschaftlich
+
+--- [67859:132] 400@20 y=1148
+be ready. Die Zukunft gehört den erneuerbaren Energien. Als erfahrener Partner für PV- und Batteriespeicherprojekte entwickeln wir nachhaltige Energielösungen mit wirtschaftlichem Mehrwert. Gemeinsam mit Flächeneigentümern und Investoren schaffen wir langfristige Werte – ökologisch und ökonomisch. Bereit für die Zukunft? 
+Mit uns haben Sie den richtigen Partner an Ihrer Seite.
+
+--- [I67859:134;1402:730] 700@16 y=1340
+Kontaktieren Sie uns!
+
+--- [I67859:137;1402:730] 700@16 y=1340
+International
+
+--- [67859:73] 400@16 y=1467
+© bejulo 2026
+
+--- [67859:71] 400@16 y=1467
+Impressum
+
+--- [67859:69] 400@16 y=1467
+Datenschutzerklärung
+
+--- [67859:65] 400@16 y=1467
+AGB
+
+--- [67859:67] 400@16 y=1467
+Cookies
+
+
+########## Unsere Leistungen / Group 5 ##########
+
+--- [I67867:44;1402:730] 700@16 y=60
+Kontaktieren Sie uns!
+
+--- [67867:46] 700@16 y=61
+Unsere Leistungen
+
+--- [67867:47] 400@16 y=61
+International
+
+--- [67867:48] 400@16 y=61
+Projekte
+
+--- [67867:49] 400@16 y=61
+Über uns
+
+--- [67867:50] 400@16 y=61
+Karriere
+
+--- [67867:51] 400@16 y=61
+Kontakt
+
+--- [67859:142] 700@40 y=711
+Von Entwicklung bis Betrieb:  PV und BESS ganzheitlich gedacht
+
+--- [67850:920] 700@28 y=912
+Projektentwicklung PV und BESS
+Leistung unter Strom
+
+--- [67850:921] 400@20 y=1005
+be strong. Wir entwickeln PV- und BESS-Projekte mit klarem Fokus auf Wirtschaftlichkeit, Nachhaltigkeit und starke Performance. Als unabhängiges, eigenfinanziertes Unternehmen realisieren wir nur Projekte mit überzeugendem Standort, belastbarer Genehmigung und solidem wirtschaftlichem Fundament – für maximale Sicherheit bei Eigentümern, Kommunen und Investoren. 
+Partnerschaft heißt für uns: Transparenz, Verlässlichkeit und wirtschaftlicher Weitblick. Mit klaren Verträgen, frühzeitiger Einbindung und regionaler Wertschöpfung schaffen wir Vertrauen bei Unternehmen, Stadtwerken, Kommunen und Investoren. Unsere unabhängig finanzierten Projekte stehen für stabile Erträge, langfristigen Betrieb und nachhaltige Energie mit Substanz.
+
+--- [67880:61] 400@20 y=1362
+be in touch. Wir erwerben Rechte für PV- und BESS-Projekte in allen Entwicklungsphasen – von der frühen Pipeline bis zum baureifen Projekt. Wir prüfen schnell, entscheiden partnerschaftlich und bieten faire, verlässliche Konditionen. Dank unabhängiger Finanzierung entstehen wirtschaftlich starke Energieprojekte mit langfristiger Perspektive und nachhaltigem Mehrwert für die Region und ihre Energiezukunft.
+
+--- [67874:47] 700@28 y=1607
+Anlagenbau PV und BESS
+Gebaut für Erfolg
+
+--- [67874:48] 400@20 y=1700
+be successful. Als PV- und BESS-Partner begleiten wir Sie mit langjähriger Erfahrung in der nachhaltigen Energieversorgung. Wir realisieren maßgeschneiderte Lösungen für unterschiedliche Anforderungen. Unsere Anlagen stehen für hohe Qualität und zuverlässige Verfügbarkeit.
+
+--- [67850:914] 700@28 y=2088
+Technische Betriebsführung PV und BESS
+Sorgfalt für stabile Erträge 
+
+--- [67850:915] 400@20 y=2184
+be  responsible. Wir warten und betreiben unsere Anlagen und die unserer Kunden mit großer Verantwortung und schnellen Reaktionszeiten. Damit gelingt es uns, langfristig verlässliche Erlöse zu sichern – für maximale Wirtschaftlichkeit und schnelles Wachstum.
+
+ 
+
+--- [67850:925] 700@28 y=2586
+Stromvermarktung IPP
+In Zukunft unabhängig und noch flexibler
+
+--- [67850:926] 400@20 y=2692
+be  independent. Energie ist ein zentraler Baustein einer nachhaltigen Zukunft. Deshalb bauen wir als IPP ein eigenes Portfolio aus PV- und BESS-Anlagen auf, um erzeugten Strom flexibel zu vermarkten und bedarfsgerecht ins Netz einzuspeisen. Die Kombination aus Stromerzeugung und Stromvermarktung schafft wirtschaftliche Stabilität und stärkt eine diversifizierte sowie unabhängige Energieversorgung.
+
+--- [67850:949] 700@20 y=3108
+Ganz gleich ob Sie Flächeneigentümer sind, ein Projektrecht verkaufen oder einen Partner für die Errichtung  suchen: bejulo ist Ihr Ansprechpartner.
+
+--- [I67850:948;1402:730] 700@20 y=3259
+Kontaktieren Sie uns!
+
+--- [67850:963] 400@16 y=3407
+© bejulo 2026
+
+--- [67850:961] 400@16 y=3407
+Impressum
+
+--- [67850:959] 400@16 y=3407
+Datenschutzerklärung
+
+--- [67850:955] 400@16 y=3407
+AGB
+
+--- [67850:957] 400@16 y=3407
+Cookies
+
+
+########## Über Uns / Group 1 ##########
+
+--- [I67880:74;1402:730] 700@16 y=-648
+Kontaktieren Sie uns!
+
+--- [67880:76] 400@16 y=-647
+Unsere Leistungen
+
+--- [67880:77] 400@16 y=-647
+International
+
+--- [67880:78] 400@16 y=-647
+Projekte
+
+--- [67880:79] 700@16 y=-647
+Über uns
+
+--- [67880:80] 400@16 y=-647
+Karriere
+
+--- [67880:81] 400@16 y=-647
+Kontakt
+
+--- [67849:611] 700@40 y=114
+Kompetenz, die Energie bewegt – unser Team
+
+--- [67849:612] 700@20 y=219
+be passionate. be with us.
+
+Seit 2012 steht bejulo für nachhaltige Energielösungen, fundierte PV-Expertise und echte Leidenschaft für das, was wir tun. Verantwortung, Verlässlichkeit, Qualitätsanspruch sowie Teamgeist sind die Werte, die uns verbinden und unser tägliches Handeln prägen.
+
+Mit Energie, Begeisterung und internationaler Erfahrung arbeiten wir daran, gemeinsam etwas zu bewegen. Dabei begleiten wir unsere Kunden mit persönlichem Engagement, fachlicher Kompetenz und einem klaren Blick für nachhaltigen, langfristigen Erfolg.
+
+Was uns besonders wichtig ist? Eine partnerschaftliche Zusammenarbeit auf Augenhöhe. Fairness, Respekt und Transparenz bilden die Grundlage unseres Handelns. Denn wir verstehen unsere Kunden nicht nur als Auftraggeber, sondern als langfristige Partner.
+
+Mit bejulo entscheiden Sie sich für einen Partner, auf den Sie sich verlassen können.
+
+--- [67849:836] 400@16 y=786
+© bejulo 2026
+
+--- [67849:834] 400@16 y=786
+Impressum
+
+--- [67849:832] 400@16 y=786
+Datenschutzerklärung
+
+--- [67849:828] 400@16 y=786
+AGB
+
+--- [67849:830] 400@16 y=786
+Cookies

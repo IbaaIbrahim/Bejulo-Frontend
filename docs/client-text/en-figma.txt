@@ -1,0 +1,152 @@
+
+
+########## Karriere / Group 104018 ##########
+
+--- [67849:700] 700@60 y=186
+Build your career with us
+
+--- [67849:701] 400@20 y=309
+be part of the team!
+If you share our passion for renewable energy, we’d love to have you on board!
+
+
+We look forward to receiving your application.  Please send it to: bewerbung@bejulo.de
+
+--- [67877:136] 700@40 y=724
+Vacancies:
+
+--- [67877:114] 700@28 y=864
+Projektleiter:in (m/w/d)
+
+--- [67880:88] 700@20 y=878
+Darstellung beispielhaft:
+bejulo klärt mit Programmierung wie Stellenanzeigen leicht aktualisiert werden können.
+
+--- [67877:116] 700@28 y=945
+Ingenieur:in (m/w/d)
+
+--- [67890:396] 400@16 y=1156
+© bejulo 2026
+
+
+########## Kontakt / Group 5 ##########
+
+--- [67878:69] 400@20 y=182
+bejulo GmbH Dekan-Laist-Straße 15a 55129 Mainz
+Germany
+
+Tel.: +49 6131 – 2151-400
+ E-Mail:  info@bejulo.de
+
+--- [67878:72] 400@20 y=640
+Follow us and  never miss an update!
+
+--- [67890:421] 400@16 y=1744
+© bejulo 2026
+
+
+########## Projekte / Group 5 ##########
+
+--- [67845:512] 700@40 y=702
+Our projects speak for themselves
+
+--- [67845:513] 400@20 y=791
+be international. We operate internationally – and we’re proud of it. Today, bejulo projects can be found across three continents. Since our company was founded, we’ve successfully completed more than 65 PV projects with a total installed capacity of around 700 MWp. Numerous additional projects are currently under construction, with further developments already in the pipeline. Wherever solar energy creates opportunities, we deliver sustainable solutions that cross borders and exceed expectations – bejulo follows the sun!
+
+--- [67880:64] 700@20 y=1027
+bejulo klärt mit Programmierung die Darstellung der Projekte inkl. Projektbeschreibungen.
+
+--- [67860:180] 400@20 y=1749
+The orange markers highlight a selection of our flagship projects, showcasing the breadth of our international activities.
+
+--- [I67869:177;1402:730] 700@16 y=1854
+Explore our international projects
+
+--- [67845:590] 400@20 y=2037
+Satisfied customers are our greatest success
+
+be happy. We work with customers across a broad range of industries, with many placing their trust in our expertise and commercial performance for years. They choose bejulo because we combine technical expertise, commercial efficiency and a fully integrated approach to project delivery. Built on quality, transparency and fairness, our partnerships are designed to create lasting value for everyone involved.
+
+--- [67890:333] 400@16 y=2340
+© bejulo 2026
+
+
+########## Startseite / Group 5 ##########
+
+--- [67859:131] 700@60 y=928
+PV and BESS –  Reliable. Sustainable. Profitable.
+
+--- [67859:132] 400@20 y=1148
+be ready. The future is renewable. As a trusted partner for photovoltaic and battery energy storage projects, we develop sustainable energy solutions with long-term commercial benefits. Together with landowners and investors, we create lasting value – for local businesses, communities and the environment. Ready for the future?  We’re here to help you make it happen.
+
+--- [I67859:137;1402:730] 700@16 y=1340
+Explore our international competence
+
+--- [I67859:134;1402:730] 700@16 y=1340
+Get in touch!
+
+--- [67859:73] 400@16 y=1467
+© bejulo 2026
+
+
+########## Unsere Leistungen / Group 5 ##########
+
+--- [67859:142] 700@40 y=711
+End-to-end PV and BESS solutions
+
+--- [67850:920] 700@28 y=857
+PV and BESS project development
+Powering performance
+
+--- [67850:921] 400@20 y=950
+be strong. Great energy projects start with the right foundations. That’s why we develop PV and BESS projects that are commercially sound, environmentally responsible and built for long-term success. As an independent, privately financed company, every one of our projects is selected for its location, planning certainty and financial strength – ensuring confidence for landowner, local authorities and investors.
+For us, working in partnership means acting transparently, reliably and with commercial foresight. Through clear contractual structures, early stakeholder engagement and regional value creation, we build trusting partnerships with businesses, municipal utilities, local authorities and investors. Our independently financed projects deliver stable returns, long-term operational performance and sustainable energy solutions built to last.
+
+--- [67880:61] 400@20 y=1375
+be in touch. We purchase PV and BESS project rights at every stage of development – from early pipeline opportunities to shovel-ready projects. Our fast and collaborative decision-making processes are complemented by fair and reliable business terms. Our independent financing creates commercially robust energy projects that drive the energy transition while delivering long-term value, reliable returns and lasting benefits for local communities.
+
+--- [67874:47] 700@28 y=1639
+PV and BESS project construction
+Built for success
+
+--- [67874:48] 400@20 y=1732
+be successful. As your trusted PV and BESS project partner, we draw on many years of experience in renewable energy infrastructure. We deliver tailored solutions to meet a wide range of project requirements. Every PV plant is engineered for quality, reliability and long-term performance.
+
+--- [67850:914] 700@28 y=2121
+Operations and maintenance
+Looking after what matters
+
+--- [67850:915] 400@20 y=2217
+be  responsible. Our experienced team operates and maintains renewable energy assets with care, expertise and fast response times – helping to maximise availability, profitability and long-term growth for our customers.
+
+ 
+
+--- [67850:925] 700@28 y=2620
+IPP energy marketing
+Greater independence. Greater flexibility.
+
+--- [67850:926] 400@20 y=2726
+be  independent. Energy is at the heart of a sustainable future. As an independent power producer, we’re building our own portfolio of PV and BESS assets, enabling us to market electricity flexibly and feed it into the grid in line with demand. By combining renewable power generation with direct marketing, we’re helping to build a more independent, diversified and resilient energy supply.  
+
+--- [67850:949] 400@20 y=3153
+Whether you’re a landowner, looking to sell project rights or seeking a trusted delivery partner,  bejulo is here to help.
+
+--- [I67850:948;1402:730] 700@20 y=3304
+Get in touch!
+
+--- [67890:45] 400@16 y=3450
+© bejulo 2026
+
+
+########## Über Uns / Group 1 ##########
+
+--- [67849:611] 700@40 y=114
+The people behind sustainable energy
+
+--- [67849:612] 700@20 y=219
+be passionate. be with us.
+
+Since 2012, bejulo has been creating a more sustainable future through expert PV solutions and a genuine passion for renewable energy. Responsibility, reliability, quality and teamwork are the values that shape our culture and define the way we work.  Our people bring together technical excellence, international experience and a shared ambition to make a difference. With personal commitment, technical expertise and a long-term perspective, we help our customers achieve sustainable success.  What matters most to us? Building partnerships based on trust and mutual respect. We believe in working openly, fairly and respectfully. We see our customers not simply as clients, but as long-term partners.  When you choose bejulo, you choose a partner you can rely on.
+
+--- [67890:371] 400@16 y=786
+© bejulo 2026

@@ -1,18 +1,14 @@
 /* ==========================================================================
    bejulo — copy dictionary (EN / DE)
 
-   English is transcribed verbatim from the Figma file (channel fi7cys1x).
+   BOTH LANGUAGES ARE THE CLIENT'S OWN TEXT, transcribed verbatim from the
+   Figma files supplied on 2026-08-24:
+     EN  channel 8vek3r8v   (see docs/client-text/en-figma.txt, en-international.txt)
+     DE  channel pyuzy0bt   (see docs/client-text/de-figma.txt, de-international.txt)
 
-   ---------------------------------------------------------------------------
-   GERMAN IS A DRAFT AND NEEDS bejulo's SIGN-OFF.
-   The Figma file supplies German only for the navigation labels, the
-   "Kontaktieren Sie uns!" button and the two job titles. Every other German
-   string below was written for this build so the language switcher has real
-   content to show. Please have it reviewed before go-live.
-   ---------------------------------------------------------------------------
-
-   The "be <adjective>." lead-ins are deliberately left in English in both
-   languages: they are a brand device tied to the bejulo name, not body copy.
+   Do not reword either language. Where the client's review notes asked for a
+   change that differs from the Figma text, the note wins and the line is
+   marked "client review 2026-08-24".
 
    Values may contain inline HTML (the orange "be" span, <br>, <strong>, <ul>)
    and are rendered with data-i18n-html. All content here is first-party.
@@ -20,6 +16,9 @@
    RULE: a value containing markup or HTML entities must only ever be consumed
    with data-i18n-html. Keys read via plain data-i18n (textContent) must hold
    literal characters — write "&", not "&amp;" — or the entity shows verbatim.
+
+   The "be <adjective>." lead-ins stay in English in both languages: the client
+   uses them identically in the DE file, so they are a brand device, not copy.
    ========================================================================== */
 window.BEJULO_CONTENT = {
 
@@ -32,9 +31,7 @@ window.BEJULO_CONTENT = {
     'nav.projects': 'Projects',
     'nav.about': 'About us',
     'nav.careers': 'Careers',
-    'nav.downloads': 'Downloads',
     'nav.contact': 'Contact',
-    'nav.search': 'Search',
     'nav.menu.open': 'Open menu',
     'nav.menu.close': 'Close menu',
     'nav.primary': 'Primary',
@@ -60,7 +57,7 @@ window.BEJULO_CONTENT = {
     'meta.title.international': 'International — Operating globally, taking responsibility | bejulo',
     'meta.desc.international': 'bejulo delivers turnkey solar PV, battery energy storage and revamping projects around the world.',
     'meta.title.international-experience': 'International experience — Local expertise | bejulo',
-    'meta.desc.international-experience': 'More than a decade of grid-connected PV across three continents, delivered in compliance with local regulations.',
+    'meta.desc.international-experience': 'Valuable experience across a range of regulatory, climatic and technical environments.',
     'meta.title.international-services': 'Service spectrum — Your one-stop shop for PV, BESS and revamping | bejulo',
     'meta.desc.international-services': 'EPC, BESS integration, revamping and O&M under one roof, wherever your projects are located.',
     'meta.title.international-contact': 'International contact | bejulo',
@@ -73,6 +70,8 @@ window.BEJULO_CONTENT = {
     'meta.desc.careers': 'Join the bejulo team and share our passion for renewable energy.',
     'meta.title.contact': 'Contact | bejulo',
     'meta.desc.contact': 'bejulo GmbH, Dekan-Laist-Straße 15a, 55129 Mainz, Germany.',
+    'meta.title.project': 'Project detail | bejulo',
+    'meta.desc.project': 'Detail page for a bejulo photovoltaic project.',
 
     /* --- shared buttons --- */
     'btn.contact': 'Get in touch!',
@@ -82,12 +81,13 @@ window.BEJULO_CONTENT = {
     'btn.experience': 'Discover our experience',
     'btn.international': 'Explore our international competence',
     'btn.intlprojects': 'Explore our international projects',
+    'btn.readmore': 'Read more…',
 
     /* --- home --- */
     'home.hero.alt': 'Aerial view of a large bejulo solar photovoltaic plant',
     'home.play': 'Play the bejulo company video',
-    'home.h1': 'PV and BESS&nbsp;–<br>Reliable. Sustainable. Profitable.',
-    'home.lede': '<span class="be">be</span><span class="be-lead"> ready.</span> The future is renewable. As a trusted partner for photovoltaic and battery energy storage projects, we develop sustainable energy solutions with long-term commercial benefits. Together with landowners and investors, we create lasting value – for local businesses, communities and the environment. Ready for the future?<br>We’re here to help you make it happen.',
+    'home.h1': 'PV and BESS –<br>Reliable. Sustainable. Profitable.',
+    'home.lede': '<span class="be">be</span><span class="be-lead"> ready.</span> The future is renewable. As a trusted partner for photovoltaic and battery energy storage projects, we develop sustainable energy solutions with long-term commercial benefits. Together with landowners and investors, we create lasting value – for local businesses, communities and the environment. Ready for the future?  We’re here to help you make it happen.',
 
     /* --- services --- */
     'services.hero.alt': 'Aerial view of a bejulo solar park in an arid landscape',
@@ -110,7 +110,9 @@ window.BEJULO_CONTENT = {
     'services.c4.sub': 'Greater independence. Greater flexibility.',
     'services.c4.alt': 'Solar modules bordered by a wildflower meadow',
     'services.c4.body': '<span class="be">be</span><span class="be-lead"> independent.</span> Energy is at the heart of a sustainable future. As an independent power producer, we’re building our own portfolio of PV and BESS assets, enabling us to market electricity flexibly and feed it into the grid in line with demand. By combining renewable power generation with direct marketing, we’re helping to build a more independent, diversified and resilient energy supply.',
-    'services.cta': 'Whether you’re a landowner, looking to sell project rights or seeking a trusted delivery partner, <strong>bejulo is here to help.</strong>',
+    /* client review 2026-08-24 §2b — split into two sentences, period + line break */
+    'services.cta.line1': 'Whether you’re a landowner, looking to sell project rights or seeking a trusted delivery partner.',
+    'services.cta.line2': 'bejulo is here to help.',
 
     /* --- international (shared) --- */
     'intl.hero.alt': 'Hands holding a glowing globe against a sunrise',
@@ -175,10 +177,13 @@ window.BEJULO_CONTENT = {
     'projects.h2': 'Our projects speak for themselves',
     'projects.lede': '<span class="be">be</span><span class="be-lead"> international.</span> We operate internationally – and we’re proud of it. Today, bejulo projects can be found across three continents. Since our company was founded, we’ve successfully completed more than 65 PV projects with a total installed capacity of around 700 MWp. Numerous additional projects are currently under construction, with further developments already in the pipeline. Wherever solar energy creates opportunities, we deliver sustainable solutions that cross borders and exceed expectations – bejulo follows the sun!',
     'projects.map.label': 'Map of bejulo project locations worldwide',
-    'projects.map.hint': 'Hover a marker for project details · Ctrl + scroll to zoom',
+    'projects.map.insetLabel': 'Detail map of bejulo project locations in Europe',
+    'projects.map.hint': 'Hover a marker for project details · zoom and drag the Europe detail map',
     'projects.map.note': 'The orange markers highlight a selection of our flagship projects, showcasing the breadth of our international activities.',
     'projects.customers.h2': 'Satisfied customers are our greatest success',
     'projects.customers.body': '<span class="be">be</span><span class="be-lead"> happy.</span> We work with customers across a broad range of industries, with many placing their trust in our expertise and commercial performance for years. They choose bejulo because we combine technical expertise, commercial efficiency and a fully integrated approach to project delivery. Built on quality, transparency and fairness, our partnerships are designed to create lasting value for everyone involved.',
+    'project.pending': 'The detail page for this project is still being designed. Please get in touch if you would like more information in the meantime.',
+    'project.back': 'Back to all projects',
 
     /* --- about --- */
     'about.hero.alt': 'The bejulo team photographed together outdoors',
@@ -192,7 +197,7 @@ window.BEJULO_CONTENT = {
     /* --- careers --- */
     'careers.h1': 'Build your career with us',
     'careers.lede': '<span class="be">be</span><span class="be-lead"> part of the team!</span><br>If you share our passion for renewable energy, we’d love to have you on board!',
-    'careers.callout': 'We look forward to receiving your application.<br>Please send it to: <strong>bewerbung@bejulo.de</strong>',
+    'careers.callout': 'We look forward to receiving your application.  Please send it to: <strong>bewerbung@bejulo.de</strong>',
     'careers.vacancies': 'Vacancies:',
     'careers.job1': 'Projektleiter:in (m/w/d)',
     'careers.job2': 'Ingenieur:in (m/w/d)',
@@ -200,7 +205,7 @@ window.BEJULO_CONTENT = {
   },
 
   /* =========================== DEUTSCH =========================== */
-  /* DRAFT — awaiting bejulo review (see header note). */
+  /* Client text, Figma channel pyuzy0bt. Verbatim — do not reword. */
   de: {
     /* --- chrome --- */
     'skip': 'Zum Inhalt springen',
@@ -209,9 +214,7 @@ window.BEJULO_CONTENT = {
     'nav.projects': 'Projekte',
     'nav.about': 'Über uns',
     'nav.careers': 'Karriere',
-    'nav.downloads': 'Downloads',
     'nav.contact': 'Kontakt',
-    'nav.search': 'Suche',
     'nav.menu.open': 'Menü öffnen',
     'nav.menu.close': 'Menü schließen',
     'nav.primary': 'Hauptnavigation',
@@ -225,112 +228,125 @@ window.BEJULO_CONTENT = {
     'footer.copy': '© bejulo 2026',
     'footer.legalnav': 'Rechtliches',
     'footer.legal': 'Impressum',
-    'footer.privacy': 'Datenschutz',
+    'footer.privacy': 'Datenschutzerklärung',
     'footer.terms': 'AGB',
     'footer.cookies': 'Cookies',
 
     /* --- meta --- */
-    'meta.title.home': 'bejulo — PV und BESS: Zuverlässig. Nachhaltig. Rentabel.',
-    'meta.desc.home': 'bejulo entwickelt, baut und betreibt schlüsselfertige Photovoltaik- und Batteriespeicherprojekte weltweit — zuverlässig, nachhaltig und rentabel.',
-    'meta.title.services': 'Unsere Leistungen — PV- und BESS-Lösungen aus einer Hand | bejulo',
-    'meta.desc.services': 'Projektentwicklung, Bau, Betrieb und Wartung sowie IPP-Direktvermarktung für Photovoltaik und Batteriespeicher.',
-    'meta.title.international': 'International — Weltweit tätig, verantwortungsvoll handeln | bejulo',
-    'meta.desc.international': 'bejulo realisiert schlüsselfertige PV-, Batteriespeicher- und Revamping-Projekte weltweit.',
-    'meta.title.international-experience': 'Internationale Erfahrung — Lokale Expertise | bejulo',
-    'meta.desc.international-experience': 'Mehr als ein Jahrzehnt netzgekoppelte PV-Projekte auf drei Kontinenten, umgesetzt im Einklang mit den lokalen Vorschriften.',
-    'meta.title.international-services': 'Leistungsspektrum — Alles für PV, BESS und Revamping aus einer Hand | bejulo',
-    'meta.desc.international-services': 'EPC, BESS-Integration, Revamping und O&M unter einem Dach — wo auch immer Ihre Projekte entstehen.',
+    'meta.title.home': 'bejulo — PV und BESS: zuverlässig, nachhaltig, wirtschaftlich',
+    'meta.desc.home': 'bejulo entwickelt, baut und betreibt schlüsselfertige Photovoltaik- und Batteriespeicherprojekte weltweit.',
+    'meta.title.services': 'Unsere Leistungen — PV und BESS ganzheitlich gedacht | bejulo',
+    'meta.desc.services': 'Projektentwicklung, Anlagenbau, technische Betriebsführung und Stromvermarktung für PV und BESS.',
+    'meta.title.international': 'International — Global agieren, Verantwortung übernehmen | bejulo',
+    'meta.desc.international': 'bejulo realisiert Photovoltaik-, Batteriespeicher- und Revamping-Projekte weltweit.',
+    'meta.title.international-experience': 'Erfahrung — internationale Erfahrung, lokale Kompetenz | bejulo',
+    'meta.desc.international-experience': 'Fundierte Erfahrung bei unterschiedlichsten regulatorischen, klimatischen und infrastrukturellen Rahmenbedingungen.',
+    'meta.title.international-services': 'Leistungsspektrum — One-Stop-Shop für PV, BESS und Revamping | bejulo',
+    'meta.desc.international-services': 'EPC, BESS-Integration, Revamping und Betriebsführung aus einer Hand.',
     'meta.title.international-contact': 'Internationaler Kontakt | bejulo',
     'meta.desc.international-contact': 'Nehmen Sie Kontakt zum internationalen Team von bejulo in Mainz auf.',
-    'meta.title.projects': 'Projekte — Unsere Projekte sprechen für sich | bejulo',
-    'meta.desc.projects': 'Mehr als 65 PV-Projekte mit rund 700 MWp installierter Leistung auf drei Kontinenten.',
-    'meta.title.about': 'Über uns — Die Menschen hinter nachhaltiger Energie | bejulo',
-    'meta.desc.about': 'Seit 2012 gestaltet bejulo mit fundierten PV-Lösungen eine nachhaltigere Zukunft.',
-    'meta.title.careers': 'Karriere — Gestalten Sie Ihre Zukunft mit uns | bejulo',
-    'meta.desc.careers': 'Werden Sie Teil des bejulo-Teams und teilen Sie unsere Begeisterung für erneuerbare Energien.',
+    'meta.title.projects': 'Projekte — Unsere Projekte, unsere Visitenkarte | bejulo',
+    'meta.desc.projects': 'Mehr als 65 Photovoltaikprojekte mit rund 700 Megawattpeak Gesamtleistung auf drei Kontinenten.',
+    'meta.title.about': 'Über uns — Kompetenz, die Energie bewegt | bejulo',
+    'meta.desc.about': 'Seit 2012 steht bejulo für nachhaltige Energielösungen und fundierte PV-Expertise.',
+    'meta.title.careers': 'Karriere — Bei uns können Sie Karriere machen | bejulo',
+    'meta.desc.careers': 'Wenn Sie Energie leben und lieben, sind Sie bei uns richtig.',
     'meta.title.contact': 'Kontakt | bejulo',
     'meta.desc.contact': 'bejulo GmbH, Dekan-Laist-Straße 15a, 55129 Mainz, Deutschland.',
+    'meta.title.project': 'Projektdetails | bejulo',
+    'meta.desc.project': 'Detailseite zu einem Photovoltaikprojekt von bejulo.',
 
     /* --- shared buttons --- */
     'btn.contact': 'Kontaktieren Sie uns!',
-    'btn.contactus': 'Kontakt aufnehmen',
-    'btn.services': 'Unsere Leistungen entdecken',
-    'btn.projects': 'Unsere Projekte entdecken',
-    'btn.experience': 'Unsere Erfahrung entdecken',
+    /* Buttons the DE file labels explicitly */
+    'btn.experience': 'Erfahrung',
+    'btn.services': 'Leistungsspektrum',
+    'btn.intlprojects': 'International',
+    /* client review 2026-08-24 §1b */
     'btn.international': 'Unsere internationale Kompetenz entdecken',
-    'btn.intlprojects': 'Unsere internationalen Projekte entdecken',
+    /* NOTE: the DE Figma file shows no button for these two — the wording below
+       is a placeholder and still needs the client's German. */
+    'btn.projects': 'Projekte',
+    'btn.contactus': 'Kontakt',
+    'btn.readmore': 'Mehr erfahren…',
 
     /* --- home --- */
     'home.hero.alt': 'Luftaufnahme einer großen Photovoltaikanlage von bejulo',
     'home.play': 'bejulo-Unternehmensvideo abspielen',
-    'home.h1': 'PV und BESS&nbsp;–<br>Zuverlässig. Nachhaltig. Rentabel.',
-    'home.lede': '<span class="be">be</span><span class="be-lead"> ready.</span> Die Zukunft ist erneuerbar. Als verlässlicher Partner für Photovoltaik- und Batteriespeicherprojekte entwickeln wir nachhaltige Energielösungen mit langfristigem wirtschaftlichem Nutzen. Gemeinsam mit Flächeneigentümern und Investoren schaffen wir dauerhafte Werte – für die regionale Wirtschaft, die Menschen vor Ort und die Umwelt. Bereit für die Zukunft?<br>Wir helfen Ihnen, sie zu gestalten.',
+    /* client review 2026-08-24 §1a — replaces the Figma "Photovoltaik und BESS …" */
+    'home.h1': 'PV und BESS – zuverlässig, nachhaltig, wirtschaftlich',
+    'home.lede': '<span class="be">be</span><span class="be-lead"> ready.</span> Die Zukunft gehört den erneuerbaren Energien. Als erfahrener Partner für PV- und Batteriespeicherprojekte entwickeln wir nachhaltige Energielösungen mit wirtschaftlichem Mehrwert. Gemeinsam mit Flächeneigentümern und Investoren schaffen wir langfristige Werte – ökologisch und ökonomisch. Bereit für die Zukunft?<br>Mit uns haben Sie den richtigen Partner an Ihrer Seite.',
 
     /* --- services --- */
     'services.hero.alt': 'Luftaufnahme eines bejulo-Solarparks in trockener Landschaft',
-    'services.h2': 'PV- und BESS-Lösungen aus einer Hand',
-    'services.c1.title': 'PV- und BESS-Projektentwicklung',
-    'services.c1.sub': 'Leistung von Anfang an',
+    'services.h2': 'Von Entwicklung bis Betrieb: PV und BESS ganzheitlich gedacht',
+    'services.c1.title': 'Projektentwicklung PV und BESS',
+    'services.c1.sub': 'Leistung unter Strom',
     'services.c1.alt': 'Hochspannungsmasten in der Abenddämmerung',
-    'services.c1.body': '<span class="be">be</span><span class="be-lead"> strong.</span> Große Energieprojekte brauchen ein solides Fundament. Deshalb entwickeln wir PV- und BESS-Projekte, die wirtschaftlich tragfähig, umweltgerecht und auf langfristigen Erfolg ausgelegt sind. Als unabhängiges, privat finanziertes Unternehmen wählen wir jedes Projekt nach Standort, Planungssicherheit und Finanzstärke aus – für Vertrauen bei Flächeneigentümern, Kommunen und Investoren.',
-    'services.c1.body2': 'Partnerschaftlich zu arbeiten bedeutet für uns: transparent, verlässlich und mit wirtschaftlichem Weitblick. Durch klare Vertragsstrukturen, frühe Einbindung aller Beteiligten und regionale Wertschöpfung entstehen vertrauensvolle Partnerschaften mit Unternehmen, Stadtwerken, Kommunen und Investoren. Unsere unabhängig finanzierten Projekte liefern stabile Renditen, dauerhafte Betriebsleistung und nachhaltige Energielösungen.',
-    'services.c1.body3': '<span class="be">be</span><span class="be-lead"> in touch.</span> Wir erwerben PV- und BESS-Projektrechte in jeder Entwicklungsphase – von der frühen Projektidee bis zum baureifen Projekt. Schnelle, partnerschaftliche Entscheidungsprozesse verbinden wir mit fairen und verlässlichen Konditionen. Unsere unabhängige Finanzierung schafft wirtschaftlich robuste Energieprojekte, die die Energiewende voranbringen und langfristigen Wert, verlässliche Renditen und dauerhaften Nutzen für die Regionen schaffen.',
-    'services.c2.title': 'PV- und BESS-Projektbau',
-    'services.c2.sub': 'Gebaut für den Erfolg',
+    'services.c1.body': '<span class="be">be</span><span class="be-lead"> strong.</span> Wir entwickeln PV- und BESS-Projekte mit klarem Fokus auf Wirtschaftlichkeit, Nachhaltigkeit und starke Performance. Als unabhängiges, eigenfinanziertes Unternehmen realisieren wir nur Projekte mit überzeugendem Standort, belastbarer Genehmigung und solidem wirtschaftlichem Fundament – für maximale Sicherheit bei Eigentümern, Kommunen und Investoren.',
+    'services.c1.body2': 'Partnerschaft heißt für uns: Transparenz, Verlässlichkeit und wirtschaftlicher Weitblick. Mit klaren Verträgen, frühzeitiger Einbindung und regionaler Wertschöpfung schaffen wir Vertrauen bei Unternehmen, Stadtwerken, Kommunen und Investoren. Unsere unabhängig finanzierten Projekte stehen für stabile Erträge, langfristigen Betrieb und nachhaltige Energie mit Substanz.',
+    'services.c1.body3': '<span class="be">be</span><span class="be-lead"> in touch.</span> Wir erwerben Rechte für PV- und BESS-Projekte in allen Entwicklungsphasen – von der frühen Pipeline bis zum baureifen Projekt. Wir prüfen schnell, entscheiden partnerschaftlich und bieten faire, verlässliche Konditionen. Dank unabhängiger Finanzierung entstehen wirtschaftlich starke Energieprojekte mit langfristiger Perspektive und nachhaltigem Mehrwert für die Region und ihre Energiezukunft.',
+    'services.c2.title': 'Anlagenbau PV und BESS',
+    'services.c2.sub': 'Gebaut für Erfolg',
     'services.c2.alt': 'Batteriespeicher-Container in einem Solarpark',
-    'services.c2.body': '<span class="be">be</span><span class="be-lead"> successful.</span> Als Ihr verlässlicher Partner für PV- und BESS-Projekte greifen wir auf langjährige Erfahrung in der Infrastruktur für erneuerbare Energien zurück. Wir realisieren passgenaue Lösungen für unterschiedlichste Projektanforderungen. Jede PV-Anlage ist auf Qualität, Zuverlässigkeit und dauerhafte Leistung ausgelegt.',
-    'services.c3.title': 'Betrieb und Wartung',
-    'services.c3.sub': 'Wir kümmern uns um das Wesentliche',
+    'services.c2.body': '<span class="be">be</span><span class="be-lead"> successful.</span> Als PV- und BESS-Partner begleiten wir Sie mit langjähriger Erfahrung in der nachhaltigen Energieversorgung. Wir realisieren maßgeschneiderte Lösungen für unterschiedliche Anforderungen. Unsere Anlagen stehen für hohe Qualität und zuverlässige Verfügbarkeit.',
+    'services.c3.title': 'Technische Betriebsführung PV und BESS',
+    'services.c3.sub': 'Sorgfalt für stabile Erträge',
     'services.c3.alt': 'Ein bejulo-Techniker prüft eine Schaltanlage',
-    'services.c3.body': '<span class="be">be</span><span class="be-lead"> responsible.</span> Unser erfahrenes Team betreibt und wartet Anlagen für erneuerbare Energien mit Sorgfalt, Fachwissen und kurzen Reaktionszeiten – für maximale Verfügbarkeit, Wirtschaftlichkeit und langfristiges Wachstum unserer Kunden.',
-    'services.c4.title': 'IPP-Direktvermarktung',
-    'services.c4.sub': 'Mehr Unabhängigkeit. Mehr Flexibilität.',
+    'services.c3.body': '<span class="be">be</span><span class="be-lead"> responsible.</span> Wir warten und betreiben unsere Anlagen und die unserer Kunden mit großer Verantwortung und schnellen Reaktionszeiten. Damit gelingt es uns, langfristig verlässliche Erlöse zu sichern – für maximale Wirtschaftlichkeit und schnelles Wachstum.',
+    'services.c4.title': 'Stromvermarktung IPP',
+    'services.c4.sub': 'In Zukunft unabhängig und noch flexibler',
     'services.c4.alt': 'Solarmodule am Rand einer Blühwiese',
-    'services.c4.body': '<span class="be">be</span><span class="be-lead"> independent.</span> Energie ist der Schlüssel zu einer nachhaltigen Zukunft. Als unabhängiger Stromerzeuger bauen wir ein eigenes Portfolio an PV- und BESS-Anlagen auf und vermarkten Strom flexibel und bedarfsgerecht. Indem wir erneuerbare Stromerzeugung mit Direktvermarktung verbinden, tragen wir zu einer unabhängigeren, breiter aufgestellten und krisenfesteren Energieversorgung bei.',
-    'services.cta': 'Ob Sie Flächen besitzen, Projektrechte verkaufen möchten oder einen verlässlichen Umsetzungspartner suchen – <strong>bejulo ist für Sie da.</strong>',
+    'services.c4.body': '<span class="be">be</span><span class="be-lead"> independent.</span> Energie ist ein zentraler Baustein einer nachhaltigen Zukunft. Deshalb bauen wir als IPP ein eigenes Portfolio aus PV- und BESS-Anlagen auf, um erzeugten Strom flexibel zu vermarkten und bedarfsgerecht ins Netz einzuspeisen. Die Kombination aus Stromerzeugung und Stromvermarktung schafft wirtschaftliche Stabilität und stärkt eine diversifizierte sowie unabhängige Energieversorgung.',
+    /* client review 2026-08-24 §2b — wording taken from the CTA screenshot the
+       client supplied, which supersedes the DE Figma text for this section
+       ("Ganz gleich ob Sie Flächeneigentümer sind, … bejulo ist Ihr
+       Ansprechpartner."). */
+    'services.cta.line1': 'Ob Sie Flächen besitzen, Projektrechte verkaufen möchten oder einen verlässlichen Umsetzungspartner suchen.',
+    'services.cta.line2': 'bejulo ist für Sie da.',
 
     /* --- international (shared) --- */
     'intl.hero.alt': 'Hände halten eine leuchtende Weltkugel im Sonnenaufgang',
-    'intl.headline': 'Weltweit tätig. Verantwortung tragen. Zukunft gestalten.<span>bejulo: alles für PV, BESS &amp; Revamping aus einer Hand</span>',
+    'intl.headline': 'Global agieren, Verantwortung übernehmen, Zukunft schaffen<span>bejulo - One-Stop-Shop für PV, BESS und Revamping</span>',
 
     /* --- international landing --- */
-    'intl.p1.title': 'Von der Planung bis zu Betrieb &amp; Wartung – wir begleiten Sie in jeder Phase.',
-    'intl.p1.body': '<span class="be">be</span><span class="be-lead"> committed.</span> Wir realisieren schlüsselfertige Projekte für Photovoltaik, Batteriespeicher und Revamping weltweit. Für Sie bedeutet das: höchste Zuverlässigkeit, minimale Komplexität und nachhaltige Renditen.',
-    'intl.p2.title': 'Ein Partner für jede Projektphase.',
-    'intl.p2.body': '<span class="be">be</span><span class="be-lead"> integrated.</span> Sie haben einen festen Partner, der alle Aspekte Ihres Projekts koordiniert. Wir steuern sämtliche Prozesse, Schnittstellen und Projektpartner, damit Sie sich auf das Wesentliche konzentrieren können – Ihre Investition.',
+    'intl.p1.title': 'Von der Planung bis zur Betriebsführung – wir übernehmen.',
+    'intl.p1.body': '<span class="be">be</span><span class="be-lead"> committed.</span> Wir realisieren Freiflächen-Photovoltaikanlagen, integrierte Batteriespeicher und Revamping-Projekte weltweit – schlüsselfertig und aus einer Hand. Für Sie bedeutet das: maximale Sicherheit, minimale Komplexität und nachhaltige Erträge.',
+    'intl.p2.title': 'Alles aus einer Hand – sorgenfrei zum erfolgreichen Projekt.',
+    'intl.p2.body': '<span class="be">be</span><span class="be-lead"> integrated.</span> Mit uns haben Sie einen zentralen Ansprechpartner für alle Projektphasen. Wir koordinieren sämtliche Prozesse, Schnittstellen und Partner, sodass Sie sich auf das Wesentliche konzentrieren können: Ihre Investition.',
     'intl.p3.title': 'Ihr Projekt. Unsere Verantwortung.',
-    'intl.p3.body': '<span class="be">be</span><span class="be-lead"> responsible.</span> Wir sind überzeugt: Die besten Projekte entstehen aus langfristigen Partnerschaften. Deshalb bleiben wir auch nach der Fertigstellung an Ihrer Seite, damit Ihre Investition dauerhaft technische Leistung, wirtschaftlichen Wert und betriebliche Zuverlässigkeit liefert.',
+    'intl.p3.body': '<span class="be">be</span><span class="be-lead"> responsible.</span> Wir verstehen uns nicht nur als Dienstleister, sondern als langfristiger Partner. Unser Ziel ist es, Ihre Projekte nicht nur erfolgreich zu realisieren, sondern nachhaltig zum Erfolg zu führen – technisch, wirtschaftlich und operativ.',
 
     /* --- international experience --- */
-    'intl.exp.a1': '<span class="be">be</span> expert – Internationale Erfahrung. Lokale Expertise.',
-    'intl.exp.a1.body': 'Durch unser internationales Projektportfolio verfügen wir über wertvolle Erfahrung in unterschiedlichsten regulatorischen, klimatischen und technischen Rahmenbedingungen. Durch enge Partnerschaften vor Ort stellen wir sicher, dass jedes Projekt effizient und nachhaltig umgesetzt wird.',
-    'intl.exp.a2': '<span class="be">be</span> sustainable – Die Energiewende voranbringen',
+    'intl.exp.a1': '<span class="be">be</span> expert – internationale Erfahrung, lokale Kompetenz',
+    'intl.exp.a1.body': 'Mit Projekten auf mehreren Kontinenten verfügen wir über fundierte Erfahrung in unterschiedlichsten regulatorischen, klimatischen und infrastrukturellen Rahmenbedingungen. Gleichzeitig setzen wir auf starke lokale Partnerschaften, um Projekte effizient und nachhaltig umzusetzen.',
+    'intl.exp.a2': '<span class="be">be</span> sustainable – Nachhaltigkeit und Wirtschaftlichkeit im Fokus',
     'intl.exp.a2.alt': 'Blühwiese vor einem Solarpark von bejulo',
-    'intl.exp.a2.body': 'Wir treiben den Umstieg auf erneuerbare Energien voran. Wir entwickeln PV-Anlagen, die ökologische Verantwortung mit starker Wirtschaftlichkeit verbinden. Mit bewährter Technik und effizienten Prozessen maximieren wir die Energieerzeugung und sichern gleichzeitig langfristige Investitionsrenditen.',
-    'intl.exp.a3': '<span class="be">be</span> reliable – Qualität, auf die Sie sich verlassen können',
+    'intl.exp.a2.body': 'Unsere Motivation ist es, die Energiewende aktiv mitzugestalten. Wir entwickeln Photovoltaikanlagen, die nicht nur ökologisch sinnvoll, sondern auch wirtschaftlich attraktiv sind. Durch erprobte Technologien und optimierte Prozesse maximieren wir Energieerträge und sichern langfristige Investitionswerte.',
+    'intl.exp.a3': '<span class="be">be</span> reliable – Vertrauen durch Qualität und Zuverlässigkeit',
     'intl.exp.a3.alt': 'Zwei bejulo-Mitarbeitende in Arbeitskleidung prüfen Solarmodule',
-    'intl.exp.a3.body': 'Offene Kommunikation, kompromisslose Sicherheitsstandards und enge Zusammenarbeit prägen alles, was wir tun. Ob mit Investoren, Energieversorgern oder Industriekunden – wir bauen dauerhafte Partnerschaften auf Basis von Fachwissen, Verlässlichkeit und konsequenter Projektumsetzung.',
+    'intl.exp.a3.body': 'Wir stehen für transparente Kommunikation, höchste Sicherheitsstandards und eine partnerschaftliche Zusammenarbeit. Unsere Kunden – von Investoren über Energieversorger bis hin zu Industrieunternehmen – vertrauen auf unsere Kompetenz und unsere Fähigkeit, komplexe Projekte erfolgreich zu realisieren.',
     'intl.exp.tl.more': '… <strong>und viele weitere</strong>…',
     'intl.exp.tl.note': '22 Projekte termingerecht und im Einklang mit den lokalen Vorschriften ans Netz gebracht – in sechs Ländern außerhalb Deutschlands.',
     'intl.exp.tl.capacity': 'mehr als 250 MWp installierte Leistung',
     'intl.exp.tl.caption': 'bejulo-Projektzeitleiste, 2014 bis 2026',
 
     /* --- international services --- */
-    'intl.svc.a1': '<span class="be">be</span> holistic – Alles für PV, BESS und Revamping aus einer Hand',
+    'intl.svc.a1': '<span class="be">be</span> holistic – ihr One-Stop-Shop für PV, BESS und Revamping',
     'intl.svc.a1.alt': 'Luftaufnahme von Modulreihen, durchzogen von einem Wartungsweg',
-    'intl.svc.a1.body': 'Unser Leistungsspektrum deckt jede Phase Ihres Projekts ab – von der ersten Planung und Auslegung bis zur Umsetzung und zum langfristigen Betriebsmanagement. Weil alles unter einem Dach liegt, reduzieren wir Komplexität, minimieren Risiken und liefern leistungsstarke Energielösungen, die auf langfristigen wirtschaftlichen Erfolg ausgelegt sind – wo auch immer Ihre Projekte entstehen.',
-    'intl.svc.a1.listtitle': 'Unsere Leistungen umfassen:',
-    'intl.svc.a1.li1': 'Engineering, Procurement and Construction (EPC): technische Planung und schlüsselfertige Umsetzung Ihrer Anlage',
-    'intl.svc.a1.li2': 'BESS-Integration: bewährte, passgenaue Batteriespeicherlösungen für maximale Flexibilität und höhere Renditen',
+    'intl.svc.a1.body': 'Als One-Stop-Shop übernehmen wir die vollständige Verantwortung: von der ersten Planung über die Umsetzung bis zur langfristigen Betriebsführung. Unser Anspruch ist klar: Wir nehmen Ihnen die Komplexität ab, minimieren Risiken und liefern leistungsstarke, wirtschaftlich optimierte Energielösungen – zuverlässig und weltweit.',
+    'intl.svc.a1.listtitle': 'Unser Leistungsspektrum umfasst:',
+    'intl.svc.a1.li1': 'EPC (Engineering, Procurement, Construction): technisches Design und schlüsselfertige Umsetzung Ihrer Anlage',
+    'intl.svc.a1.li2': 'BESS-Integration: erprobte, maßgeschneiderte Speicherlösungen für maximale Flexibilität und Erträge',
     'intl.svc.a1.li3': 'Revamping: Modernisierung und Leistungssteigerung bestehender PV-Anlagen',
-    'intl.svc.a1.li4': 'Betrieb und Wartung (O&amp;M): technisches Asset-Management für dauerhafte Leistung',
-    'intl.svc.a2': '<span class="be">be</span> supportive – Komplexität reduzieren. Renditen maximieren.',
+    'intl.svc.a1.li4': 'Betriebsführung (O&amp;M): technische Betriebsführung für langfristige Performance',
+    'intl.svc.a2': '<span class="be">be</span> supportive – Komplexität reduzieren, Erträge maximieren',
     'intl.svc.a2.alt': 'Solarpark unter einem dramatischen Wolkenhimmel',
-    'intl.svc.a2.body': 'Energieprojekte werden regulatorisch, technisch und wirtschaftlich immer anspruchsvoller. Wir vereinfachen diese Komplexität mit einem integrierten Ansatz, der die Zusammenarbeit strafft, Reibungsverluste reduziert und volle Transparenz über den gesamten Projektlebenszyklus schafft.',
-    'intl.svc.a2.listtitle': 'Ihre Vorteile:',
-    'intl.svc.a2.li1': 'Höhere Planungssicherheit',
-    'intl.svc.a2.li2': 'Optimierte Projektlaufzeiten',
-    'intl.svc.a2.li3': 'Höhere Energieerträge und stärkere Renditen',
+    'intl.svc.a2.body': 'Energieprojekte werden zunehmend anspruchsvoller – regulatorisch, technisch und wirtschaftlich. Genau hier setzen wir an: Durch unsere integrierte Herangehensweise reduzieren wir Schnittstellen, vermeiden Reibungsverluste und schaffen maximale Transparenz.',
+    'intl.svc.a2.listtitle': 'Das Ergebnis:',
+    'intl.svc.a2.li1': 'höhere Planungssicherheit',
+    'intl.svc.a2.li2': 'optimierte Projektlaufzeiten',
+    'intl.svc.a2.li3': 'maximierte Renditen',
 
     /* --- contact --- */
     'contact.company': '<strong><span class="be">be</span>julo GmbH</strong>',
@@ -338,38 +354,41 @@ window.BEJULO_CONTENT = {
     'contact.city': '55129 Mainz',
     'contact.country': 'Deutschland',
     'contact.tel.label': 'Tel.:',
-    'contact.tel': '+49 6131 – 2151-400',
+    'contact.tel': '+49 6131 2151-400',
     'contact.email.label': 'E-Mail:',
     'contact.email': 'info@bejulo.de',
     'contact.email.intl': 'international@bejulo.de',
-    'contact.follow': 'Folgen Sie uns und<br>bleiben Sie auf dem Laufenden!',
+    'contact.follow': 'Jetzt folgen und<br>nichts verpassen!',
     'contact.linkedin.alt': 'bejulo auf LinkedIn',
     'contact.photo.alt': 'Der Hauptsitz von bejulo in Mainz',
     'contact.pending': 'Die Inhalte der internationalen Kontaktseite sind noch mit bejulo abzustimmen.',
 
     /* --- projects --- */
     'projects.hero.alt': 'Reihen von Solarmodulen bis zum Horizont',
-    'projects.h2': 'Unsere Projekte sprechen für sich',
-    'projects.lede': '<span class="be">be</span><span class="be-lead"> international.</span> Wir arbeiten international – und sind stolz darauf. Heute finden sich bejulo-Projekte auf drei Kontinenten. Seit unserer Gründung haben wir mehr als 65 PV-Projekte mit einer installierten Gesamtleistung von rund 700 MWp erfolgreich realisiert. Zahlreiche weitere Projekte befinden sich im Bau, weitere Entwicklungen sind in Vorbereitung. Wo Solarenergie Chancen schafft, liefern wir nachhaltige Lösungen über Grenzen hinweg – bejulo folgt der Sonne!',
+    'projects.h2': 'Unsere Projekte – unsere Visitenkarte',
+    'projects.lede': '<span class="be">be</span><span class="be-lead"> international.</span> Wir sind international tätig – und darauf sind wir stolz: bejulo-Projekte sind mittlerweile auf drei Kontinenten vertreten. Seit unserer Gründung haben wir mehr als 65 Photovoltaikprojekte mit einer Gesamtleistung von rund 700 Megawattpeak erfolgreich umgesetzt. Weitere Projekte befinden sich derzeit im Bau, zusätzliche Vorhaben sind bereits in der Planung. Nachhaltige Energielösungen über Ländergrenzen hinweg realisieren und Kunden begeistern - wo Sonne wartet, wird bejulo sein.',
     'projects.map.label': 'Karte der bejulo-Projektstandorte weltweit',
-    'projects.map.hint': 'Marker ansteuern für Projektdetails · Strg + Scrollen zum Zoomen',
-    'projects.map.note': 'Die orangen Marker zeigen eine Auswahl unserer Leuchtturmprojekte und damit die Bandbreite unserer internationalen Tätigkeit.',
+    'projects.map.insetLabel': 'Detailkarte der bejulo-Projektstandorte in Europa',
+    'projects.map.hint': 'Marker ansteuern für Projektdetails · Europakarte zoomen und verschieben',
+    'projects.map.note': 'Die orange markierten Standorte zeigen eine Auswahl unserer Großprojekte. Sie bilden einen Auszug unserer internationalen Projektaktivitäten.',
     'projects.customers.h2': 'Zufriedene Kunden sind unser größter Erfolg',
-    'projects.customers.body': '<span class="be">be</span><span class="be-lead"> happy.</span> Wir arbeiten mit Kunden aus den unterschiedlichsten Branchen – viele vertrauen seit Jahren auf unsere Expertise und unsere wirtschaftliche Leistungsfähigkeit. Sie entscheiden sich für bejulo, weil wir technisches Know-how, wirtschaftliche Effizienz und einen vollständig integrierten Umsetzungsansatz verbinden. Aufgebaut auf Qualität, Transparenz und Fairness schaffen unsere Partnerschaften dauerhaften Wert für alle Beteiligten.',
+    'projects.customers.body': '<span class="be">be</span><span class="be-lead"> happy.</span> Unsere Kunden stammen aus den unterschiedlichsten Branchen und vertrauen zum Teil bereits seit vielen Jahren auf unsere Leistungsfähigkeit und Wirtschaftlichkeit. Dabei schätzen sie uns als zuverlässigen und kompetenten Komplettdienstleister, der Projekte ganzheitlich und effizient umsetzt. Qualität, Transparenz und Fairness bilden die Grundlage für unseren nachhaltigen gemeinsamen Erfolg.',
+    'project.pending': 'Die Detailseite zu diesem Projekt wird derzeit gestaltet. Sprechen Sie uns gerne an, wenn Sie vorab mehr erfahren möchten.',
+    'project.back': 'Zurück zu allen Projekten',
 
     /* --- about --- */
     'about.hero.alt': 'Das bejulo-Team gemeinsam im Freien',
-    'about.h2': 'Die Menschen hinter nachhaltiger Energie',
+    'about.h2': 'Kompetenz, die Energie bewegt – unser Team',
     'about.body1': '<span class="be">be</span><span class="be-lead"> passionate. be with us.</span>',
-    'about.body2': 'Seit 2012 gestaltet bejulo mit fundierten PV-Lösungen und echter Begeisterung für erneuerbare Energien eine nachhaltigere Zukunft. Verantwortung, Verlässlichkeit, Qualität und Teamgeist sind die Werte, die unsere Kultur und unsere Arbeitsweise prägen.',
-    'about.body3': 'Unsere Mitarbeitenden verbinden technische Exzellenz, internationale Erfahrung und den gemeinsamen Anspruch, etwas zu bewegen. Mit persönlichem Engagement, technischem Sachverstand und langfristiger Perspektive helfen wir unseren Kunden zu nachhaltigem Erfolg.',
-    'about.body4': 'Was uns am wichtigsten ist? Partnerschaften auf Basis von Vertrauen und gegenseitigem Respekt. Wir arbeiten offen, fair und respektvoll. Unsere Kunden sind für uns nicht einfach Auftraggeber, sondern langfristige Partner.',
-    'about.body5': 'Wer sich für bejulo entscheidet, entscheidet sich für einen Partner, auf den man sich verlassen kann.',
+    'about.body2': 'Seit 2012 steht bejulo für nachhaltige Energielösungen, fundierte PV-Expertise und echte Leidenschaft für das, was wir tun. Verantwortung, Verlässlichkeit, Qualitätsanspruch sowie Teamgeist sind die Werte, die uns verbinden und unser tägliches Handeln prägen.',
+    'about.body3': 'Mit Energie, Begeisterung und internationaler Erfahrung arbeiten wir daran, gemeinsam etwas zu bewegen. Dabei begleiten wir unsere Kunden mit persönlichem Engagement, fachlicher Kompetenz und einem klaren Blick für nachhaltigen, langfristigen Erfolg.',
+    'about.body4': 'Was uns besonders wichtig ist? Eine partnerschaftliche Zusammenarbeit auf Augenhöhe. Fairness, Respekt und Transparenz bilden die Grundlage unseres Handelns. Denn wir verstehen unsere Kunden nicht nur als Auftraggeber, sondern als langfristige Partner.',
+    'about.body5': 'Mit bejulo entscheiden Sie sich für einen Partner, auf den Sie sich verlassen können.',
 
     /* --- careers --- */
-    'careers.h1': 'Gestalten Sie Ihre Zukunft mit uns',
-    'careers.lede': '<span class="be">be</span><span class="be-lead"> part of the team!</span><br>Wenn Sie unsere Begeisterung für erneuerbare Energien teilen, freuen wir uns auf Sie!',
-    'careers.callout': 'Wir freuen uns auf Ihre Bewerbung.<br>Bitte senden Sie sie an: <strong>bewerbung@bejulo.de</strong>',
+    'careers.h1': 'Bei uns können Sie Karriere machen!',
+    'careers.lede': '<span class="be">be</span><span class="be-lead"> part of the team!</span><br>Wenn Sie Energie leben und lieben, sind Sie bei uns richtig!',
+    'careers.callout': 'Wir sind gespannt auf Sie. Senden Sie Ihre Bewerbung an: <strong>bewerbung@bejulo.de</strong>',
     'careers.vacancies': 'Offene Stellen:',
     'careers.job1': 'Projektleiter:in (m/w/d)',
     'careers.job2': 'Ingenieur:in (m/w/d)',

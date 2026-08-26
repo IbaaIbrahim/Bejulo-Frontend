@@ -41,6 +41,7 @@ resolves.
 | `about.html` | Über Uns | over hero |
 | `careers.html` | Karriere | solid white |
 | `contact.html` | Kontakt | solid white |
+| `project.html` | — (placeholder, design pending) | solid white |
 
 The seven International frames are three accordion *states* of two pages plus a
 contact page, so they collapse to four files. Accordions load collapsed.
@@ -75,11 +76,15 @@ in step when editing copy.
 `data-i18n-html`.** Keys read as plain text need literal characters (`&`, not
 `&amp;`).
 
-> **The German copy is a draft and needs bejulo's sign-off.** Figma supplies
-> German only for the nav labels, `Kontaktieren Sie uns!` and the two job
-> titles; everything else was written for this build. The `be <adjective>.`
-> lead-ins stay English in both languages — they are a brand device tied to the
-> bejulo name, not body copy.
+> **Both languages are now the client's own text**, transcribed verbatim from
+> the Figma files supplied on 2026-08-24 — EN channel `8vek3r8v`, DE channel
+> `pyuzy0bt`. The raw extractions are kept in `docs/client-text/` for
+> comparison. Do not reword either language. Where the client's review note
+> asked for wording that differs from the Figma text, the note wins and the line
+> is marked `client review 2026-08-24` in `content.js`.
+>
+> The `be <adjective>.` lead-ins stay in English in both languages: the client
+> uses them identically in the DE file, so they are a brand device, not copy.
 
 ## Projects map
 
@@ -89,16 +94,53 @@ chosen over the standard osm.org style because the Figma map is flat pale grey
 landmass on white, which it matches closely. OSM + CARTO are both attributed
 in-map as their licences require.
 
-Markers are the orange outline pin from the design, drawn as inline SVG.
-Hovering a pin opens its popup; it stays open while the pointer is over the pin
-*or* the popup. Keyboard focus opens it too. The wheel does not hijack page
-scroll — `Ctrl`/`Cmd` + wheel zooms.
+Per client review §3b the page shows **two** maps: a world map in the
+background and a zoomed Europe map inset in the foreground, matching the PDF.
 
-> **Project data is provisional.** Countries and years come from the
-> International timeline; coordinates are country centroids, not real sites, and
-> the descriptions were written for this build. One marker per country: 65+
-> projects across 22 countries, which is what the page copy calls "a selection".
-> Replace the `PROJECTS` array with the real list.
+**No basemap tiles.** The design is flat grey landmasses on white with no
+labels and no graticule. Raster basemaps give the opposite — labelled, grid
+lined, and light land on grey water — so the countries are drawn as vector
+polygons from `assets/data/world.geojson` (Natural Earth, public domain,
+838 KB simplified to 163 KB). The page therefore makes no third-party requests
+at all, which is a bonus for GDPR.
+
+**Interaction is split.** The world map pans but does not zoom, keeping the
+fixed scale of the artwork; the Europe inset both pans and zooms, so the
+cluster of projects there can be inspected. The inset is fenced in — you cannot
+zoom out past its initial framing, which always contains all five European
+pins, and panning is bounded to the surrounding region. Zoom controls sit
+top-right, the only corner of the inset no pin occupies.
+
+Panning is disabled on coarse-pointer (touch) devices: the map is full-bleed on
+phones, and a drag-to-pan map there swallows the swipe used to scroll the page.
+Flip `DISABLE_PAN_ON_TOUCH` in `map.js` to change that.
+
+**Layout.** On desktop the inset overhangs the top edge of the world map by
+70px (with a matching 70px top margin on the panel) so it reads as a separate
+plane and covers less of the world behind it. Below 900px the inset stops being
+an overlay and stacks underneath the world map: an overlay wide enough to be
+useful on a phone would cover the Iran pin, and one narrow enough to avoid that
+is too small to read, so each map gets the full width instead.
+
+Seven pins: five on the Europe inset (Ireland, United Kingdom, Netherlands,
+Germany, Italy) plus Iran and South Africa on the world map. Markers are the
+orange outline pin from the design, drawn as inline SVG. Hovering a pin opens
+its popup, which stays open while the pointer is over the pin *or* the popup so
+the **Read more…** link inside stays clickable. Keyboard focus opens it too.
+
+The popup is *not* a Leaflet popup: the inset clips its own overflow, so one
+opened inside it would be cut in half. A single shared card lives in
+`.map-panel` and `map.js` positions it over whichever pin is active, flipping
+below the pin when there is no room above and following the pin as a map moves.
+
+> **Project data is provisional.** Coordinates are country/region centroids
+> rather than real sites, and the descriptions were written for this build.
+> Replace the `PROJECTS` array in `map.js` with the real list. Iran carries no
+> year yet — it is new in this review and not on the International timeline.
+>
+> **Detail pages are a separate change request.** `project.html` is a
+> placeholder that echoes the project name from `?id=` so the routing can be
+> reviewed; the client has confirmed the design is still pending.
 
 ## Timeline
 
@@ -129,13 +171,12 @@ every page reads identically, which is what was asked for.
    they are optically centred here.
 5. **Pink circles** are the designer's German review notes, not content, and are
    not rendered. Their instructions were carried out (see below).
-6. **Nav items** — Figma's English nav layer ends with *Downloads* and omits
-   Contact; its German layer ends with *Kontakt* and omits Downloads. Both items
-   appear in both languages so the two versions match. Split the `NAV` array in
-   `layout.js` per language if they should genuinely differ. The pill therefore
-   carries seven items plus search and the language switcher, which is wider than
-   the six-item pill in Figma: the header gutter and link padding tighten below
-   1440 px, and the nav collapses to a menu below 1220 px.
+6. **Nav items** — Downloads and the search icon were removed at the client's
+   request (review §4), so the menu is Services · International · Projects ·
+   About us · Careers · Contact in both languages, matching the DE Figma layer.
+   With the language switcher the pill is still wider than the six-item pill in
+   Figma, so the header gutter and link padding tighten below 1440 px and the nav
+   collapses to a menu below 1140 px.
 
 ## Still needed from bejulo
 
@@ -147,12 +188,21 @@ every page reads identically, which is what was asked for.
   Figma. It currently mirrors the main contact page with the `international@`
   address. A ready-made banner string is in `content.js` under
   `contact.pending`.
-- **Legal pages** — Legal Notice, Privacy Policy, Terms & Conditions, Cookies
-  all point at `#`.
-- **Downloads** — in the nav on every page, but no page was designed.
-- **Search** — the icon is in the design; no page or backend is defined, so the
-  button is inert. Options: build a client-side index over the ten pages, wire
-  it to a service, or drop it.
+- **Legal pages** — Impressum / Legal Notice, Datenschutzerklärung / Privacy
+  Policy, AGB / Terms & Conditions, Cookies all point at `#`.
+- **Services CTA German wording** — the screenshot supplied with review §2b
+  reads "Ob Sie Flächen besitzen, Projektrechte verkaufen möchten oder einen
+  verlässlichen Umsetzungspartner suchen. / bejulo ist für Sie da.", which is
+  *not* what the DE Figma file says ("Ganz gleich ob Sie Flächeneigentümer sind,
+  … bejulo ist Ihr Ansprechpartner."). The screenshot was treated as the newer
+  instruction and is what ships. Please confirm, and update the Figma so the two
+  stay in step.
+- **Two DE button labels** — the DE Figma file has no button for "Explore our
+  projects" or "Contact us" on the International landing page (it shows only
+  *Erfahrung* and *Leistungsspektrum*). `btn.projects` and `btn.contactus` carry
+  placeholder German pending the client's wording.
+- **Project detail pages** — design pending (see the map section above).
+- **Iran project details** — year and description needed.
 - **Routing check** — "Explore our services" on the International landing page
   currently goes to the international service-spectrum page rather than the main
   Our Services page. Confirm which was intended.
@@ -165,3 +215,25 @@ panels, focus-visible outlines, `prefers-reduced-motion` honoured, and a print
 stylesheet that expands accordions. All images carry intrinsic `width`/`height`
 to avoid layout shift; below-fold images are lazy-loaded and heroes use
 `fetchpriority="high"`.
+
+## Client review — 2026-08-24
+
+Every point from the review, and what was done.
+
+| # | Request | Status |
+|---|---|---|
+| 1 general | Use the client's EN/DE text verbatim; DE was incorrect | **Done** — both languages re-transcribed from the supplied Figma files (`docs/client-text/`). The previous German was AI-drafted and has been discarded. |
+| 1a | DE H1 → "PV und BESS – zuverlässig, nachhaltig, wirtschaftlich" | **Done.** Note this overrides the DE Figma, which reads "Photovoltaik und BESS – …"; the review note was taken as authoritative. |
+| 1b | DE button "International" → "Unsere internationale Kompetenz entdecken" | **Done** (home page). The Projects page button is still labelled "International" per the DE Figma — say the word if that one should change too. |
+| 2a | Services "PV and BESS project development" layout wrong | **Done** — the "be in touch" paragraph now spans the full card width below the photo, as in Figma, instead of being stacked in the text column. |
+| 2b | Re-layout the CTA per screenshot; split copy into two sentences | **Done.** Chevron now sits beside the copy (66px mark, 32px gap) with the button below, left-aligned to the chevron. Copy is two lines, second bold. The screenshot also supplied **new German wording**, which supersedes the DE Figma text for this section — see the note below. |
+| 3a | 60px between the button and "Satisfied customers" | **Done** — measured at exactly 60px, and held at every breakpoint. |
+| 3b | World map behind, Europe map in front | **Done.** |
+| 3b | 5 Europe pins + Iran + South Africa, remove the rest | **Done** — 7 pins total (was 22). |
+| 3b | Disable zoom completely | **Superseded.** Implemented as asked, then reversed on request: the world map now pans (no zoom) and the Europe inset pans *and* zooms. Worth re-confirming with the client, since it contradicts the written note. |
+| 3b | "Read more…" link in each popup → detail page | **Done** — links to `project.html?id=…`. That page is a placeholder; detail design is the pending change request. |
+| 4 | Remove Downloads from the menu | **Done.** |
+| 4 | Remove the search icon | **Done.** |
+
+Verified in both languages at 1440, 1140, 1139, 768 and 375 px: no horizontal
+overflow, no console errors, and all 36 asset references resolve.

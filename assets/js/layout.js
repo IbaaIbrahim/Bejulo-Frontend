@@ -23,13 +23,9 @@
     { key: 'projects',      href: 'projects.html',      i18n: 'nav.projects' },
     { key: 'about',         href: 'about.html',         i18n: 'nav.about' },
     { key: 'careers',       href: 'careers.html',       i18n: 'nav.careers' },
-    // No Downloads page exists in the Figma file yet — target still to be
-    // supplied by bejulo. Kept in the nav because the design shows it.
-    { key: 'downloads',     href: '#',                  i18n: 'nav.downloads' },
-    // Figma's German nav layer ends with "Kontakt" while the English layer ends
-    // with "Downloads". Both items are shown in both languages so the two
-    // versions stay consistent; split this array per language if they should
-    // genuinely differ.
+    // Downloads and the search icon were removed at the client's request
+    // (review 2026-08-24 §4). The DE Figma nav ends with Kontakt, which is now
+    // the menu in both languages.
     { key: 'contact',       href: 'contact.html',       i18n: 'nav.contact' }
   ];
 
@@ -75,11 +71,6 @@
         '</button>' +
         '<nav class="nav" id="primary-nav" data-i18n-attr="aria-label:nav.primary">' +
           links +
-          // Search UI is present in the design; no search backend defined yet.
-          '<button class="nav__search" type="button" ' +
-            'data-i18n-attr="aria-label:nav.search">' +
-            '<img src="assets/icons/search.svg" width="21" height="21" alt="">' +
-          '</button>' +
           switcher +
         '</nav>' +
       '</div>' +
