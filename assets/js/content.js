@@ -87,6 +87,7 @@ window.BEJULO_CONTENT = {
     'home.hero.alt': 'Aerial view of a large bejulo solar photovoltaic plant',
     'home.play': 'Play the bejulo company video',
     'home.scrollcue': 'Scroll down to the introduction',
+    'home.backtotop': 'Back to top',
     'home.h1': 'PV and BESS –<br>Reliable. Sustainable. Profitable.',
     'home.lede': '<span class="be">be</span><span class="be-lead"> ready.</span> The future is renewable. As a trusted partner for photovoltaic and battery energy storage projects, we develop sustainable energy solutions with long-term commercial benefits. Together with landowners and investors, we create lasting value – for local businesses, communities and the environment. Ready for the future?  We’re here to help you make it happen.',
 
@@ -275,6 +276,7 @@ window.BEJULO_CONTENT = {
     'home.hero.alt': 'Luftaufnahme einer großen Photovoltaikanlage von bejulo',
     'home.play': 'bejulo-Unternehmensvideo abspielen',
     'home.scrollcue': 'Nach unten zur Einführung scrollen',
+    'home.backtotop': 'Nach oben',
     /* client review 2026-08-24 §1a — replaces the Figma "Photovoltaik und BESS …" */
     'home.h1': 'PV und BESS – zuverlässig, nachhaltig, wirtschaftlich',
     'home.lede': '<span class="be">be</span><span class="be-lead"> ready.</span> Die Zukunft gehört den erneuerbaren Energien. Als erfahrener Partner für PV- und Batteriespeicherprojekte entwickeln wir nachhaltige Energielösungen mit wirtschaftlichem Mehrwert. Gemeinsam mit Flächeneigentümern und Investoren schaffen wir langfristige Werte – ökologisch und ökonomisch. Bereit für die Zukunft?<br>Mit uns haben Sie den richtigen Partner an Ihrer Seite.',

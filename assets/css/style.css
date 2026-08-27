@@ -645,13 +645,15 @@ body[data-header='overlay'] #site-header {
   position: absolute;
 }
 
-/* Scroll cue: orange disc on the lower-right of the hero, straddling its edge,
-   that jumps to the intro section below (client request 2026-08-26). */
+/* Floating scroll cue, pinned to the bottom-right of the viewport.
+   At the top of the page it points down and jumps to the intro; once the
+   visitor has scrolled past the hero it flips to a back-to-top control
+   (.is-up). See the script in index.html. */
 .scroll-cue {
-  position: absolute;
-  right: 8%;
-  bottom: -28px;
-  z-index: 3;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 900;
   width: 56px;
   height: 56px;
   display: grid;
@@ -660,17 +662,23 @@ body[data-header='overlay'] #site-header {
   background: var(--orange);
   color: var(--white);
   box-shadow: 0 6px 20px rgba(0, 0, 0, .22);
-  transition: background-color .15s ease, transform .15s ease;
+  transition: background-color .15s ease, box-shadow .15s ease;
 }
 
 .scroll-cue svg {
   width: 26px;
   height: 26px;
+  transition: transform .25s ease;
+}
+
+/* same chevron, turned over — one glyph, two meanings */
+.scroll-cue.is-up svg {
+  transform: rotate(180deg);
 }
 
 .scroll-cue:hover {
   background: var(--orange-hover);
-  transform: translateY(2px);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, .28);
 }
 
 .sr-only {
@@ -1567,8 +1575,8 @@ body[data-header='overlay'] #site-header {
   }
 
   .scroll-cue {
-    right: 6%;
-    bottom: -22px;
+    right: 16px;
+    bottom: 16px;
     width: 44px;
     height: 44px;
   }

@@ -4,7 +4,8 @@
     {
       "name": "bejulo",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["serve.py", "4173"],
+      "runtimeArgs": ["serve.py"],
+      "autoPort": true,
       "port": 4173
     }
   ]

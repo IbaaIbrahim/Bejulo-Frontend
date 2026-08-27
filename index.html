@@ -29,8 +29,10 @@
       <span class="sr-only" data-i18n="home.play">Play the bejulo company video</span>
     </button>
 
-    <!-- Client request: a cue that scrolls straight down to the intro/CTA.
-         A plain anchor, so it works without JS; the smooth easing comes from
+    <!-- Client request: a floating cue pinned to the bottom-right of the
+         viewport. It points down to the intro at the top of the page and flips
+         to back-to-top once the hero has scrolled by. It stays a plain anchor,
+         so without JS it still jumps to the intro; the smooth easing comes from
          scroll-behavior in CSS and is dropped for prefers-reduced-motion. -->
     <a class="scroll-cue" href="#home-intro" data-i18n-attr="aria-label:home.scrollcue">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -76,6 +78,63 @@
       ? (window.BejuloI18n.get() === 'de' ? 'Video folgt in Kürze' : 'Company video coming soon')
       : 'Company video coming soon');
   });
+
+  /* Floating scroll cue: down-to-intro near the top, back-to-top once the hero
+     has gone by. One button, two jobs. */
+  (function () {
+    var cue = document.querySelector('.scroll-cue');
+    var hero = document.querySelector('.hero');
+    if (!cue) return;
+
+    var isUp = false;
+
+    function label(key) {
+      // keep data-i18n-attr in step so a language switch re-applies the right one
+      cue.setAttribute('data-i18n-attr', 'aria-label:' + key);
+      if (window.BejuloI18n) cue.setAttribute('aria-label', window.BejuloI18n.t(key) || '');
+    }
+
+    function setState(up) {
+      if (up === isUp) return;
+      isUp = up;
+      cue.classList.toggle('is-up', up);
+      cue.setAttribute('href', up ? '#top' : '#home-intro');
+      label(up ? 'home.backtotop' : 'home.scrollcue');
+    }
+
+    // flip once the hero is mostly behind us — i.e. the intro is in view.
+    // Cached so the scroll handler never forces a layout.
+    var threshold = 0;
+    function measure() {
+      threshold = (hero ? hero.offsetHeight : window.innerHeight) * 0.6;
+    }
+
+    /* Deliberately no requestAnimationFrame throttle here: the handler is a
+       comparison plus an early-out, and an rAF latch silently stops updating
+       for good in any context where rAF does not fire (a background or
+       non-compositing tab leaves the "pending" flag stuck on). */
+    function onScroll() {
+      setState(window.scrollY > threshold);
+    }
+
+    cue.addEventListener('click', function (e) {
+      if (!isUp) return;   // down state: let the anchor jump to #home-intro
+      e.preventDefault();
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    });
+
+    // re-label if the visitor switches language while it is in the up state
+    document.addEventListener('bejulo:langchange', function () {
+      label(isUp ? 'home.backtotop' : 'home.scrollcue');
+    });
+
+    function onResize() { measure(); onScroll(); }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+    onResize();
+  })();
 </script>
 
 </body>
