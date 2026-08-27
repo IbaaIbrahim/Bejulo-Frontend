@@ -21,16 +21,26 @@
 
   <!-- Hero: full-bleed still with a play affordance (video to be supplied) -->
   <section class="hero hero--home">
-    <img class="hero__media" src="assets/img/hero-home.jpg" width="2160" height="846"
+    <img class="hero__media" src="assets/img/hero-home.jpg" width="1440" height="686"
          alt="Aerial view of a large bejulo solar photovoltaic plant"
          data-i18n-attr="alt:home.hero.alt" fetchpriority="high">
     <span class="hero__scrim"></span>
     <button class="hero__play" type="button" id="hero-play">
       <span class="sr-only" data-i18n="home.play">Play the bejulo company video</span>
     </button>
+
+    <!-- Client request: a cue that scrolls straight down to the intro/CTA.
+         A plain anchor, so it works without JS; the smooth easing comes from
+         scroll-behavior in CSS and is dropped for prefers-reduced-motion. -->
+    <a class="scroll-cue" href="#home-intro" data-i18n-attr="aria-label:home.scrollcue">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M5 9l7 7 7-7" fill="none" stroke="currentColor"
+              stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
   </section>
 
-  <section class="section">
+  <section class="section" id="home-intro">
     <div class="container stack">
       <h1 class="h1" data-i18n-html="home.h1">PV and BESS&nbsp;–<br>Reliable. Sustainable. Profitable.</h1>
 

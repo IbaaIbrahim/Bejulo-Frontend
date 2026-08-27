@@ -104,16 +104,11 @@ polygons from `assets/data/world.geojson` (Natural Earth, public domain,
 838 KB simplified to 163 KB). The page therefore makes no third-party requests
 at all, which is a bonus for GDPR.
 
-**Interaction is split.** The world map pans but does not zoom, keeping the
-fixed scale of the artwork; the Europe inset both pans and zooms, so the
-cluster of projects there can be inspected. The inset is fenced in — you cannot
-zoom out past its initial framing, which always contains all five European
-pins, and panning is bounded to the surrounding region. Zoom controls sit
-top-right, the only corner of the inset no pin occupies.
-
-Panning is disabled on coarse-pointer (touch) devices: the map is full-bleed on
-phones, and a drag-to-pan map there swallows the swipe used to scroll the page.
-Flip `DISABLE_PAN_ON_TOUCH` in `map.js` to change that.
+**Both maps are static.** No panning, no zooming, no keyboard control — they
+read as artwork, and only the pins are interactive. Panning on the world map
+and zooming on the Europe inset were both trialled in between and switched off
+again at the client's request (2026-08-26). The inset's framing always contains
+all five European pins.
 
 **Layout.** The inset overhangs the top edge of the world map — 70px on
 desktop, 90px below 900px — with a matching top margin on the panel, so it
@@ -216,6 +211,40 @@ stylesheet that expands accordions. All images carry intrinsic `width`/`height`
 to avoid layout shift; below-fold images are lazy-loaded and heroes use
 `fetchpriority="high"`.
 
+## Hero images — how the cropping works
+
+Heroes are full-bleed, so the photo always has to `object-fit: cover` its box,
+and whatever does not fit is cropped. Two things control that:
+
+**Height scales with the viewport.** `.hero` uses
+`clamp(380px, 50.28vw, 880px)` (and the `--home` / `--services` variants use
+their own vw figures). A *fixed* height is the trap: the wider the screen, the
+taller the covered image has to be and the more is cropped away — at 1920 the
+old fixed 724px was discarding 556px of the team photo and cutting off their
+heads. The vw values are the Figma heights ÷ 1440, so at the artboard width
+they still resolve to exactly 724 / 686 / 636px. The cap stops the hero eating
+a whole ultrawide screen.
+
+**The crop has a focal point.** `.hero__media` uses
+`object-position: center var(--hero-focus, 50%)`. The 50% default centres the
+crop, which is fine for a landscape but wrong for a group shot — it keeps
+torsos and loses faces. `.hero--about` sets `--hero-focus: 30%` to bias
+upwards. Add a modifier and set the variable for any other hero whose subject
+is off-centre.
+
+Because the navbar is transparent and overlays the hero, treat the top ~122px
+as a no-critical-content zone when choosing a focal point: biasing too far up
+puts faces behind the menu.
+
+If a future photo cannot be made to work at both phone and ultrawide with one
+crop, the next step is art direction — a `<picture>` element with a separately
+cropped file per breakpoint.
+
+**Intrinsic `width`/`height` attributes on every `<img>` must match the real
+file**, or the browser reserves the wrong space and the page shifts on load.
+They were re-synced on 2026-08-26 after the photos were replaced with
+full-resolution originals.
+
 ## Client review — 2026-08-24
 
 Every point from the review, and what was done.
@@ -237,3 +266,31 @@ Every point from the review, and what was done.
 
 Verified in both languages at 1440, 1140, 1139, 768 and 375 px: no horizontal
 overflow, no console errors, and all 36 asset references resolve.
+
+## Client review — 2026-08-26
+
+| # | Request | Status |
+|---|---|---|
+| 1 | About: hero image partly covering the heading | **Fixed.** `assets/css/aboutus.css` was overriding `.hero` to `height:auto; max-height:100vh` and `.hero__media` to `position:relative`. The in-flow image kept its natural height while the hero was clamped to the viewport, so on a short viewport it spilled over the heading. That file is removed and the hero is back to the Figma 724px with `object-fit: cover`. Copy kept at `docs/superseded/aboutus.css.removed` and in git history. |
+| 2 | Projects: disable panning on both maps and zoom on the Europe map | **Done** — both maps are fully static again. Kept as Leaflet vector maps, *not* swapped for static images. |
+| 3 | Homepage: button that smoothly scrolls to the CTA section | **Done** — orange disc with a chevron, lower-right of the hero and straddling its edge, as in the mockup. It is a plain `#home-intro` anchor so it works without JS; the easing comes from `scroll-behavior: smooth`, which is dropped under `prefers-reduced-motion`. |
+
+**Also fixed while in there:** below 1140px the mobile block forced
+`position: relative` on *every* header. That outranks `.site-header--overlay`,
+so on hero pages the bar dropped out of the image and the **white logo landed on
+the white page background — invisible**. Overlay headers now stay overlaying at
+every width.
+
+### 2026-08-26 — hero cropping on large screens
+
+The team photo lost its heads on wide monitors. Two causes, both fixed:
+
+1. The hero height was pinned at 724px while the image had to cover an
+   ever-wider box, so the crop grew with the viewport. Heights are now fluid
+   (see *Hero images* above) and still hit the Figma values at 1440.
+2. `object-fit: cover` crops from the centre by default. The About hero now
+   biases the crop upwards via `--hero-focus`.
+
+Also re-synced every `<img>`'s `width`/`height` to the real file dimensions —
+the photos had been replaced with full-resolution originals, leaving 19 images
+across 8 pages declaring the wrong intrinsic size.

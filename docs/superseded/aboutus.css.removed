@@ -1,6 +1,11 @@
-.hero--about {
+.hero {
+  position: relative;
+  max-height: 100vh;
   height: auto;
-  /* max-height: 100vh; */
+  background: #2b2f36 center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* .hero--home {
@@ -16,6 +21,5 @@
   inset: 0;
   max-width: 100%;
   height: auto;
-  /* max-height: 100vh; */
   object-fit: cover;
 }

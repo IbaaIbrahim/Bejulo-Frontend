@@ -86,6 +86,7 @@ window.BEJULO_CONTENT = {
     /* --- home --- */
     'home.hero.alt': 'Aerial view of a large bejulo solar photovoltaic plant',
     'home.play': 'Play the bejulo company video',
+    'home.scrollcue': 'Scroll down to the introduction',
     'home.h1': 'PV and BESS –<br>Reliable. Sustainable. Profitable.',
     'home.lede': '<span class="be">be</span><span class="be-lead"> ready.</span> The future is renewable. As a trusted partner for photovoltaic and battery energy storage projects, we develop sustainable energy solutions with long-term commercial benefits. Together with landowners and investors, we create lasting value – for local businesses, communities and the environment. Ready for the future?  We’re here to help you make it happen.',
 
@@ -178,7 +179,7 @@ window.BEJULO_CONTENT = {
     'projects.lede': '<span class="be">be</span><span class="be-lead"> international.</span> We operate internationally – and we’re proud of it. Today, bejulo projects can be found across three continents. Since our company was founded, we’ve successfully completed more than 65 PV projects with a total installed capacity of around 700 MWp. Numerous additional projects are currently under construction, with further developments already in the pipeline. Wherever solar energy creates opportunities, we deliver sustainable solutions that cross borders and exceed expectations – bejulo follows the sun!',
     'projects.map.label': 'Map of bejulo project locations worldwide',
     'projects.map.insetLabel': 'Detail map of bejulo project locations in Europe',
-    'projects.map.hint': 'Hover a marker for project details · zoom and drag the Europe detail map',
+    'projects.map.hint': 'Hover a marker for project details',
     'projects.map.note': 'The orange markers highlight a selection of our flagship projects, showcasing the breadth of our international activities.',
     'projects.customers.h2': 'Satisfied customers are our greatest success',
     'projects.customers.body': '<span class="be">be</span><span class="be-lead"> happy.</span> We work with customers across a broad range of industries, with many placing their trust in our expertise and commercial performance for years. They choose bejulo because we combine technical expertise, commercial efficiency and a fully integrated approach to project delivery. Built on quality, transparency and fairness, our partnerships are designed to create lasting value for everyone involved.',
@@ -273,6 +274,7 @@ window.BEJULO_CONTENT = {
     /* --- home --- */
     'home.hero.alt': 'Luftaufnahme einer großen Photovoltaikanlage von bejulo',
     'home.play': 'bejulo-Unternehmensvideo abspielen',
+    'home.scrollcue': 'Nach unten zur Einführung scrollen',
     /* client review 2026-08-24 §1a — replaces the Figma "Photovoltaik und BESS …" */
     'home.h1': 'PV und BESS – zuverlässig, nachhaltig, wirtschaftlich',
     'home.lede': '<span class="be">be</span><span class="be-lead"> ready.</span> Die Zukunft gehört den erneuerbaren Energien. Als erfahrener Partner für PV- und Batteriespeicherprojekte entwickeln wir nachhaltige Energielösungen mit wirtschaftlichem Mehrwert. Gemeinsam mit Flächeneigentümern und Investoren schaffen wir langfristige Werte – ökologisch und ökonomisch. Bereit für die Zukunft?<br>Mit uns haben Sie den richtigen Partner an Ihrer Seite.',
@@ -369,7 +371,7 @@ window.BEJULO_CONTENT = {
     'projects.lede': '<span class="be">be</span><span class="be-lead"> international.</span> Wir sind international tätig – und darauf sind wir stolz: bejulo-Projekte sind mittlerweile auf drei Kontinenten vertreten. Seit unserer Gründung haben wir mehr als 65 Photovoltaikprojekte mit einer Gesamtleistung von rund 700 Megawattpeak erfolgreich umgesetzt. Weitere Projekte befinden sich derzeit im Bau, zusätzliche Vorhaben sind bereits in der Planung. Nachhaltige Energielösungen über Ländergrenzen hinweg realisieren und Kunden begeistern - wo Sonne wartet, wird bejulo sein.',
     'projects.map.label': 'Karte der bejulo-Projektstandorte weltweit',
     'projects.map.insetLabel': 'Detailkarte der bejulo-Projektstandorte in Europa',
-    'projects.map.hint': 'Marker ansteuern für Projektdetails · Europakarte zoomen und verschieben',
+    'projects.map.hint': 'Marker ansteuern für Projektdetails',
     'projects.map.note': 'Die orange markierten Standorte zeigen eine Auswahl unserer Großprojekte. Sie bilden einen Auszug unserer internationalen Projektaktivitäten.',
     'projects.customers.h2': 'Zufriedene Kunden sind unser größter Erfolg',
     'projects.customers.body': '<span class="be">be</span><span class="be-lead"> happy.</span> Unsere Kunden stammen aus den unterschiedlichsten Branchen und vertrauen zum Teil bereits seit vielen Jahren auf unsere Leistungsfähigkeit und Wirtschaftlichkeit. Dabei schätzen sie uns als zuverlässigen und kompetenten Komplettdienstleister, der Projekte ganzheitlich und effizient umsetzt. Qualität, Transparenz und Fairness bilden die Grundlage für unseren nachhaltigen gemeinsamen Erfolg.',

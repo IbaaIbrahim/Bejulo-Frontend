@@ -107,56 +107,24 @@
     return v || fallback;
   }
 
-  /* Interaction split:
-       world  — pan only (no zoom), so it keeps the fixed scale of the artwork
-       europe — pan and zoom, so the cluster of projects can be inspected
-     Zoom on the world map stays off per client review §3b. */
-  /* On a touch device a drag-to-pan map swallows the swipe you were using to
-     scroll the page — and here the map is full-bleed on phones, so there is no
-     way past it. Panning is therefore off for coarse pointers; zoom buttons and
-     pinch-zoom still work. Set this to false to pan on touch as well. */
-  var DISABLE_PAN_ON_TOUCH = true;
-
-  function coarsePointer() {
-    return window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
-  }
-
-  function makeMap(el, opts) {
-    opts = opts || {};
-    var pan = !!opts.pan && !(DISABLE_PAN_ON_TOUCH && coarsePointer());
-    var zoom = !!opts.zoom;
-
-    var map = L.map(el, {
-      // added below so it can sit top-right — the one corner of the inset that
-      // no project pin occupies
+  /* Both maps are static artwork: no panning, no zooming, no keyboard control.
+     Only the pins are interactive. (Client review 2026-08-24 §3b, reconfirmed
+     2026-08-26 — panning on the world map and zooming on the Europe inset were
+     both tried in between and have been switched off again.) */
+  function makeMap(el) {
+    return L.map(el, {
       zoomControl: false,
       attributionControl: false,
-      // the wheel is handled below so the map never hijacks page scrolling
       scrollWheelZoom: false,
-      doubleClickZoom: zoom,
-      touchZoom: zoom,
+      doubleClickZoom: false,
+      touchZoom: false,
       boxZoom: false,
-      dragging: pan,
-      keyboard: pan || zoom,
+      dragging: false,
+      keyboard: false,
+      tap: false,
       zoomSnap: 0,
-      inertia: pan
+      inertia: false
     });
-
-    if (zoom) {
-      L.control.zoom({ position: 'topright' }).addTo(map);
-
-      // Ctrl/Cmd + wheel zooms; a plain wheel scrolls the page as usual.
-      var wheelTimer;
-      el.addEventListener('wheel', function (e) {
-        if (!(e.ctrlKey || e.metaKey)) return;
-        e.preventDefault();
-        map.scrollWheelZoom.enable();
-        clearTimeout(wheelTimer);
-        wheelTimer = setTimeout(function () { map.scrollWheelZoom.disable(); }, 400);
-      }, { passive: false });
-    }
-
-    return map;
   }
 
   function init() {
@@ -165,25 +133,18 @@
     var europeEl = document.getElementById('projects-map-europe');
     if (!panel || !worldEl || typeof L === 'undefined') return;
 
-    var world = makeMap(worldEl, { pan: true, zoom: false });
+    var world = makeMap(worldEl);
     /* Frame the populated world (Antarctica omitted, as in the artwork) and
        refit on resize, so the map always fills its container instead of sitting
        at a fixed zoom that overflows narrow screens. */
     var WORLD_BOUNDS = L.latLngBounds([[-56, -168], [74, 178]]);
     function frameWorld() {
       world.fitBounds(WORLD_BOUNDS, { padding: [0, 0], animate: false });
-      // panning is allowed but only within the world itself
-      world.setMaxBounds(WORLD_BOUNDS.pad(0.08));
     }
     frameWorld();
 
-    /* Once the visitor has moved a map, stop re-framing it on resize so their
-       view is not yanked back. */
-    var userMovedWorld = false, userMovedEurope = false;
-    world.on('dragstart', function () { userMovedWorld = true; });
-    world.on('move', reposition);
     
-    var europe = europeEl ? makeMap(europeEl, { pan: true, zoom: true }) : null;
+    var europe = europeEl ? makeMap(europeEl) : null;
 
     /* --- one shared popup card, outside the inset's clipping context ------- */
     var card = document.createElement('div');
@@ -208,8 +169,6 @@
     function show(p, marker, map) {
       cancelHide();
       openFor = p;
-      activeMarker = marker;
-      activeMap = map;
       var l = lang();
       var years = txt(p.years, l);
       card.innerHTML =
@@ -249,12 +208,6 @@
     card.addEventListener('mouseenter', cancelHide);
     card.addEventListener('mouseleave', scheduleHide);
 
-    /* The maps can now be panned and zoomed, so an open card has to follow its
-       pin rather than staying where it was first placed. */
-    var activeMarker = null, activeMap = null;
-    function reposition() {
-      if (openFor && activeMarker) position(activeMarker, activeMap);
-    }
 
     /* --- markers ---------------------------------------------------------- */
     var icon = L.divIcon({
@@ -300,8 +253,6 @@
           var euro = PROJECTS.filter(function (p) { return p.scope === 'europe'; });
           addPins(europe, euro);
           frameEurope(euro);
-          europe.on('zoomstart dragstart', function () { userMovedEurope = true; });
-          europe.on('move zoom', reposition);
         }
       })
       .catch(function (err) {
@@ -322,12 +273,6 @@
         animate: false
       });
 
-      /* The inset is explorable, so fence it in: you cannot zoom out past the
-         framing above, and panning is limited to the surrounding region so the
-         box never fills with empty ocean. */
-      europe.setMinZoom(europe.getZoom());
-      europe.setMaxZoom(europe.getZoom() + 5);
-      europe.setMaxBounds(bounds.pad(1.1));
     }
 
     /* --- language ---------------------------------------------------------- */
@@ -348,12 +293,10 @@
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function () {
         world.invalidateSize();
-        if (!userMovedWorld) frameWorld();
+        frameWorld();
         if (europe) {
           europe.invalidateSize();
-          if (!userMovedEurope) {
-            frameEurope(PROJECTS.filter(function (p) { return p.scope === 'europe'; }));
-          }
+          frameEurope(PROJECTS.filter(function (p) { return p.scope === 'europe'; }));
         }
         hide();
       }, 150);

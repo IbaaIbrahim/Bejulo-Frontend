@@ -95,6 +95,13 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -560,7 +567,12 @@ body[data-header='overlay'] #site-header {
    ========================================================================== */
 .hero {
   position: relative;
-  height: 724px;
+  /* A fixed height means the wider the screen, the more of the photo gets
+     cropped away — on an ultrawide monitor that ate the team's heads. Scaling
+     with viewport width keeps the crop roughly constant. The vw figures are the
+     Figma heights divided by 1440, so at the 1440 artboard these still resolve
+     to exactly 724 / 686 / 636px. */
+  height: clamp(380px, 50.28vw, 880px);
   background: #2b2f36 center / cover no-repeat;
   display: flex;
   align-items: center;
@@ -568,11 +580,11 @@ body[data-header='overlay'] #site-header {
 }
 
 .hero--home {
-  height: 686px;
+  height: clamp(380px, 47.64vw, 834px);
 }
 
 .hero--services {
-  height: 636px;
+  height: clamp(380px, 44.17vw, 773px);
 }
 
 .hero__media {
@@ -581,6 +593,16 @@ body[data-header='overlay'] #site-header {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Which part of the photo survives the crop. 50% (the default) centres it,
+     which is wrong for a group shot — it keeps torsos and loses faces. Pages
+     set --hero-focus to their subject; see .hero--about below. */
+  object-position: center var(--hero-focus, 50%);
+}
+
+/* The team photo's faces sit in the upper third, and the navbar overlays the
+   top of the hero, so bias the crop upwards without pushing heads under it. */
+.hero--about {
+  --hero-focus: 30%;
 }
 
 .hero__scrim {
@@ -621,6 +643,34 @@ body[data-header='overlay'] #site-header {
 
 .hero__play .sr-only {
   position: absolute;
+}
+
+/* Scroll cue: orange disc on the lower-right of the hero, straddling its edge,
+   that jumps to the intro section below (client request 2026-08-26). */
+.scroll-cue {
+  position: absolute;
+  right: 8%;
+  bottom: -28px;
+  z-index: 3;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .22);
+  transition: background-color .15s ease, transform .15s ease;
+}
+
+.scroll-cue svg {
+  width: 26px;
+  height: 26px;
+}
+
+.scroll-cue:hover {
+  background: var(--orange-hover);
+  transform: translateY(2px);
 }
 
 .sr-only {
@@ -1175,15 +1225,7 @@ body[data-header='overlay'] #site-header {
   margin: 8px !important;
 }
 
-/* the inset is draggable — say so on hover */
-.map-inset #projects-map-europe {
-  cursor: grab;
-}
 
-.map-inset .leaflet-dragging #projects-map-europe,
-.map-inset #projects-map-europe.leaflet-dragging {
-  cursor: grabbing;
-}
 
 .leaflet-control-zoom a {
   width: 28px;
@@ -1386,12 +1428,6 @@ body[data-header='overlay'] #site-header {
     font-size: 15px;
   }
 
-  .hero,
-  .hero--home,
-  .hero--services {
-    height: 520px;
-  }
-
   .card,
   .card--media-left {
     grid-template-columns: 1fr;
@@ -1431,9 +1467,9 @@ body[data-header='overlay'] #site-header {
 }
 
 @media (max-width: 1139px) {
-  .site-header {
-    position: relative;
-  }
+  /* NB: do not force position:relative here. It outranks
+     .site-header--overlay, drops the bar out of the hero, and leaves the white
+     logo sitting on the white page background — invisible. */
 
   .nav-toggle {
     display: inline-flex;
@@ -1525,15 +1561,21 @@ body[data-header='overlay'] #site-header {
     padding-block: 40px;
   }
 
-  .hero,
-  .hero--home,
-  .hero--services {
-    height: 380px;
-  }
-
   .hero__play {
     width: 96px;
     height: 96px;
+  }
+
+  .scroll-cue {
+    right: 6%;
+    bottom: -22px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .scroll-cue svg {
+    width: 21px;
+    height: 21px;
   }
 
   .hero__play::before {
