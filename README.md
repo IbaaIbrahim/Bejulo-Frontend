@@ -118,7 +118,7 @@ stays clear of the Iran pin (~46px of headroom at the tightest width, tablet).
 `.map-panel` must keep `overflow: visible` or the overhang is clipped.
 
 Seven pins: five on the Europe inset (Ireland, United Kingdom, Netherlands,
-Germany, Italy) plus Iran and South Africa on the world map. Markers are the
+Germany, Hungary) plus Iran and South Africa on the world map. Markers are the
 orange outline pin from the design, drawn as inline SVG. Hovering a pin opens
 its popup, which stays open while the pointer is over the pin *or* the popup so
 the **Read more…** link inside stays clickable. Keyboard focus opens it too.
@@ -128,14 +128,77 @@ opened inside it would be cut in half. A single shared card lives in
 `.map-panel` and `map.js` positions it over whichever pin is active, flipping
 below the pin when there is no room above and following the pin as a map moves.
 
+Hungary replaced Italy on 2026-09-08 at the client's request. Its years
+(2018, 2019) are the ones the client's own International timeline already
+carries; **Italy still appears on that timeline** for 2020 / 2024 / 2026 and
+has been left there, because the request named the Projects page only.
+
 > **Project data is provisional.** Coordinates are country/region centroids
 > rather than real sites, and the descriptions were written for this build.
 > Replace the `PROJECTS` array in `map.js` with the real list. Iran carries no
 > year yet — it is new in this review and not on the International timeline.
+> Hungary's description is placeholder copy too.
 >
 > **Detail pages are a separate change request.** `project.html` is a
 > placeholder that echoes the project name from `?id=` so the routing can be
 > reviewed; the client has confirmed the design is still pending.
+
+## Home hero video
+
+`index.html` — a muted, looping, autoplaying background video replaced the
+still-plus-play-button hero on 2026-09-08. `muted` **and** `playsinline` are
+both required: without either, iOS Safari and Chrome refuse to autoplay and the
+visitor sees only the poster. The source has no audio track at all, so there is
+nothing to unmute and no control is offered.
+
+| File                                                   | What it is                                                    |
+| ------------------------------------------------------ | ------------------------------------------------------------- |
+| `assets/video/hero-home.mp4`                         | what ships — 1600×900, H.264, CRF 33,`+faststart`, 6.1 MB |
+| `assets/img/hero-home-poster.jpg`                    | first frame of that encode, 206 KB                            |
+| `docs/source-assets/bejulo-hero-bg-video-master.mp4` | the client's original — 1920×1080, 25 MB, 6.9 Mbps          |
+
+The master is kept for re-encoding but never served: `docs/` is in
+`.dockerignore` and is deleted from the web root by the `Dockerfile`, so it
+cannot reach production by accident. 26 MB of 1080p at 6.9 Mbps is far more
+than a scrimmed background loop needs; 1600×900 at CRF 33 holds the fine solar
+panel grid without visible blocking at a quarter of the weight. VP9/WebM was
+tried and came out *larger* than H.264 on this content at matched quality, so
+there is a single MP4 source.
+
+**The poster is the video's own frame 0**, which is what makes the fallbacks
+invisible. Three paths end on that frame: the video still loading, autoplay
+refused (data saver, low power mode — the `play()` rejection is swallowed on
+purpose), and `prefers-reduced-motion: reduce`, where the inline script pauses
+and seeks back to 0. All three look like the still hero the page used before.
+The poster is `<link rel="preload" as="image" fetchpriority="high">`ed because
+it is the LCP element and `<video>` takes no `fetchpriority` of its own.
+
+`assets/img/hero-home.jpg` (2.3 MB) is the old still hero and is now
+unreferenced. It has been left in place in case the client wants to revert, but
+it ships in the Docker image for nothing — delete it once the video is signed
+off.
+
+## Footer ISO 9001 badge
+
+`layout.js` renders a certificate badge into the shared footer, so it appears on
+every page. It links to the ISO 9001:2015 certificate **in the language being
+read** — the `href` is a `content.js` value (`footer.iso.href`) applied through
+`data-i18n-attr`, so the EN/DE switch swaps the PDF along with everything else,
+live and without a reload. The hard-coded `href` in the markup is the English
+PDF, which is what a no-JS reader gets.
+
+    assets/certificates/bejulo-iso-9001-de.pdf
+    assets/certificates/bejulo-iso-9001-en.pdf
+
+Two details worth keeping:
+
+- **It sits on the left, beside the copyright**, not at the far right. The home
+  page's `.scroll-cue` is fixed to the bottom-right corner, and a right-aligned
+  badge collides with it at every width below ~1330 px.
+- **It is drawn on a white chip.** The supplied artwork is an opaque
+  white-background PNG, so on the grey (`--footer-bg`) bar it would otherwise
+  read as a stray white rectangle. `.site-footer__cert` gives it padding, a
+  radius and a deliberate white ground.
 
 ## Timeline
 
@@ -175,8 +238,16 @@ every page reads identically, which is what was asked for.
 
 ## Still needed from bejulo
 
-- **Hero video** — the play button on the home page has no asset.
+- **Project detail page copy** — the client's text was due 2026-09-08 and has
+  not arrived. `project.html` stays a placeholder until it does.
 - **Project data** for the map (see above).
+- **Hungary vs Italy on the International timeline** — Italy was removed from
+  the Projects map on 2026-09-08 but still runs on the timeline (2020 / 2024 /
+  2026). Confirm whether it should come off there too.
+- **English country names** — the 2026-09-08 rename was specified "for the
+  German version" only, so English still reads *Kingdom of the Netherlands* and
+  *United Kingdom* while German now reads *Niederlande* and *Großbritannien*.
+  Confirm whether English should follow.
 - **Job descriptions** — Figma gives titles only. The design notes ask for job
   ads to be easy to update; consider driving the list from JSON or a CMS.
 - **International contact page content** — flagged "grundsätzlich klären" in
@@ -209,7 +280,9 @@ Skip link, `aria-current` on the active nav item, `aria-expanded` /
 panels, focus-visible outlines, `prefers-reduced-motion` honoured, and a print
 stylesheet that expands accordions. All images carry intrinsic `width`/`height`
 to avoid layout shift; below-fold images are lazy-loaded and heroes use
-`fetchpriority="high"`.
+`fetchpriority="high"` (the home hero is a `<video>`, so the hint moves to a
+`<link rel="preload">` for its poster). The home hero video holds its poster
+frame instead of looping under `prefers-reduced-motion: reduce`.
 
 ## Hero images — how the cropping works
 
@@ -249,31 +322,31 @@ full-resolution originals.
 
 Every point from the review, and what was done.
 
-| # | Request | Status |
-|---|---|---|
-| 1 general | Use the client's EN/DE text verbatim; DE was incorrect | **Done** — both languages re-transcribed from the supplied Figma files (`docs/client-text/`). The previous German was AI-drafted and has been discarded. |
-| 1a | DE H1 → "PV und BESS – zuverlässig, nachhaltig, wirtschaftlich" | **Done.** Note this overrides the DE Figma, which reads "Photovoltaik und BESS – …"; the review note was taken as authoritative. |
-| 1b | DE button "International" → "Unsere internationale Kompetenz entdecken" | **Done** (home page). The Projects page button is still labelled "International" per the DE Figma — say the word if that one should change too. |
-| 2a | Services "PV and BESS project development" layout wrong | **Done** — the "be in touch" paragraph now spans the full card width below the photo, as in Figma, instead of being stacked in the text column. |
-| 2b | Re-layout the CTA per screenshot; split copy into two sentences | **Done.** Chevron now sits beside the copy (66px mark, 32px gap) with the button below, left-aligned to the chevron. Copy is two lines, second bold. The screenshot also supplied **new German wording**, which supersedes the DE Figma text for this section — see the note below. |
-| 3a | 60px between the button and "Satisfied customers" | **Done** — measured at exactly 60px, and held at every breakpoint. |
-| 3b | World map behind, Europe map in front | **Done.** |
-| 3b | 5 Europe pins + Iran + South Africa, remove the rest | **Done** — 7 pins total (was 22). |
-| 3b | Disable zoom completely | **Superseded.** Implemented as asked, then reversed on request: the world map now pans (no zoom) and the Europe inset pans *and* zooms. Worth re-confirming with the client, since it contradicts the written note. |
-| 3b | "Read more…" link in each popup → detail page | **Done** — links to `project.html?id=…`. That page is a placeholder; detail design is the pending change request. |
-| 4 | Remove Downloads from the menu | **Done.** |
-| 4 | Remove the search icon | **Done.** |
+| #         | Request                                                                  | Status                                                                                                                                                                                                                                                                                           |
+| --------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1 general | Use the client's EN/DE text verbatim; DE was incorrect                   | **Done** — both languages re-transcribed from the supplied Figma files (`docs/client-text/`). The previous German was AI-drafted and has been discarded.                                                                                                                                |
+| 1a        | DE H1 → "PV und BESS – zuverlässig, nachhaltig, wirtschaftlich"       | **Done.** Note this overrides the DE Figma, which reads "Photovoltaik und BESS – …"; the review note was taken as authoritative.                                                                                                                                                         |
+| 1b        | DE button "International" → "Unsere internationale Kompetenz entdecken" | **Done** (home page). The Projects page button is still labelled "International" per the DE Figma — say the word if that one should change too.                                                                                                                                           |
+| 2a        | Services "PV and BESS project development" layout wrong                  | **Done** — the "be in touch" paragraph now spans the full card width below the photo, as in Figma, instead of being stacked in the text column.                                                                                                                                           |
+| 2b        | Re-layout the CTA per screenshot; split copy into two sentences          | **Done.** Chevron now sits beside the copy (66px mark, 32px gap) with the button below, left-aligned to the chevron. Copy is two lines, second bold. The screenshot also supplied **new German wording**, which supersedes the DE Figma text for this section — see the note below. |
+| 3a        | 60px between the button and "Satisfied customers"                        | **Done** — measured at exactly 60px, and held at every breakpoint.                                                                                                                                                                                                                        |
+| 3b        | World map behind, Europe map in front                                    | **Done.**                                                                                                                                                                                                                                                                                  |
+| 3b        | 5 Europe pins + Iran + South Africa, remove the rest                     | **Done** — 7 pins total (was 22).                                                                                                                                                                                                                                                         |
+| 3b        | Disable zoom completely                                                  | **Superseded.** Implemented as asked, then reversed on request: the world map now pans (no zoom) and the Europe inset pans *and* zooms. Worth re-confirming with the client, since it contradicts the written note.                                                                      |
+| 3b        | "Read more…" link in each popup → detail page                          | **Done** — links to `project.html?id=…`. That page is a placeholder; detail design is the pending change request.                                                                                                                                                                      |
+| 4         | Remove Downloads from the menu                                           | **Done.**                                                                                                                                                                                                                                                                                  |
+| 4         | Remove the search icon                                                   | **Done.**                                                                                                                                                                                                                                                                                  |
 
 Verified in both languages at 1440, 1140, 1139, 768 and 375 px: no horizontal
 overflow, no console errors, and all 36 asset references resolve.
 
 ## Client review — 2026-08-26
 
-| # | Request | Status |
-|---|---|---|
-| 1 | About: hero image partly covering the heading | **Fixed.** `assets/css/aboutus.css` was overriding `.hero` to `height:auto; max-height:100vh` and `.hero__media` to `position:relative`. The in-flow image kept its natural height while the hero was clamped to the viewport, so on a short viewport it spilled over the heading. That file is removed and the hero is back to the Figma 724px with `object-fit: cover`. Copy kept at `docs/superseded/aboutus.css.removed` and in git history. |
-| 2 | Projects: disable panning on both maps and zoom on the Europe map | **Done** — both maps are fully static again. Kept as Leaflet vector maps, *not* swapped for static images. |
-| 3 | Homepage: button that smoothly scrolls to the CTA section | **Done** — orange disc with a chevron, lower-right of the hero and straddling its edge, as in the mockup. It is a plain `#home-intro` anchor so it works without JS; the easing comes from `scroll-behavior: smooth`, which is dropped under `prefers-reduced-motion`. |
+| # | Request                                                           | Status                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| - | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1 | About: hero image partly covering the heading                     | **Fixed.** `assets/css/aboutus.css` was overriding `.hero` to `height:auto; max-height:100vh` and `.hero__media` to `position:relative`. The in-flow image kept its natural height while the hero was clamped to the viewport, so on a short viewport it spilled over the heading. That file is removed and the hero is back to the Figma 724px with `object-fit: cover`. Copy kept at `docs/superseded/aboutus.css.removed` and in git history. |
+| 2 | Projects: disable panning on both maps and zoom on the Europe map | **Done** — both maps are fully static again. Kept as Leaflet vector maps, *not* swapped for static images.                                                                                                                                                                                                                                                                                                                                                  |
+| 3 | Homepage: button that smoothly scrolls to the CTA section         | **Done**, then extended on 2026-08-27 into a fixed floating control — see below.                                                                                                                                                                                                                                                                                                                                                                              |
 
 **Also fixed while in there:** below 1140px the mobile block forced
 `position: relative` on *every* header. That outranks `.site-header--overlay`,
@@ -294,3 +367,73 @@ The team photo lost its heads on wide monitors. Two causes, both fixed:
 Also re-synced every `<img>`'s `width`/`height` to the real file dimensions —
 the photos had been replaced with full-resolution originals, leaving 19 images
 across 8 pages declaring the wrong intrinsic size.
+
+### 2026-08-27 — floating scroll cue
+
+The homepage cue is now pinned to the bottom-right of the **viewport**
+(`position: fixed`) rather than to the hero's edge, and it does two jobs:
+
+| Scroll position              | Arrow | Target          | Label                                                                     |
+| ---------------------------- | ----- | --------------- | ------------------------------------------------------------------------- |
+| above 60% of the hero height | down  | `#home-intro` | "Scroll down to the introduction" / "Nach unten zur Einführung scrollen" |
+| below that                   | up    | top of page     | "Back to top" / "Nach oben"                                               |
+
+One SVG serves both — `.scroll-cue.is-up svg` just rotates it 180°. It stays an
+`<a href="#home-intro">`, so without JS it still works as a jump-to-intro link;
+the up state calls `preventDefault()` and `scrollTo({top: 0})` so no `#top` hash
+is pushed into the URL. `aria-label` (and its `data-i18n-attr` key) swap with
+the state, so a language switch mid-page relabels the correct one.
+
+**No `requestAnimationFrame` throttle in the scroll handler, deliberately.** The
+first version used the usual rAF latch (`if (ticking) return`). If rAF never
+fires — a background tab, or any non-compositing context — the pending flag
+stays set and the button silently stops updating for good. The handler is a
+single comparison against a cached threshold, so the throttle bought nothing;
+the threshold is re-measured on resize so the handler never forces a layout.
+
+## Client review — 2026-09-08
+
+1. **Home hero** — the supplied drone footage now runs as an autoplaying muted
+   background video and the play button is gone. See *Home hero video* above
+   for the encode, the poster and the three fallback paths.
+2. **Footer** — ISO 9001:2015 badge added to the shared footer, linked to the
+   DE or EN certificate depending on the language being read. See *Footer ISO
+   9001 badge* above.
+3. **Projects map — German country names.**
+
+   |         | before (DE)                 | after (DE)      |
+   | ------- | --------------------------- | --------------- |
+   | `nld` | Königreich der Niederlande | Niederlande     |
+   | `gbr` | Vereinigtes Königreich     | Großbritannien |
+
+   Italy came off the map and Hungary went on, with the years the client's own
+   timeline already gives Hungary (2018, 2019).
+
+   Two judgement calls, both flagged under *Still needed from bejulo*:
+
+   - The renames were applied **site-wide**, not only on the Projects page. The
+     same two countries appear on the International timeline, and one German
+     name per country across the site is what the request implies; a map
+     reading *Niederlande* beside a timeline reading *Königreich der
+     Niederlande* would just come back in the next review.
+   - Italy was removed **from the map only**. It remains on the International
+     timeline for 2020 / 2024 / 2026, which is client-supplied Figma data and
+     outside what the note asked for.
+
+   English is untouched — the note said "for the German version".
+4. **Project detail page copy** — still outstanding; `project.html` remains the
+   placeholder.
+
+### Where the attachments went
+
+Delivered assets were dropped flat into `assets/`; they now live by type.
+
+| Attachment                   | Now at                                                                                                                      |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `bejulo-hero-bg-video.mp4` | `docs/source-assets/bejulo-hero-bg-video-master.mp4` (master, never served) + `assets/video/hero-home.mp4` (web encode) |
+| `certificate DE.pdf`       | `assets/certificates/bejulo-iso-9001-de.pdf`                                                                              |
+| `certificate ENG.pdf`      | `assets/certificates/bejulo-iso-9001-en.pdf`                                                                              |
+| `image.png` (ISO badge)    | `assets/img/iso-9001-certified.png`                                                                                       |
+
+`nginx.conf`'s long-cache `location` block gained `mp4`, `webm` and `pdf` so the
+video and the certificates are cached like every other static asset.

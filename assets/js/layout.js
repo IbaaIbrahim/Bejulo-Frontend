@@ -77,10 +77,28 @@
     '</header>';
 
   /* --- Footer ------------------------------------------------------------ */
+  /* ISO 9001:2015 badge (client review 2026-09-08 §2). The href is translated
+     rather than hard-coded so EN and DE each open their own certificate, and
+     it falls back to the English PDF for a no-JS reader. The artwork is a
+     white-background PNG, so CSS sets it on a white chip — otherwise it lands
+     on the grey footer as a bare white rectangle.
+
+     It goes on the LEFT, beside the copyright, not at the far right: the
+     home page's floating scroll cue is fixed to the bottom-right corner and
+     lands on top of a right-hand badge at any width below ~1330px. */
+  var certHTML =
+    '<a class="site-footer__cert" href="assets/certificates/bejulo-iso-9001-en.pdf" ' +
+      'target="_blank" rel="noopener" ' +
+      'data-i18n-attr="href:footer.iso.href,title:footer.iso.title">' +
+      '<img src="assets/img/iso-9001-certified.png" width="200" height="88" ' +
+        'alt="" data-i18n-attr="alt:footer.iso.alt" loading="lazy" decoding="async">' +
+    '</a>';
+
   var footerHTML =
     '<footer class="site-footer">' +
       '<div class="container site-footer__inner">' +
         '<p class="site-footer__copy" data-i18n="footer.copy"></p>' +
+        certHTML +
         '<nav class="site-footer__nav" data-i18n-attr="aria-label:footer.legalnav">' +
           FOOTER_LINKS.map(function (l) {
             return '<a href="' + l.href + '" data-i18n="' + l.i18n + '"></a>';

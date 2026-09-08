@@ -42,13 +42,15 @@
                  de: 'Unser aktivster Markt – seit 2016 realisieren wir hier jedes Jahr Projekte.' } },
 
     { id: 'united-kingdom', scope: 'europe', lat: 52.65, lng: -1.55,
-      country: { en: 'United Kingdom', de: 'Vereinigtes Königreich' },
+      /* client review 2026-09-08 §3 — DE reads "Großbritannien" */
+      country: { en: 'United Kingdom', de: 'Großbritannien' },
       years:   { en: '2014, 2015, 2016', de: '2014, 2015, 2016' },
       note:    { en: 'Early international expansion, including some of our first utility-scale PV plants.',
                  de: 'Früher Schritt ins Ausland – mit einigen unserer ersten PV-Großanlagen.' } },
 
     { id: 'netherlands', scope: 'europe', lat: 52.20, lng: 5.45,
-      country: { en: 'Kingdom of the Netherlands', de: 'Königreich der Niederlande' },
+      /* client review 2026-09-08 §3 — DE reads "Niederlande" */
+      country: { en: 'Kingdom of the Netherlands', de: 'Niederlande' },
       years:   { en: '2017–2023', de: '2017–2023' },
       note:    { en: 'A long-running portfolio of PV projects delivered across seven consecutive years.',
                  de: 'Ein über sieben Jahre hinweg kontinuierlich gewachsenes PV-Portfolio.' } },
@@ -59,11 +61,15 @@
       note:    { en: 'Head office in Mainz and the base for our development, EPC and O&amp;M teams.',
                  de: 'Hauptsitz in Mainz und Basis unserer Teams für Entwicklung, EPC und O&amp;M.' } },
 
-    { id: 'italy', scope: 'europe', lat: 42.60, lng: 12.60,
-      country: { en: 'Italy', de: 'Italien' },
-      years:   { en: '2020, 2024, 2026', de: '2020, 2024, 2026' },
-      note:    { en: 'Southern European PV projects benefiting from high irradiation levels.',
-                 de: 'Südeuropäische PV-Projekte mit hoher Sonneneinstrahlung.' } },
+    /* client review 2026-09-08 §3 — Italy dropped from the map, Hungary added.
+       The years are the ones the client's own International timeline lists for
+       Hungary (see timeline.js); the note is still placeholder copy. Italy
+       remains on that timeline for 2020 / 2024 / 2026 — flagged for the client. */
+    { id: 'hungary', scope: 'europe', lat: 47.16, lng: 19.50,
+      country: { en: 'Hungary', de: 'Ungarn' },
+      years:   { en: '2018, 2019', de: '2018, 2019' },
+      note:    { en: 'Central European PV projects delivered over two consecutive years.',
+                 de: 'Mitteleuropäische PV-Projekte aus zwei aufeinanderfolgenden Jahren.' } },
 
     { id: 'iran', scope: 'world', lat: 32.40, lng: 53.70,
       country: { en: 'Iran', de: 'Iran' },

@@ -441,6 +441,33 @@ body[data-header='overlay'] #site-header {
   text-decoration: underline;
 }
 
+/* ISO 9001:2015 certificate badge (client review 2026-09-08 §2).
+   The supplied artwork has an opaque white background, so it is framed as a
+   deliberate white chip rather than left to sit on the grey bar as a stray
+   rectangle. Sized by height so the 200×88 source scales without arithmetic
+   and stays clear of the 123px footer. */
+.site-footer__cert {
+  flex: none;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: var(--white);
+  line-height: 0;
+  /* no inline-image descender inside the chip */
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+
+.site-footer__cert img {
+  display: block;
+  height: 48px;
+  width: auto;
+}
+
+.site-footer__cert:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+}
+
 /* ==========================================================================
    Typography
    ========================================================================== */
@@ -587,9 +614,14 @@ body[data-header='overlay'] #site-header {
   height: clamp(380px, 44.17vw, 773px);
 }
 
+/* Shared by the <img> heroes and the <video> hero on Home, so both crop
+   identically. `display: block` matters for the video: as an inline-level
+   replaced element it would otherwise sit on a text baseline and leave a
+   hairline of the .hero background showing along its bottom edge. */
 .hero__media {
   position: absolute;
   inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -610,39 +642,6 @@ body[data-header='overlay'] #site-header {
   inset: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, .38) 0%, rgba(0, 0, 0, .10) 34%, rgba(0, 0, 0, 0) 60%);
   pointer-events: none;
-}
-
-/* Video play affordance — white disc 157px, dark triangle at 46% opacity */
-.hero__play {
-  position: relative;
-  width: 157px;
-  height: 157px;
-  border: 0;
-  border-radius: 50%;
-  background: var(--white);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  transition: transform .18s ease, box-shadow .18s ease;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, .25);
-}
-
-.hero__play:hover {
-  transform: scale(1.05);
-}
-
-.hero__play::before {
-  content: '';
-  width: 0;
-  height: 0;
-  margin-left: 14px;
-  border-left: 58px solid rgba(0, 0, 0, .46);
-  border-top: 42px solid transparent;
-  border-bottom: 42px solid transparent;
-}
-
-.hero__play .sr-only {
-  position: absolute;
 }
 
 /* Floating scroll cue, pinned to the bottom-right of the viewport.
@@ -724,7 +723,7 @@ body[data-header='overlay'] #site-header {
 .card__media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 
 .card__body>*+* {
@@ -1565,13 +1564,12 @@ body[data-header='overlay'] #site-header {
     gap: 20px 28px;
   }
 
-  .section {
-    padding-block: 40px;
+  .site-footer__cert img {
+    height: 40px;
   }
 
-  .hero__play {
-    width: 96px;
-    height: 96px;
+  .section {
+    padding-block: 40px;
   }
 
   .scroll-cue {
@@ -1584,13 +1582,6 @@ body[data-header='overlay'] #site-header {
   .scroll-cue svg {
     width: 21px;
     height: 21px;
-  }
-
-  .hero__play::before {
-    margin-left: 8px;
-    border-left-width: 34px;
-    border-top-width: 25px;
-    border-bottom-width: 25px;
   }
 
   .timeline {
@@ -1704,7 +1695,7 @@ body[data-header='overlay'] #site-header {
 
   .site-header,
   .site-footer,
-  .hero__play {
+  .scroll-cue {
     display: none;
   }
 

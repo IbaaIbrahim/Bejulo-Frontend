@@ -17,14 +17,19 @@
     egy: { en: 'Egypt',                        de: 'Ägypten' },
     jpn: { en: 'Japan',                        de: 'Japan' },
     per: { en: 'Peru',                         de: 'Peru' },
-    gbr: { en: 'United Kingdom',               de: 'Vereinigtes Königreich' },
+    /* client review 2026-09-08 §3 renamed both of these for the German
+       version. The note names the Projects map, but the timeline is the only
+       other place these two countries appear, and one German name per country
+       across the site is what the client is asking for — flagged for
+       confirmation. */
+    gbr: { en: 'United Kingdom',               de: 'Großbritannien' },
     dnk: { en: 'Denmark',                      de: 'Dänemark' },
     nga: { en: 'Nigeria',                      de: 'Nigeria' },
     irl: { en: 'Ireland',                      de: 'Irland' },
     mex: { en: 'Mexico',                       de: 'Mexiko' },
     cyp: { en: 'Cyprus',                       de: 'Zypern' },
     hun: { en: 'Hungary',                      de: 'Ungarn' },
-    nld: { en: 'Kingdom of the Netherlands',   de: 'Königreich der Niederlande' },
+    nld: { en: 'Kingdom of the Netherlands',   de: 'Niederlande' },
     zaf: { en: 'South Africa',                 de: 'Südafrika' },
     ukr: { en: 'Ukraine',                      de: 'Ukraine' },
     bra: { en: 'Brazil',                       de: 'Brasilien' },

@@ -48,6 +48,13 @@ window.BEJULO_CONTENT = {
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms & Conditions',
     'footer.cookies': 'Cookies',
+    /* client review 2026-09-08 §2 — ISO 9001:2015 badge in the footer, linked
+       to the certificate in the language the visitor is reading. The href is a
+       dictionary value rather than markup precisely so the EN/DE switch swaps
+       the PDF along with the rest of the page; see layout.js. */
+    'footer.iso.href': 'assets/certificates/bejulo-iso-9001-en.pdf',
+    'footer.iso.alt': 'ISO 9001:2015 certified company — certificate registration number 260812 11 QM',
+    'footer.iso.title': 'Open our ISO 9001:2015 certificate (PDF)',
 
     /* --- meta --- */
     'meta.title.home': 'bejulo — PV and BESS: Reliable. Sustainable. Profitable.',
@@ -85,7 +92,6 @@ window.BEJULO_CONTENT = {
 
     /* --- home --- */
     'home.hero.alt': 'Aerial view of a large bejulo solar photovoltaic plant',
-    'home.play': 'Play the bejulo company video',
     'home.scrollcue': 'Scroll down to the introduction',
     'home.backtotop': 'Back to top',
     'home.h1': 'PV and BESS –<br>Reliable. Sustainable. Profitable.',
@@ -233,6 +239,10 @@ window.BEJULO_CONTENT = {
     'footer.privacy': 'Datenschutzerklärung',
     'footer.terms': 'AGB',
     'footer.cookies': 'Cookies',
+    /* client review 2026-09-08 §2 — siehe EN */
+    'footer.iso.href': 'assets/certificates/bejulo-iso-9001-de.pdf',
+    'footer.iso.alt': 'Nach ISO 9001:2015 zertifiziertes Unternehmen — Zertifikat-Register-Nr. 260812 11 QM',
+    'footer.iso.title': 'ISO-9001:2015-Zertifikat öffnen (PDF)',
 
     /* --- meta --- */
     'meta.title.home': 'bejulo — PV und BESS: zuverlässig, nachhaltig, wirtschaftlich',
@@ -274,7 +284,6 @@ window.BEJULO_CONTENT = {
 
     /* --- home --- */
     'home.hero.alt': 'Luftaufnahme einer großen Photovoltaikanlage von bejulo',
-    'home.play': 'bejulo-Unternehmensvideo abspielen',
     'home.scrollcue': 'Nach unten zur Einführung scrollen',
     'home.backtotop': 'Nach oben',
     /* client review 2026-08-24 §1a — replaces the Figma "Photovoltaik und BESS …" */

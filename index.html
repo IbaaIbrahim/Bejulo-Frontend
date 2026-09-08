@@ -6,6 +6,9 @@
 <title>bejulo — PV and BESS: Reliable. Sustainable. Profitable.</title>
 <meta name="description" content="bejulo develops, builds and operates turnkey solar PV and battery energy storage projects worldwide — reliable, sustainable and profitable.">
 <link rel="preload" href="assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+<!-- The hero poster is the largest contentful paint. <video> takes no
+     fetchpriority, so the hint that the old hero <img> carried is given here. -->
+<link rel="preload" href="assets/img/hero-home-poster.jpg" as="image" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
@@ -19,15 +22,23 @@
 
 <main id="main">
 
-  <!-- Hero: full-bleed still with a play affordance (video to be supplied) -->
+  <!-- Hero: full-bleed background video, autoplaying and muted, with the play
+       button removed (client request 2026-09-08).
+       · muted + playsinline are what make autoplay legal on iOS and in Chrome;
+         without both, the browser silently refuses and only the poster shows.
+       · the poster is the video's own first frame, so the handover from poster
+         to playback is invisible — and it is what stays on screen if autoplay
+         is blocked or the visitor prefers reduced motion.
+       · the source has no audio track at all, so there is nothing to unmute. -->
   <section class="hero hero--home">
-    <img class="hero__media" src="assets/img/hero-home.jpg" width="1440" height="686"
-         alt="Aerial view of a large bejulo solar photovoltaic plant"
-         data-i18n-attr="alt:home.hero.alt" fetchpriority="high">
+    <video class="hero__media" id="hero-video"
+           autoplay muted loop playsinline preload="auto"
+           poster="assets/img/hero-home-poster.jpg"
+           role="img" aria-label="Aerial view of a large bejulo solar photovoltaic plant"
+           data-i18n-attr="aria-label:home.hero.alt">
+      <source src="assets/video/hero-home.mp4" type="video/mp4">
+    </video>
     <span class="hero__scrim"></span>
-    <button class="hero__play" type="button" id="hero-play">
-      <span class="sr-only" data-i18n="home.play">Play the bejulo company video</span>
-    </button>
 
     <!-- Client request: a floating cue pinned to the bottom-right of the
          viewport. It points down to the intro at the top of the page and flips
@@ -71,13 +82,33 @@
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/layout.js"></script>
 <script>
-  // The hero video asset is not part of the Figma file. Until bejulo supplies
-  // it the play button announces itself rather than failing silently.
-  document.getElementById('hero-play').addEventListener('click', function () {
-    this.setAttribute('title', window.BejuloI18n
-      ? (window.BejuloI18n.get() === 'de' ? 'Video folgt in Kürze' : 'Company video coming soon')
-      : 'Company video coming soon');
-  });
+  /* Hero background video: hold the poster frame for visitors who ask for
+     reduced motion, and follow the setting if it changes mid-visit. The
+     `autoplay` attribute means playback may already have begun by the time
+     this runs, so pausing on the first frame is what stops it — the result is
+     indistinguishable from the still hero the page used before. */
+  (function () {
+    var video = document.getElementById('hero-video');
+    if (!video) return;
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function sync() {
+      if (reduce.matches) {
+        video.pause();
+        video.currentTime = 0;   // back to the poster frame
+      } else {
+        // Autoplay can still be refused (data saver, low power mode). The
+        // rejection is expected, not an error: the poster simply stays.
+        var started = video.play();
+        if (started && started.catch) started.catch(function () {});
+      }
+    }
+
+    sync();
+    if (reduce.addEventListener) reduce.addEventListener('change', sync);
+    else if (reduce.addListener) reduce.addListener(sync);   // Safari < 14
+  })();
 
   /* Floating scroll cue: down-to-intro near the top, back-to-top once the hero
      has gone by. One button, two jobs. */

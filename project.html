@@ -39,12 +39,15 @@
 <script>
   // Show the requested project's name, taken from the ?id= in the popup link.
   (function () {
+    // Keep in step with PROJECTS in assets/js/map.js — these are the ids its
+    // popups link to. (client review 2026-09-08 §3: DE renames, Italy out,
+    // Hungary in.)
     var NAMES = {
       'ireland': { en: 'Ireland', de: 'Irland' },
-      'united-kingdom': { en: 'United Kingdom', de: 'Vereinigtes Königreich' },
-      'netherlands': { en: 'Kingdom of the Netherlands', de: 'Königreich der Niederlande' },
+      'united-kingdom': { en: 'United Kingdom', de: 'Großbritannien' },
+      'netherlands': { en: 'Kingdom of the Netherlands', de: 'Niederlande' },
       'germany': { en: 'Germany', de: 'Deutschland' },
-      'italy': { en: 'Italy', de: 'Italien' },
+      'hungary': { en: 'Hungary', de: 'Ungarn' },
       'iran': { en: 'Iran', de: 'Iran' },
       'south-africa': { en: 'South Africa', de: 'Südafrika' }
     };
