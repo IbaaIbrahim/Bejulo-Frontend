@@ -792,6 +792,80 @@ body[data-header='overlay'] #site-header {
   gap: 48px;
 }
 
+/* ==========================================================================
+   Project detail cards (project-<country>.html)
+   The Services card is the layout template the client asked for, so these
+   only add what a project entry needs on top of it: the figures table, a
+   two-photo media column for the entries that cover two sites, and a card
+   with no photo at all for the one still under construction.
+   ========================================================================== */
+
+/* `.card__media img` is `object-fit: fill` site-wide, which stretches a photo
+   to whatever shape the card row ends up. The project photos are 4:3 and 16:9
+   aerials and the distortion is obvious on them, so they crop instead. Scoped
+   to these pages so the already-signed-off Services cards are left as they are
+   — that page shows the same stretch and is worth raising separately. */
+[data-meta^="project-"] .card__media img {
+  object-fit: cover;
+}
+
+/* Figures table — <dl> of label/value pairs from the client's document.
+   Two columns at desktop so the values line up as they do in the document;
+   one column on narrow screens, where a 2-column grid would leave the longer
+   labels ("Construction time, both projects:") with nowhere to go. */
+.specs {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 2px 24px;
+  margin-top: 16px;
+}
+
+.specs dt {
+  font-weight: 400;
+}
+
+.specs dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Both photos of a two-site entry (Odell + Glebe, Ehyaei + Eslamieh) share
+   the media column, so the pair reads as one project the way the client's
+   document presents it. */
+.card__media--pair {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  overflow: visible;
+  /* A definite height, so a pair takes about as much room as one single-photo
+     card. Left to size itself, two 4:3 photos in a 401px column come to ~615px
+     and the card ends up mostly empty grey beside two lines of figures. */
+  height: 420px;
+  align-self: start;
+}
+
+.card__media--pair img {
+  border-radius: var(--radius);
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+
+/* Ballinaclough has figures but no photo yet — let the text run the full
+   width rather than leaving an empty 401px column. */
+.card--no-media {
+  grid-template-columns: 1fr;
+}
+
+/* Group heading inside a card stack ("Challenging soil conditions"). */
+.card-stack__heading {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  font-weight: 700;
+  margin-bottom: -16px;
+  /* pulls the heading towards the card it introduces, against the 48px gap */
+}
+
 /* Wide card used on the International landing page (text only, panel bg) */
 .panel {
   background: var(--surface-panel);
@@ -1449,6 +1523,13 @@ body[data-header='overlay'] #site-header {
     min-height: 260px;
   }
 
+  /* Stacked, the pair is two photos above the copy — cap them so the card
+     does not open with 520px of imagery before a word of text. */
+  .card__media--pair {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -1532,6 +1613,21 @@ body[data-header='overlay'] #site-header {
 @media (max-width: 900px) {
   .card {
     padding: 28px 24px;
+  }
+
+  /* The longer labels ("Construction time, both projects:") no longer leave
+     room for a value beside them — run label over value instead. */
+  .specs {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .specs dd {
+    margin-bottom: 10px;
+  }
+
+  .specs dd:last-child {
+    margin-bottom: 0;
   }
 
   .panel,

@@ -16,6 +16,7 @@ RUN rm -rf /usr/share/nginx/html/Dockerfile \
            /usr/share/nginx/html/docker-compose*.yml \
            /usr/share/nginx/html/Makefile \
            /usr/share/nginx/html/run.sh \
+           /usr/share/nginx/html/stamp-assets.py \
            /usr/share/nginx/html/kill.sh \
            /usr/share/nginx/html/README.md \
            /usr/share/nginx/html/logs \

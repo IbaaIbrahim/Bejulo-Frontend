@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects in the United Kingdom | bejulo</title>
+<meta name="description" content="Five PV plants with over 50 MWp — Odell, Glebe and Caswell.">
+<link rel="preload" href="assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css?v=b442977e">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/favicon.svg">
+</head>
+<!-- Country project page, reached from the "Read more…" link in a map popup on
+     projects.html. Client review 2026-09-10: services.html is the layout
+     template, so each project is a Services-style card — one photo, alternating
+     sides — carrying the figures from the client's own document.
+     All copy lives in assets/js/content.js under the proj.* keys. -->
+<body data-page="projects" data-meta="project-united-kingdom" data-header="overlay">
+
+<div id="site-header"></div>
+
+<main id="main">
+
+  <section class="hero">
+    <img class="hero__media" src="assets/img/hero-projects.jpg" width="4032" height="1607"
+         alt="Rows of solar modules stretching towards the horizon"
+         data-i18n-attr="alt:proj.hero.alt" fetchpriority="high">
+    <span class="hero__scrim"></span>
+  </section>
+
+  <section class="section">
+    <div class="container stack">
+      <h1 class="h2" data-i18n="proj.uk.h1">United Kingdom</h1>
+
+      <p class="lede" data-i18n="proj.uk.stats">5 PV Plants installed and commissioned, with a total capacity of over 50 MWp.</p>
+
+      <div class="card-stack">
+
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title">
+              <span data-i18n="proj.odellglebe.title">Odell and Glebe</span>
+            </h3>
+            <dl class="specs" data-i18n-html="proj.odellglebe.specs" data-i18n-attr="aria-label:proj.specs.label" aria-label="Project data"><dt>Installed capacity, both projects:</dt><dd>34.4 MWp</dd><dt>Construction time, both projects:</dt><dd>Nov/Dec 2014 – Mar 2015</dd></dl>
+          </div>
+          <!-- One entry, two sites — both photos share the media column. -->
+          <div class="card__media card__media--pair">
+            <img src="assets/img/projects/odell.jpg" width="1600" height="1200" loading="lazy"
+                 alt="Aerial view of the Odell solar park across harvested fields" data-i18n-attr="alt:proj.odellglebe.alt1">
+            <img src="assets/img/projects/glebe.jpg" width="1600" height="1200" loading="lazy"
+                 alt="Aerial view of the Glebe solar park in a patchwork of fields" data-i18n-attr="alt:proj.odellglebe.alt2">
+          </div>
+        </article>
+
+        <article class="card card--media-left">
+          <div class="card__body">
+            <h3 class="card__title">
+              <span data-i18n="proj.caswell.title">Caswell</span>
+            </h3>
+            <dl class="specs" data-i18n-html="proj.caswell.specs" data-i18n-attr="aria-label:proj.specs.label" aria-label="Project data"><dt>Installed capacity:</dt><dd>5.9 MWp</dd><dt>Construction time:</dt><dd>Jan 2016 – Mar 2016</dd></dl>
+          </div>
+          <div class="card__media">
+            <img src="assets/img/projects/caswell.jpg" width="1600" height="1200" loading="lazy"
+                 alt="Aerial view of the Caswell solar park bordered by hedgerows" data-i18n-attr="alt:proj.caswell.alt">
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="btn-row">
+        <a class="btn" href="projects.html" data-i18n="project.back">Back to all projects</a>
+        <a class="btn" href="contact.html" data-i18n="btn.contact">Get in touch!</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="assets/js/content.js?v=096c3685"></script>
+<script src="assets/js/i18n.js?v=a9a08aae"></script>
+<script src="assets/js/layout.js?v=a9ca7609"></script>
+
+</body>
+</html>

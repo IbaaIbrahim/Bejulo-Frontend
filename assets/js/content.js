@@ -79,6 +79,20 @@ window.BEJULO_CONTENT = {
     'meta.desc.contact': 'bejulo GmbH, Dekan-Laist-Straße 15a, 55129 Mainz, Germany.',
     'meta.title.project': 'Project detail | bejulo',
     'meta.desc.project': 'Detail page for a bejulo photovoltaic project.',
+    'meta.title.project-germany': 'Projects in Germany | bejulo',
+    'meta.desc.project-germany': 'More than 46 PV plants with over 455 MWp — including Kahsel Süd, Merbitz, Gerbstedt and Sennewitz.',
+    'meta.title.project-netherlands': 'Projects in the Netherlands | bejulo',
+    'meta.desc.project-netherlands': 'Six PV plants with over 135 MWp — Almelo, Hall, Heerenveen, Stadskanaal and Mercurius.',
+    'meta.title.project-ireland': 'Projects in Ireland | bejulo',
+    'meta.desc.project-ireland': 'Three PV plants with over 25 MWp — Lehinch, Friarspark and Horsepasture, with Ballinaclough under construction.',
+    'meta.title.project-united-kingdom': 'Projects in the United Kingdom | bejulo',
+    'meta.desc.project-united-kingdom': 'Five PV plants with over 50 MWp — Odell, Glebe and Caswell.',
+    'meta.title.project-hungary': 'Projects in Hungary | bejulo',
+    'meta.desc.project-hungary': 'A 23 MWp PV plant at Bükkabrany, built on a former opencast coal mine.',
+    'meta.title.project-iran': 'Projects in Iran | bejulo',
+    'meta.desc.project-iran': 'Three PV plants with 22 MWp — Ehyaei, Eslamieh and Vian.',
+    'meta.title.project-south-africa': 'Projects in South Africa | bejulo',
+    'meta.desc.project-south-africa': 'Two PV plants with a total capacity of 443 kWp.',
 
     /* --- shared buttons --- */
     'btn.contact': 'Get in touch!',
@@ -183,15 +197,143 @@ window.BEJULO_CONTENT = {
     /* --- projects --- */
     'projects.hero.alt': 'Rows of solar modules stretching towards the horizon',
     'projects.h2': 'Our projects speak for themselves',
-    'projects.lede': '<span class="be">be</span><span class="be-lead"> international.</span> We operate internationally – and we’re proud of it. Today, bejulo projects can be found across three continents. Since our company was founded, we’ve successfully completed more than 65 PV projects with a total installed capacity of around 700 MWp. Numerous additional projects are currently under construction, with further developments already in the pipeline. Wherever solar energy creates opportunities, we deliver sustainable solutions that cross borders and exceed expectations – bejulo follows the sun!',
+    'projects.lede': '<span class="be">be</span><span class="be-lead"> international.</span> We operate internationally – and we’re proud of it. Today, bejulo projects can be found across three continents. Since our company was founded, we’ve successfully completed more than 65 PV projects with a total installed capacity of around 700 MWp. Numerous additional projects are currently under construction, with further developments already in the pipeline.',
     'projects.map.label': 'Map of bejulo project locations worldwide',
     'projects.map.insetLabel': 'Detail map of bejulo project locations in Europe',
     'projects.map.hint': 'Hover a marker for project details',
-    'projects.map.note': 'The orange markers highlight a selection of our flagship projects, showcasing the breadth of our international activities.',
+    'projects.map.note': 'The orange markers show a selection of the projects we have delivered. They are a cross-section of our international project activities.',
     'projects.customers.h2': 'Satisfied customers are our greatest success',
     'projects.customers.body': '<span class="be">be</span><span class="be-lead"> happy.</span> We work with customers across a broad range of industries, with many placing their trust in our expertise and commercial performance for years. They choose bejulo because we combine technical expertise, commercial efficiency and a fully integrated approach to project delivery. Built on quality, transparency and fairness, our partnerships are designed to create lasting value for everyone involved.',
-    'project.pending': 'The detail page for this project is still being designed. Please get in touch if you would like more information in the meantime.',
     'project.back': 'Back to all projects',
+
+    /* --- project detail pages ---------------------------------------------
+       Client copy from "Button Projekte EN & DE" (supplied 2026-09-10),
+       transcribed from the client's own EN column. `.specs` values are <dl>
+       markup and must be consumed with data-i18n-html.
+
+       Normalised against the source, so the two languages read consistently
+       (every change is listed in the hand-over notes):
+         · decimal separator in the EN figures: "38,4 MWp" -> "38.4 MWp"
+         · a space before the unit in both languages: "70MWh" -> "70 MWh"
+       Left ALONE because only bejulo can say which number is right:
+         · Germany  — DE "mehr als 45 Anlagen" vs EN "more than 46 PV Plants"
+         · Odell & Glebe — DE 34,3 MWp vs EN 34,4 MWp
+       ---------------------------------------------------------------------- */
+    'proj.hero.alt': 'Rows of solar modules stretching towards the horizon',
+    'proj.specs.label': 'Project data',
+
+    /* Germany */
+    'proj.germany.h1': 'Germany',
+    'proj.germany.stats': 'More than 46 PV Plants installed and commissioned, with a total capacity of over 455 MWp.',
+    'proj.germany.stats2': 'Further plants currently under construction, in the development phase and in the tendering process.',
+    'proj.germany.intro': 'Successfully commissioned: Three of our major reference projects',
+    'proj.germany.soil': 'Challenging soil conditions',
+
+    'proj.kahsel.title': 'Kahsel Süd, Brandenburg',
+    'proj.kahsel.body': 'With the commissioning of this project, bejulo has achieved a major milestone: the planning, construction and commissioning of our first PV Plant with BESS',
+    'proj.kahsel.specs': '<dt>Installed capacity PV Plant:</dt><dd>38.4 MWp</dd><dt>Installed capacity BESS:</dt><dd>70 MWh</dd><dt>Construction time:</dt><dd>Feb – Jun 2026</dd><dt>Commissioning:</dt><dd>Aug 2026</dd>',
+    'proj.kahsel.alt': 'Aerial view of the battery storage containers being installed alongside the Kahsel Süd solar park',
+
+    'proj.merbitz.title': 'Merbitz, Saxony-Anhalt',
+    'proj.merbitz.body': 'A 71.5 MWp PV plant - planned, constructed, and commissioned by bejulo. Undercrossing of the motorway and railway line: Realised via HDD.',
+    'proj.merbitz.specs': '<dt>Installed capacity:</dt><dd>71.5 MWp</dd><dt>Construction time:</dt><dd>Oct 2025 – Mar 2026</dd><dt>Commissioning:</dt><dd>Apr 2026</dd>',
+    'proj.merbitz.alt': 'Aerial view of the Merbitz solar park between farmland and a village',
+
+    'proj.gerbstedt.title': 'Gerbstedt, Saxony-Anhalt',
+    'proj.gerbstedt.body': 'A 53 MWp PV farm, planned and constructed on rolling terrain.',
+    'proj.gerbstedt.specs': '<dt>Installed capacity:</dt><dd>52.9 MWp</dd><dt>Construction time:</dt><dd>Mar 2026 – Nov 2026</dd>',
+    'proj.gerbstedt.alt': 'Aerial view of the Gerbstedt solar park in open farmland, with wind turbines on the horizon',
+
+    'proj.sennewitz.title': 'Sennewitz Petersberg and Sennewitz 2, Saxony-Anhalt',
+    'proj.sennewitz.body': 'Both projects were constructed on a former ash landfill.',
+    'proj.sennewitz.specs': '<dt>Installed capacity, both projects:</dt><dd>11.7 MWp</dd><dt>Construction time, both projects:</dt><dd>Feb 2019 – Apr 2019 and<br>Jan 2020 – Mar 2020</dd>',
+    'proj.sennewitz.alt': 'Aerial view of the two Sennewitz solar parks beside a railway line',
+
+    /* Hungary */
+    'proj.hungary.h1': 'Hungary',
+    'proj.hungary.stats': '1 PV Plant installed and commissioned, with a total capacity of 23 MWp.',
+
+    'proj.bukkabrany.title': 'Bukkabrany',
+    'proj.bukkabrany.body': 'A 23 MWp PV plant, which we planned and constructed on a former opencast coal mine.',
+    'proj.bukkabrany.specs': '<dt>Installed capacity:</dt><dd>22.7 MWp</dd><dt>Construction time:</dt><dd>Sep 2018 – Feb 2019</dd>',
+    'proj.bukkabrany.alt': 'Aerial view of the Bükkabrany solar park on a reclaimed opencast coal mine',
+
+    /* Ireland */
+    'proj.ireland.h1': 'Ireland',
+    'proj.ireland.stats': '3 PV Plants installed and commissioned, with a total capacity of over 25 MWp.',
+    'proj.ireland.stats2': 'Further plants currently under construction and in the tendering process.',
+
+    'proj.lehinch.title': 'Lehinch',
+    'proj.lehinch.body': 'A 6.3 MWp PV plant, constructed in winter on undulating, inhomogeneous terrain with extensive surface water accumulation after heavy rain',
+    'proj.lehinch.specs': '<dt>Installed capacity:</dt><dd>6.3 MWp</dd><dt>Construction time:</dt><dd>Sep 2023 – Jun 2024</dd>',
+    'proj.lehinch.alt': 'Site team assembling mounting structures on wet ground at Lehinch',
+
+    'proj.friarspark.title': 'Friarspark',
+    'proj.friarspark.specs': '<dt>Installed capacity:</dt><dd>6.5 MWp</dd><dt>Construction time:</dt><dd>Jul 2023 – Jun 2024</dd>',
+    'proj.friarspark.alt': 'A grass track running between the module rows at Friarspark, with an oak tree beyond',
+
+    'proj.horsepasture.title': 'Horsepasture',
+    'proj.horsepasture.body': 'A 12.7 MWp PV plant constructed on inhomogeneous soil; Piling foundation via pre-drilling and root posts; approx. 1-year project suspension due to archaeological finds on site',
+    'proj.horsepasture.specs': '<dt>Installed capacity:</dt><dd>12.7 MWp</dd><dt>Construction time:</dt><dd>Jul 2023 – Mar 2025</dd>',
+    'proj.horsepasture.alt': 'Module rows at Horsepasture under a rainbow after rainfall',
+
+    'proj.ballinaclough.title': 'Ballinaclough',
+    'proj.ballinaclough.specs': '<dt>Installed capacity:</dt><dd>15.5 MWp</dd><dt>Construction time:</dt><dd>under construction (start: Jul 2026)</dd>',
+
+    /* The Netherlands */
+    'proj.netherlands.h1': 'The Netherlands',
+    'proj.netherlands.stats': '6 PV Plants installed and commissioned, with a total capacity of over 135 MWp.',
+
+    'proj.almelo.title': 'Almelo',
+    'proj.almelo.specs': '<dt>Installed capacity:</dt><dd>39.3 MWp</dd><dt>Construction time:</dt><dd>Jun 2019 – Nov 2019</dd>',
+    'proj.almelo.alt': 'Aerial view of the Almelo solar park on the edge of farmland',
+
+    'proj.hall.title': 'Hall',
+    'proj.hall.specs': '<dt>Installed capacity:</dt><dd>36.1 MWp</dd><dt>Construction time:</dt><dd>Jul 2022 – Apr 2023</dd>',
+    'proj.hall.alt': 'The Hall solar park seen from a wooden viewing platform',
+
+    'proj.heerenveen.title': 'Heerenveen',
+    'proj.heerenveen.specs': '<dt>Installed capacity:</dt><dd>7.3 MWp</dd><dt>Construction time:</dt><dd>Jun 2020 – Sep 2020</dd>',
+    'proj.heerenveen.alt': 'The Heerenveen solar park behind a green field margin',
+
+    'proj.stadskanaal.title': 'Stadskanaal',
+    'proj.stadskanaal.specs': '<dt>Installed capacity:</dt><dd>13.7 MWp</dd><dt>Construction time:</dt><dd>Oct 2017 – Feb 2018</dd>',
+    'proj.stadskanaal.alt': 'Module rows at Stadskanaal converging towards the horizon',
+
+    'proj.mercurius.title': 'Mercurius',
+    'proj.mercurius.specs': '<dt>Installed capacity:</dt><dd>4.4 MWp</dd><dt>Construction time:</dt><dd>Aug 2018 – Nov 2018</dd>',
+    'proj.mercurius.alt': 'Aerial view of the Mercurius mounting structures under construction on an industrial estate',
+
+    /* United Kingdom */
+    'proj.uk.h1': 'United Kingdom',
+    'proj.uk.stats': '5 PV Plants installed and commissioned, with a total capacity of over 50 MWp.',
+
+    'proj.odellglebe.title': 'Odell and Glebe',
+    'proj.odellglebe.specs': '<dt>Installed capacity, both projects:</dt><dd>34.4 MWp</dd><dt>Construction time, both projects:</dt><dd>Nov/Dec 2014 – Mar 2015</dd>',
+    'proj.odellglebe.alt1': 'Aerial view of the Odell solar park across harvested fields',
+    'proj.odellglebe.alt2': 'Aerial view of the Glebe solar park in a patchwork of fields',
+
+    'proj.caswell.title': 'Caswell',
+    'proj.caswell.specs': '<dt>Installed capacity:</dt><dd>5.9 MWp</dd><dt>Construction time:</dt><dd>Jan 2016 – Mar 2016</dd>',
+    'proj.caswell.alt': 'Aerial view of the Caswell solar park bordered by hedgerows',
+
+    /* Iran */
+    'proj.iran.h1': 'Iran',
+    'proj.iran.stats': '3 PV Plants installed and commissioned, with a total capacity of 22 MWp.',
+
+    'proj.ehyaei.title': 'Ehyaei and Eslamieh',
+    'proj.ehyaei.specs': '<dt>Installed capacity, both projects:</dt><dd>13.9 MWp</dd><dt>Construction time, both projects:</dt><dd>Sep 2016 – Jan 2017</dd>',
+    'proj.ehyaei.alt1': 'Aerial view of the Ehyaei solar park on an arid plain, with mountains on the horizon',
+    'proj.ehyaei.alt2': 'Aerial view of the Eslamieh module arrays on open desert ground',
+
+    'proj.vian.title': 'Vian',
+    'proj.vian.specs': '<dt>Installed capacity:</dt><dd>7.9 MWp</dd><dt>Construction time:</dt><dd>May 2017 – Jul 2017</dd>',
+    'proj.vian.alt': 'The fenced Vian solar array with its inverter station',
+
+    /* South Africa — bejulo supplied country figures but no project entries. */
+    'proj.southafrica.h1': 'South Africa',
+    'proj.southafrica.stats': '2 PV Plants installed and commissioned, with a total capacity of 443 kWp.',
+    'proj.southafrica.pending': 'Project details for South Africa will follow.',
 
     /* --- about --- */
     'about.hero.alt': 'The bejulo team photographed together outdoors',
@@ -267,6 +409,20 @@ window.BEJULO_CONTENT = {
     'meta.desc.contact': 'bejulo GmbH, Dekan-Laist-Straße 15a, 55129 Mainz, Deutschland.',
     'meta.title.project': 'Projektdetails | bejulo',
     'meta.desc.project': 'Detailseite zu einem Photovoltaikprojekt von bejulo.',
+    'meta.title.project-germany': 'Projekte in Deutschland | bejulo',
+    'meta.desc.project-germany': 'Mehr als 45 Anlagen mit über 455 MWp — darunter Kahsel Süd, Merbitz, Gerbstedt und Sennewitz.',
+    'meta.title.project-netherlands': 'Projekte in den Niederlanden | bejulo',
+    'meta.desc.project-netherlands': 'Sechs Anlagen mit über 135 MWp — Almelo, Hall, Heerenveen, Stadskanaal und Mercurius.',
+    'meta.title.project-ireland': 'Projekte in Irland | bejulo',
+    'meta.desc.project-ireland': 'Drei Anlagen mit über 25 MWp — Lehinch, Friarspark und Horsepasture, Ballinaclough im Bau.',
+    'meta.title.project-united-kingdom': 'Projekte in Großbritannien | bejulo',
+    'meta.desc.project-united-kingdom': 'Fünf Anlagen mit über 50 MWp — Odell, Glebe und Caswell.',
+    'meta.title.project-hungary': 'Projekte in Ungarn | bejulo',
+    'meta.desc.project-hungary': 'Ein 23 MWp großer PV-Park in Bükkabrany auf einem ehemaligen Kohletagebau.',
+    'meta.title.project-iran': 'Projekte im Iran | bejulo',
+    'meta.desc.project-iran': 'Drei Anlagen mit 22 MWp — Ehyaei, Eslamieh und Vian.',
+    'meta.title.project-south-africa': 'Projekte in Südafrika | bejulo',
+    'meta.desc.project-south-africa': 'Zwei Anlagen mit einer Gesamtkapazität von 443 kWp.',
 
     /* --- shared buttons --- */
     'btn.contact': 'Kontaktieren Sie uns!',
@@ -379,15 +535,131 @@ window.BEJULO_CONTENT = {
     /* --- projects --- */
     'projects.hero.alt': 'Reihen von Solarmodulen bis zum Horizont',
     'projects.h2': 'Unsere Projekte – unsere Visitenkarte',
-    'projects.lede': '<span class="be">be</span><span class="be-lead"> international.</span> Wir sind international tätig – und darauf sind wir stolz: bejulo-Projekte sind mittlerweile auf drei Kontinenten vertreten. Seit unserer Gründung haben wir mehr als 65 Photovoltaikprojekte mit einer Gesamtleistung von rund 700 Megawattpeak erfolgreich umgesetzt. Weitere Projekte befinden sich derzeit im Bau, zusätzliche Vorhaben sind bereits in der Planung. Nachhaltige Energielösungen über Ländergrenzen hinweg realisieren und Kunden begeistern - wo Sonne wartet, wird bejulo sein.',
+    'projects.lede': '<span class="be">be</span><span class="be-lead"> international.</span> Wir sind international tätig – und darauf sind wir stolz: bejulo-Projekte sind mittlerweile auf drei Kontinenten vertreten. Seit unserer Gründung haben wir mehr als 65 Photovoltaikprojekte mit einer Gesamtleistung von rund 700 Megawattpeak erfolgreich umgesetzt. Weitere Projekte befinden sich derzeit im Bau, zusätzliche Vorhaben sind bereits in der Planung.',
     'projects.map.label': 'Karte der bejulo-Projektstandorte weltweit',
     'projects.map.insetLabel': 'Detailkarte der bejulo-Projektstandorte in Europa',
     'projects.map.hint': 'Marker ansteuern für Projektdetails',
-    'projects.map.note': 'Die orange markierten Standorte zeigen eine Auswahl unserer Großprojekte. Sie bilden einen Auszug unserer internationalen Projektaktivitäten.',
+    'projects.map.note': 'Die orange markierten Standorte zeigen eine Auswahl unserer umgesetzten Projekte. Sie bilden einen Auszug unserer internationalen Projektaktivitäten.',
     'projects.customers.h2': 'Zufriedene Kunden sind unser größter Erfolg',
     'projects.customers.body': '<span class="be">be</span><span class="be-lead"> happy.</span> Unsere Kunden stammen aus den unterschiedlichsten Branchen und vertrauen zum Teil bereits seit vielen Jahren auf unsere Leistungsfähigkeit und Wirtschaftlichkeit. Dabei schätzen sie uns als zuverlässigen und kompetenten Komplettdienstleister, der Projekte ganzheitlich und effizient umsetzt. Qualität, Transparenz und Fairness bilden die Grundlage für unseren nachhaltigen gemeinsamen Erfolg.',
-    'project.pending': 'Die Detailseite zu diesem Projekt wird derzeit gestaltet. Sprechen Sie uns gerne an, wenn Sie vorab mehr erfahren möchten.',
     'project.back': 'Zurück zu allen Projekten',
+
+    /* --- Projekt-Detailseiten (siehe EN-Block für die Normalisierungen) --- */
+    'proj.hero.alt': 'Reihen von Solarmodulen bis zum Horizont',
+    'proj.specs.label': 'Projektdaten',
+
+    /* Deutschland */
+    'proj.germany.h1': 'Deutschland',
+    'proj.germany.stats': 'Mehr als 45 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von mehr als 455 MWp.',
+    'proj.germany.stats2': 'Weitere Anlagen aktuell im Bau, in der Entwicklung und in der Angebotsphase.',
+    'proj.germany.intro': 'Erfolgreich am Netz: Drei unserer größten Referenzen…',
+    'proj.germany.soil': 'Herausfordernde Bodenverhältnisse',
+
+    'proj.kahsel.title': 'Kahsel Süd, Brandenburg',
+    'proj.kahsel.body': 'Mit der Inbetriebnahme dieses Projekts hat bejulo einen wichtigen Meilenstein erreicht: die Planung, Errichtung und Inbetriebnahme unseres ersten PV-Parks mit Batteriespeicher.',
+    'proj.kahsel.specs': '<dt>Installierte Leistung PV-Park:</dt><dd>38,4 MWp</dd><dt>Installierte Kapazität BESS:</dt><dd>70 MWh</dd><dt>Realisierung:</dt><dd>Feb – Jun 2026</dd><dt>Inbetriebnahme:</dt><dd>Aug 2026</dd>',
+    'proj.kahsel.alt': 'Luftaufnahme der Batteriespeicher-Container neben dem Solarpark Kahsel Süd',
+
+    'proj.merbitz.title': 'Merbitz, Sachsen-Anhalt',
+    'proj.merbitz.body': 'Ein 71,5 MWp großer PV-Park, den wir geplant, errichtet und in Betrieb genommen haben. Unterquerung der Autobahn und Bahntrasse: Realisiert durch Spülbohrung.',
+    'proj.merbitz.specs': '<dt>Anlagenleistung:</dt><dd>71,5 MWp</dd><dt>Realisierung:</dt><dd>Okt 2025 – März 2026</dd><dt>Inbetriebnahme:</dt><dd>Apr 2026</dd>',
+    'proj.merbitz.alt': 'Luftaufnahme des Solarparks Merbitz zwischen Feldern und Ortsrand',
+
+    'proj.gerbstedt.title': 'Gerbstedt, Sachsen-Anhalt',
+    'proj.gerbstedt.body': 'Ein 53 MWp großer PV-Park, geplant und errichtet auf teilweise hügligem Untergrund.',
+    'proj.gerbstedt.specs': '<dt>Anlagenleistung:</dt><dd>52,9 MWp</dd><dt>Realisierung:</dt><dd>März 2026 – Nov 2026</dd>',
+    'proj.gerbstedt.alt': 'Luftaufnahme des Solarparks Gerbstedt in offener Feldflur, am Horizont Windräder',
+
+    'proj.sennewitz.title': 'Sennewitz Petersberg und Sennewitz 2, Sachsen-Anhalt',
+    'proj.sennewitz.body': 'Beide Projekte wurden auf einer ehemaligen Aschedeponie errichtet.',
+    'proj.sennewitz.specs': '<dt>Anlagenleistung beider Projekte:</dt><dd>11,7 MWp</dd><dt>Realisierung beider Projekte:</dt><dd>Feb 2019 – Apr 2019 und<br>Jan 2020 – März 2020</dd>',
+    'proj.sennewitz.alt': 'Luftaufnahme der beiden Solarparks Sennewitz an einer Bahntrasse',
+
+    /* Ungarn */
+    'proj.hungary.h1': 'Ungarn',
+    'proj.hungary.stats': '1 Anlage installiert und in Betrieb genommen mit einer Gesamtkapazität von 23 MWp.',
+
+    'proj.bukkabrany.title': 'Bükkabrany',
+    'proj.bukkabrany.body': 'Ein 23 MWp großer PV-Park, den wir auf einem ehemaligen Kohletagebau geplant und errichtet haben.',
+    'proj.bukkabrany.specs': '<dt>Anlagenleistung:</dt><dd>22,7 MWp</dd><dt>Realisierung:</dt><dd>Sep 2018 – Feb 2019</dd>',
+    'proj.bukkabrany.alt': 'Luftaufnahme des Solarparks Bükkabrany auf einem ehemaligen Kohletagebau',
+
+    /* Irland */
+    'proj.ireland.h1': 'Irland',
+    'proj.ireland.stats': '3 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von mehr als 25 MWp.',
+    'proj.ireland.stats2': 'Weitere Anlagen aktuell im Bau und in der Angebotsphase.',
+
+    'proj.lehinch.title': 'Lehinch',
+    'proj.lehinch.body': 'Ein 6,3 MWp großer PV-Park, den wir auf hügligem und inhomogenen Untergrund in den Wintermonaten errichtet haben; teilweise mit großflächigen Wasseransammlungen nach Regenfall',
+    'proj.lehinch.specs': '<dt>Anlagenleistung:</dt><dd>6,3 MWp</dd><dt>Realisierung:</dt><dd>Sep 2023 – Jun 2024</dd>',
+    'proj.lehinch.alt': 'Montage der Unterkonstruktion auf nassem Untergrund in Lehinch',
+
+    'proj.friarspark.title': 'Friarspark',
+    'proj.friarspark.specs': '<dt>Anlagenleistung:</dt><dd>6,5 MWp</dd><dt>Realisierung:</dt><dd>Jul 2023 – Jun 2024</dd>',
+    'proj.friarspark.alt': 'Grasweg zwischen den Modulreihen in Friarspark, dahinter eine Eiche',
+
+    'proj.horsepasture.title': 'Horsepasture',
+    'proj.horsepasture.body': 'Ein 12,7 MWp großer PV-Park, errichtet auf inhomogenem Boden; Gründung der Pfosten mittels Vorbohrens und Anbringen von Querpfosten („root posts“). Aufgrund archäologischer Funde auf dem Baufeld, Unterbrechung der Arbeiten von ca. 1 Jahr.',
+    'proj.horsepasture.specs': '<dt>Anlagenleistung:</dt><dd>12,7 MWp</dd><dt>Realisierung:</dt><dd>Jul 2023 – März 2025</dd>',
+    'proj.horsepasture.alt': 'Modulreihen in Horsepasture unter einem Regenbogen nach dem Regen',
+
+    'proj.ballinaclough.title': 'Ballinaclough',
+    'proj.ballinaclough.specs': '<dt>Anlagenleistung:</dt><dd>15,5 MWp</dd><dt>Realisierung:</dt><dd>Im Bau (Baustart Jul 2026)</dd>',
+
+    /* Niederlande */
+    'proj.netherlands.h1': 'Niederlande',
+    'proj.netherlands.stats': '6 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von mehr als 135 MWp.',
+
+    'proj.almelo.title': 'Almelo',
+    'proj.almelo.specs': '<dt>Anlagenleistung:</dt><dd>39,3 MWp</dd><dt>Realisierung:</dt><dd>Jun 2019 – Nov 2019</dd>',
+    'proj.almelo.alt': 'Luftaufnahme des Solarparks Almelo am Rand der Feldflur',
+
+    'proj.hall.title': 'Hall',
+    'proj.hall.specs': '<dt>Anlagenleistung:</dt><dd>36,1 MWp</dd><dt>Realisierung:</dt><dd>Jul 2022 – Apr 2023</dd>',
+    'proj.hall.alt': 'Blick von einer hölzernen Aussichtsplattform über den Solarpark Hall',
+
+    'proj.heerenveen.title': 'Heerenveen',
+    'proj.heerenveen.specs': '<dt>Anlagenleistung:</dt><dd>7,3 MWp</dd><dt>Realisierung:</dt><dd>Jun 2020 – Sep 2020</dd>',
+    'proj.heerenveen.alt': 'Der Solarpark Heerenveen hinter einem begrünten Feldsaum',
+
+    'proj.stadskanaal.title': 'Stadskanaal',
+    'proj.stadskanaal.specs': '<dt>Anlagenleistung:</dt><dd>13,7 MWp</dd><dt>Realisierung:</dt><dd>Okt 2017 – Feb 2018</dd>',
+    'proj.stadskanaal.alt': 'Modulreihen in Stadskanaal, die zum Horizont zusammenlaufen',
+
+    'proj.mercurius.title': 'Mercurius',
+    'proj.mercurius.specs': '<dt>Anlagenleistung:</dt><dd>4,4 MWp</dd><dt>Realisierung:</dt><dd>Aug 2018 – Nov 2018</dd>',
+    'proj.mercurius.alt': 'Luftaufnahme der Unterkonstruktion von Mercurius im Bau auf einem Gewerbegebiet',
+
+    /* Großbritannien */
+    'proj.uk.h1': 'Großbritannien',
+    'proj.uk.stats': '5 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von mehr als 50 MWp.',
+
+    'proj.odellglebe.title': 'Odell und Glebe',
+    'proj.odellglebe.specs': '<dt>Anlagenleistung beider Projekte:</dt><dd>34,3 MWp</dd><dt>Realisierung beider Projekte:</dt><dd>Nov/Dez 2014 – März 2015</dd>',
+    'proj.odellglebe.alt1': 'Luftaufnahme des Solarparks Odell über abgeernteten Feldern',
+    'proj.odellglebe.alt2': 'Luftaufnahme des Solarparks Glebe in einer Feldlandschaft',
+
+    'proj.caswell.title': 'Caswell',
+    'proj.caswell.specs': '<dt>Anlagenleistung:</dt><dd>5,9 MWp</dd><dt>Realisierung:</dt><dd>Jan 2016 – März 2016</dd>',
+    'proj.caswell.alt': 'Luftaufnahme des von Hecken gesäumten Solarparks Caswell',
+
+    /* Iran */
+    'proj.iran.h1': 'Iran',
+    'proj.iran.stats': '3 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von 22 MWp.',
+
+    'proj.ehyaei.title': 'Ehyaei und Eslamieh',
+    'proj.ehyaei.specs': '<dt>Anlagenleistung beider Projekte:</dt><dd>13,9 MWp</dd><dt>Realisierung beider Projekte:</dt><dd>Sep 2016 – Jan 2017</dd>',
+    'proj.ehyaei.alt1': 'Luftaufnahme des Solarparks Ehyaei in einer Trockenebene, am Horizont Berge',
+    'proj.ehyaei.alt2': 'Luftaufnahme der Modulfelder von Eslamieh auf offenem Wüstenboden',
+
+    'proj.vian.title': 'Vian',
+    'proj.vian.specs': '<dt>Anlagenleistung:</dt><dd>7,9 MWp</dd><dt>Realisierung:</dt><dd>Mai 2017 – Jul 2017</dd>',
+    'proj.vian.alt': 'Die eingezäunte Solaranlage Vian mit ihrer Wechselrichterstation',
+
+    /* Südafrika — bejulo hat Länderzahlen, aber keine Projekteinträge geliefert. */
+    'proj.southafrica.h1': 'Südafrika',
+    'proj.southafrica.stats': '2 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von 443 kWp.',
+    'proj.southafrica.pending': 'Projektdetails zu Südafrika folgen.',
 
     /* --- about --- */
     'about.hero.alt': 'Das bejulo-Team gemeinsam im Freien',

@@ -5,15 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project detail | bejulo</title>
 <meta name="description" content="Detail page for a bejulo photovoltaic project.">
+<meta name="robots" content="noindex">
 <link rel="preload" href="assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=b442977e">
 <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
 </head>
-<!-- Placeholder. The client has flagged project detail pages as a separate
-     change request; the design is still pending. This page keeps the
-     "Read more…" links in the map popups from being dead ends, and shows the
-     project name so the routing can be reviewed. -->
+<!-- Superseded by the per-country pages added on 2026-09-10
+     (project-germany.html and friends). Kept only so the old
+     `project.html?id=<country>` links the map popups used to emit still land
+     somewhere sensible; nothing in the site links here any more. -->
 <body data-page="projects" data-meta="project" data-header="solid">
 
 <div id="site-header"></div>
@@ -21,11 +22,9 @@
 <main id="main">
   <section class="section">
     <div class="container stack">
-      <h1 class="h2" id="project-title">Project</h1>
-      <p class="lede" data-i18n="project.pending">The detail page for this project is still being designed. Please get in touch if you would like more information in the meantime.</p>
+      <h1 class="h2" data-i18n="projects.h2">Our projects speak for themselves</h1>
       <div class="btn-row">
         <a class="btn" href="projects.html" data-i18n="project.back">Back to all projects</a>
-        <a class="btn" href="contact.html" data-i18n="btn.contact">Get in touch!</a>
       </div>
     </div>
   </section>
@@ -33,33 +32,23 @@
 
 <div id="site-footer"></div>
 
-<script src="assets/js/content.js"></script>
-<script src="assets/js/i18n.js"></script>
-<script src="assets/js/layout.js"></script>
+<script src="assets/js/content.js?v=096c3685"></script>
+<script src="assets/js/i18n.js?v=a9a08aae"></script>
+<script src="assets/js/layout.js?v=a9ca7609"></script>
 <script>
-  // Show the requested project's name, taken from the ?id= in the popup link.
+  // Forward the old ?id= links to the country page that replaced them.
   (function () {
-    // Keep in step with PROJECTS in assets/js/map.js — these are the ids its
-    // popups link to. (client review 2026-09-08 §3: DE renames, Italy out,
-    // Hungary in.)
-    var NAMES = {
-      'ireland': { en: 'Ireland', de: 'Irland' },
-      'united-kingdom': { en: 'United Kingdom', de: 'Großbritannien' },
-      'netherlands': { en: 'Kingdom of the Netherlands', de: 'Niederlande' },
-      'germany': { en: 'Germany', de: 'Deutschland' },
-      'hungary': { en: 'Hungary', de: 'Ungarn' },
-      'iran': { en: 'Iran', de: 'Iran' },
-      'south-africa': { en: 'South Africa', de: 'Südafrika' }
+    var PAGES = {
+      'ireland': 'project-ireland.html',
+      'united-kingdom': 'project-united-kingdom.html',
+      'netherlands': 'project-netherlands.html',
+      'germany': 'project-germany.html',
+      'hungary': 'project-hungary.html',
+      'iran': 'project-iran.html',
+      'south-africa': 'project-south-africa.html'
     };
-    function render() {
-      var id = new URLSearchParams(location.search).get('id');
-      var lang = (window.BejuloI18n && window.BejuloI18n.get()) || 'en';
-      var entry = NAMES[id];
-      var el = document.getElementById('project-title');
-      if (el && entry) el.textContent = entry[lang] || entry.en;
-    }
-    render();
-    document.addEventListener('bejulo:langchange', render);
+    var target = PAGES[new URLSearchParams(location.search).get('id')] || 'projects.html';
+    location.replace(target);
   })();
 </script>
 

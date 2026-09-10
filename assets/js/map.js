@@ -23,65 +23,75 @@
    One shared card, positioned over whichever map the pin belongs to.
 
    ---------------------------------------------------------------------------
-   PROJECT DATA STILL NEEDS bejulo's CONFIRMATION.
-   Coordinates are country/region centroids rather than real sites, and the
-   descriptions were written for this build. Detail pages are a separate change
-   request; project.html is a placeholder.
+   PIN COPY is bejulo's own, from "Button Projekte EN & DE" (supplied
+   2026-09-10): per country, the number of plants installed and commissioned,
+   the total capacity, and — where the document gives one — a line about what
+   is still in construction, development or tendering. "Read more…" opens that
+   country's project page.
+
+   Coordinates are still country/region centroids rather than real sites, which
+   is what the artwork shows.
    ---------------------------------------------------------------------------
    ========================================================================== */
 (function () {
   'use strict';
 
-  /* scope: 'europe' renders on the inset, 'world' on the background map */
+  /* scope: 'europe' renders on the inset, 'world' on the background map
+     href:  the country's project page, opened from the popup */
   var PROJECTS = [
     { id: 'ireland', scope: 'europe', lat: 53.05, lng: -7.75,
+      href: 'project-ireland.html',
       country: { en: 'Ireland', de: 'Irland' },
-      years:   { en: '2016, 2017, 2022, 2023, 2024, 2025, 2026',
-                 de: '2016, 2017, 2022, 2023, 2024, 2025, 2026' },
-      note:    { en: 'Our most active market, with projects delivered every year since 2016.',
-                 de: 'Unser aktivster Markt – seit 2016 realisieren wir hier jedes Jahr Projekte.' } },
+      stats:   { en: '3 PV Plants installed and commissioned, with a total capacity of over 25 MWp.',
+                 de: '3 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von mehr als 25 MWp.' },
+      note:    { en: 'Further plants currently under construction and in the tendering process.',
+                 de: 'Weitere Anlagen aktuell im Bau und in der Angebotsphase.' } },
 
     { id: 'united-kingdom', scope: 'europe', lat: 52.65, lng: -1.55,
+      href: 'project-united-kingdom.html',
       /* client review 2026-09-08 §3 — DE reads "Großbritannien" */
       country: { en: 'United Kingdom', de: 'Großbritannien' },
-      years:   { en: '2014, 2015, 2016', de: '2014, 2015, 2016' },
-      note:    { en: 'Early international expansion, including some of our first utility-scale PV plants.',
-                 de: 'Früher Schritt ins Ausland – mit einigen unserer ersten PV-Großanlagen.' } },
+      stats:   { en: '5 PV Plants installed and commissioned, with a total capacity of over 50 MWp.',
+                 de: '5 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von mehr als 50 MWp.' } },
 
     { id: 'netherlands', scope: 'europe', lat: 52.20, lng: 5.45,
+      href: 'project-netherlands.html',
       /* client review 2026-09-08 §3 — DE reads "Niederlande" */
-      country: { en: 'Kingdom of the Netherlands', de: 'Niederlande' },
-      years:   { en: '2017–2023', de: '2017–2023' },
-      note:    { en: 'A long-running portfolio of PV projects delivered across seven consecutive years.',
-                 de: 'Ein über sieben Jahre hinweg kontinuierlich gewachsenes PV-Portfolio.' } },
+      country: { en: 'The Netherlands', de: 'Niederlande' },
+      stats:   { en: '6 PV Plants installed and commissioned, with a total capacity of over 135 MWp.',
+                 de: '6 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von mehr als 135 MWp.' } },
 
+    /* The plant count differs between the two columns of the client's
+       document — DE "mehr als 45", EN "more than 46". Each language keeps its
+       own figure until bejulo says which is right. */
     { id: 'germany', scope: 'europe', lat: 49.99, lng: 8.25,
+      href: 'project-germany.html',
       country: { en: 'Germany', de: 'Deutschland' },
-      years:   { en: 'Home market since 2012', de: 'Heimatmarkt seit 2012' },
-      note:    { en: 'Head office in Mainz and the base for our development, EPC and O&amp;M teams.',
-                 de: 'Hauptsitz in Mainz und Basis unserer Teams für Entwicklung, EPC und O&amp;M.' } },
+      stats:   { en: 'More than 46 PV Plants installed and commissioned, with a total capacity of over 455 MWp.',
+                 de: 'Mehr als 45 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von mehr als 455 MWp.' },
+      note:    { en: 'Further plants currently under construction, in the development phase and in the tendering process.',
+                 de: 'Weitere Anlagen aktuell im Bau, in der Entwicklung und in der Angebotsphase.' } },
 
     /* client review 2026-09-08 §3 — Italy dropped from the map, Hungary added.
-       The years are the ones the client's own International timeline lists for
-       Hungary (see timeline.js); the note is still placeholder copy. Italy
-       remains on that timeline for 2020 / 2024 / 2026 — flagged for the client. */
+       Italy remains on the International timeline for 2020 / 2024 / 2026 —
+       still flagged for the client. */
     { id: 'hungary', scope: 'europe', lat: 47.16, lng: 19.50,
+      href: 'project-hungary.html',
       country: { en: 'Hungary', de: 'Ungarn' },
-      years:   { en: '2018, 2019', de: '2018, 2019' },
-      note:    { en: 'Central European PV projects delivered over two consecutive years.',
-                 de: 'Mitteleuropäische PV-Projekte aus zwei aufeinanderfolgenden Jahren.' } },
+      stats:   { en: '1 PV Plant installed and commissioned, with a total capacity of 23 MWp.',
+                 de: '1 Anlage installiert und in Betrieb genommen mit einer Gesamtkapazität von 23 MWp.' } },
 
     { id: 'iran', scope: 'world', lat: 32.40, lng: 53.70,
+      href: 'project-iran.html',
       country: { en: 'Iran', de: 'Iran' },
-      years:   { en: '', de: '' },
-      note:    { en: 'Photovoltaic project in the Middle East.',
-                 de: 'Photovoltaikprojekt im Nahen Osten.' } },
+      stats:   { en: '3 PV Plants installed and commissioned, with a total capacity of 22 MWp.',
+                 de: '3 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von 22 MWp.' } },
 
     { id: 'south-africa', scope: 'world', lat: -29.20, lng: 24.60,
+      href: 'project-south-africa.html',
       country: { en: 'South Africa', de: 'Südafrika' },
-      years:   { en: '2017, 2019', de: '2017, 2019' },
-      note:    { en: 'Utility-scale PV in one of the sunniest regions we work in.',
-                 de: 'PV-Großanlagen in einer der sonnenreichsten Regionen, in denen wir arbeiten.' } }
+      stats:   { en: '2 PV Plants installed and commissioned, with a total capacity of 443 kWp.',
+                 de: '2 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von 443 kWp.' } }
   ];
 
   var LAND_STYLE = {
@@ -176,12 +186,12 @@
       cancelHide();
       openFor = p;
       var l = lang();
-      var years = txt(p.years, l);
+      var note = txt(p.note, l);
       card.innerHTML =
         '<p class="pin-card__country">' + txt(p.country, l) + '</p>' +
-        (years ? '<p class="pin-card__meta">' + years + '</p>' : '') +
-        '<p class="pin-card__text">' + txt(p.note, l) + '</p>' +
-        '<a class="pin-card__more" href="project.html?id=' + p.id + '">' +
+        '<p class="pin-card__text">' + txt(p.stats, l) + '</p>' +
+        (note ? '<p class="pin-card__text">' + note + '</p>' : '') +
+        '<a class="pin-card__more" href="' + p.href + '">' +
           t('btn.readmore', 'Read more…') + '</a>';
       card.classList.add('is-open');
       position(marker, map);

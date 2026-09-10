@@ -41,7 +41,14 @@ resolves.
 | `about.html` | Über Uns | over hero |
 | `careers.html` | Karriere | solid white |
 | `contact.html` | Kontakt | solid white |
-| `project.html` | — (placeholder, design pending) | solid white |
+| `project-germany.html` | Projekte → Deutschland | over hero |
+| `project-netherlands.html` | Projekte → Niederlande | over hero |
+| `project-ireland.html` | Projekte → Irland | over hero |
+| `project-united-kingdom.html` | Projekte → Großbritannien | over hero |
+| `project-hungary.html` | Projekte → Ungarn | over hero |
+| `project-iran.html` | Projekte → Iran | over hero |
+| `project-south-africa.html` | Projekte → Südafrika (figures only) | over hero |
+| `project.html` | — (redirects old `?id=` links to the pages above) | solid white |
 
 The seven International frames are three accordion *states* of two pages plus a
 contact page, so they collapse to four files. Accordions load collapsed.
@@ -128,20 +135,63 @@ opened inside it would be cut in half. A single shared card lives in
 `.map-panel` and `map.js` positions it over whichever pin is active, flipping
 below the pin when there is no room above and following the pin as a map moves.
 
-Hungary replaced Italy on 2026-09-08 at the client's request. Its years
-(2018, 2019) are the ones the client's own International timeline already
-carries; **Italy still appears on that timeline** for 2020 / 2024 / 2026 and
-has been left there, because the request named the Projects page only.
+Hungary replaced Italy on 2026-09-08 at the client's request. **Italy still
+appears on the International timeline** for 2020 / 2024 / 2026 and has been
+left there, because the request named the Projects page only.
 
-> **Project data is provisional.** Coordinates are country/region centroids
-> rather than real sites, and the descriptions were written for this build.
-> Replace the `PROJECTS` array in `map.js` with the real list. Iran carries no
-> year yet — it is new in this review and not on the International timeline.
-> Hungary's description is placeholder copy too.
->
-> **Detail pages are a separate change request.** `project.html` is a
-> placeholder that echoes the project name from `?id=` so the routing can be
-> reviewed; the client has confirmed the design is still pending.
+**Popup copy is bejulo's own** as of 2026-09-10: per country, the number of
+plants installed and commissioned, the total capacity, and — for Germany and
+Ireland — the client's line about what is still in construction, development or
+tendering. Each popup's **Read more…** opens that country's project page.
+
+> Coordinates are still country/region centroids rather than real sites, which
+> is what the artwork shows.
+
+## Project pages
+
+Seven country pages, one per map pin, added 2026-09-10 when bejulo supplied the
+copy ("Button Projekte EN & DE") and the photos.
+
+`services.html` is the layout template the client asked for, so each project is
+a Services-style card — grey panel, one photo, sides alternating down the page —
+with the figures from the client's document set as a `<dl class="specs">`. Copy
+lives in `assets/js/content.js` under the `proj.*` keys in both languages; the
+markup carries structure only, exactly like every other page.
+
+Three things the client's document needed that a plain Services card does not:
+
+| Case | Handling |
+| --- | --- |
+| An entry covering two sites (*Odell and Glebe*, *Ehyaei and Eslamieh*) | `.card__media--pair` — both photos share the media column, at a fixed 420px so the card does not double in height beside two lines of figures |
+| An entry with no photo yet (*Ballinaclough*, under construction) | `.card--no-media` — the text runs the full card width |
+| A group heading inside the stack (*Challenging soil conditions*) | `.card-stack__heading` |
+
+`.card__media img` is `object-fit: fill` site-wide, which stretches a photo to
+whatever shape its card row ends up. These pages override it to `cover`, scoped
+by `[data-meta^="project-"]`, because the project photos are 4:3 and 16:9
+aerials and the distortion is plain on them. **The same stretch is live on the
+Services cards** and is worth a separate look — it was left alone here because
+that page is already signed off.
+
+South Africa has country figures but no project entries in the document, so its
+page carries the figures and `proj.southafrica.pending`.
+
+`project.html` is no longer a page: it redirects the old
+`project.html?id=<country>` links the map popups used to emit, and falls back to
+`projects.html` for an unknown id.
+
+### Project photos
+
+`assets/img/projects/` — 19 files, 6.5 MB total. The originals are 2–21 MB
+each; they are resized to 1600px on the long edge at quality 82, which is
+roughly 4× the 401px column the cards render them in. Every `<img>` carries the
+resulting intrinsic `width`/`height`.
+
+Six supplied photos are **not** used, because the client asked for one image per
+project and these are second views of a project that already has one:
+`Kahsel Linkedin`, `UW Merbitz` (the substation), `Friarspark mit Schafen`,
+`Horsepasture Schrägpfosten`, `Lehinch Bauphase`, `Hall Gestell`. They are still
+in the delivery folder if any should be swapped in.
 
 ## Home hero video
 
@@ -206,6 +256,49 @@ The 2014–2026 timeline is a flat image in Figma. `assets/js/timeline.js`
 rebuilds it from data so years and country names stay selectable, translatable
 and responsive. It scrolls inside its own container on narrow screens.
 
+## Caching and cache busting
+
+nginx serves `.css` and `.js` with `Cache-Control: public, max-age=31536000,
+immutable`. `immutable` means the browser will not revalidate at all, so before
+2026-09-10 a copy edit in `assets/js/content.js` did not reach a returning
+visitor until they hard-reloaded — which is how the new German strings came to
+be invisible on a normal reload.
+
+`immutable` is the right header, but only for a URL that changes when its bytes
+do. There is no build step here to hash filenames, so the version goes in the
+query string instead:
+
+```html
+<script src="assets/js/content.js?v=096c3685"></script>
+```
+
+`?v=` is part of the browser's cache key but not of the path, so nginx and
+`serve.py` both still resolve it to the file on disk.
+
+`stamp-assets.py` writes those stamps. The value is a short SHA-256 of that
+file's own contents, so it is impossible to forget to bump — and because it is
+per file rather than one global number, editing `content.js` does not force
+everyone to re-download Leaflet as well.
+
+```bash
+make stamp        # rewrite the stamps
+make check-stamp  # exit 1 if any are stale — for CI or a pre-commit hook
+```
+
+`make up` runs `stamp` first, so a Docker deploy always ships matching stamps.
+
+**HTML is `Cache-Control: no-cache`** — set at server level in `nginx.conf`, so
+`location /` inherits it while the asset block, which declares `add_header`
+directives of its own and therefore inherits none, keeps `immutable`. HTML has
+to be revalidated on every visit because it is what carries the new `?v=`
+values; a cached page would keep pointing at the previous build's JS. It
+revalidates with an ETag, so the usual response is a 304.
+
+**Not stamped:** images, fonts, the hero video and the certificate PDFs. They
+are still `immutable` for a year, so replacing one *under the same filename*
+will not reach anyone who already has it. Give it a new name, or widen the
+pattern in `stamp-assets.py`.
+
 ## Typography
 
 Figma specifies **Myriad Web Pro**, a licensed Adobe face that cannot be
@@ -238,9 +331,30 @@ every page reads identically, which is what was asked for.
 
 ## Still needed from bejulo
 
-- **Project detail page copy** — the client's text was due 2026-09-08 and has
-  not arrived. `project.html` stays a placeholder until it does.
-- **Project data** for the map (see above).
+- **Two figures that disagree between the client's own EN and DE columns.**
+  Each language currently ships its own number, because only bejulo can say
+  which is right:
+
+  | | DE | EN |
+  | --- | --- | --- |
+  | Germany, plants installed | mehr als **45** Anlagen | more than **46** PV Plants |
+  | Odell and Glebe, capacity | **34,3** MWp | **34,4** MWp |
+
+- **English map note.** The German note lost „Großprojekte" in this review and
+  now reads *umgesetzte Projekte*. No English was supplied, so `projects.map.note`
+  was updated to match ("the projects we have delivered") rather than left
+  saying *flagship projects*. Please confirm the English wording.
+- **"Challenging soil conditions"** sits between Gerbstedt and Sennewitz in the
+  document with no other marker. It is rendered as a heading introducing
+  Sennewitz on the Germany page. If it was meant to group Bükkabrany, Lehinch
+  and Horsepasture as well, those are on other countries' pages and it needs a
+  different home.
+- **Great Britain vs United Kingdom** — the country-figures section of the
+  document says *United Kingdom*, the project section says *Great Britain*.
+  The pages and the map both use *United Kingdom* / *Großbritannien*.
+- **Ballinaclough photo** — the only project without one.
+- **South Africa projects** — figures supplied (2 plants, 443 kWp) but no
+  project entries, so `project-south-africa.html` has nothing to list.
 - **Hungary vs Italy on the International timeline** — Italy was removed from
   the Projects map on 2026-09-08 but still runs on the timeline (2020 / 2024 /
   2026). Confirm whether it should come off there too.
@@ -267,8 +381,6 @@ every page reads identically, which is what was asked for.
   projects" or "Contact us" on the International landing page (it shows only
   *Erfahrung* and *Leistungsspektrum*). `btn.projects` and `btn.contactus` carry
   placeholder German pending the client's wording.
-- **Project detail pages** — design pending (see the map section above).
-- **Iran project details** — year and description needed.
 - **Routing check** — "Explore our services" on the International landing page
   currently goes to the international service-spectrum page rather than the main
   Our Services page. Confirm which was intended.
@@ -424,6 +536,39 @@ the threshold is re-measured on resize so the handler never forces a layout.
 4. **Project detail page copy** — still outstanding; `project.html` remains the
    placeholder.
 
+## Client review — 2026-09-10
+
+Attachments: *Button Projekte EN & DE* (both languages — the covering note said
+the English was still to follow, but the document carries it) and 25 project
+photos.
+
+1. **Map pins** now carry bejulo's own country figures in both languages, and
+   each **Read more…** opens that country's project page. See *Projects map*.
+2. **Project pages** — seven of them, laid out from `services.html` as asked.
+   See *Project pages* above for the structure and the three cases the Services
+   card did not already cover.
+3. **Two sentences struck out in the document** are gone from `projects.html`:
+   the closing "Nachhaltige Energielösungen … wo Sonne wartet, wird bejulo sein."
+   / "Wherever solar energy creates opportunities … bejulo follows the sun!",
+   and „Großprojekte" in the map note, which now reads *umgesetzte Projekte*.
+
+### Corrections applied to the supplied text
+
+Transcribed verbatim except for these, all easily reverted — each is a slip
+rather than a wording choice:
+
+| Where | Document | Ships as |
+| --- | --- | --- |
+| Merbitz, DE | Okt 2025 – **Mar** 2026 | Okt 2025 – **März** 2026 |
+| Merbitz, EN | **Commssioning** | **Commissioning** |
+| Sennewitz, DE | Beide Projekte **wurde** errichtet | Beide Projekte **wurden** errichtet |
+| Horsepasture, EN | A **12,7** MWp PV plant | A **12.7** MWp PV plant (as "A 6.3 MWp" / "A 71.5 MWp" elsewhere in the EN text) |
+| Ireland figures, EN | total capacity of over 25 **MW** | over 25 **MWp** |
+| All EN figures | 38,4 MWp · 71,5MWp · 52,9MWp … | 38.4 MWp · 71.5 MWp · 52.9 MWp — decimal point, and a space before the unit in both languages |
+
+Two figures were **not** touched because they are content, not typography — see
+*Still needed from bejulo*.
+
 ### Where the attachments went
 
 Delivered assets were dropped flat into `assets/`; they now live by type.
@@ -434,6 +579,8 @@ Delivered assets were dropped flat into `assets/`; they now live by type.
 | `certificate DE.pdf`       | `assets/certificates/bejulo-iso-9001-de.pdf`                                                                              |
 | `certificate ENG.pdf`      | `assets/certificates/bejulo-iso-9001-en.pdf`                                                                              |
 | `image.png` (ISO badge)    | `assets/img/iso-9001-certified.png`                                                                                       |
+| `bejulo Projektsbilder/` (25 photos) | 19 of them resized into `assets/img/projects/`; see *Project photos* above for the six left out |
+| `Button Projekte EN & DE.pdf` | copy transcribed into `assets/js/content.js` (`proj.*`) and `assets/js/map.js` |
 
 `nginx.conf`'s long-cache `location` block gained `mp4`, `webm` and `pdf` so the
 video and the certificates are cached like every other static asset.
