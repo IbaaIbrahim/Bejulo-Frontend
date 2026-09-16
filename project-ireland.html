@@ -6,14 +6,15 @@
 <title>Projects in Ireland | bejulo</title>
 <meta name="description" content="Three PV plants with over 25 MWp — Lehinch, Friarspark and Horsepasture, with Ballinaclough under construction.">
 <link rel="preload" href="assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=b442977e">
+<link rel="stylesheet" href="assets/css/style.css?v=e477c4b2">
 <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
 </head>
 <!-- Country project page, reached from the "Read more…" link in a map popup on
-     projects.html. Client review 2026-09-10: services.html is the layout
-     template, so each project is a Services-style card — one photo, alternating
-     sides — carrying the figures from the client's own document.
+     projects.html. Client review 2026-09-15 replaced the Services-style card
+     (one photo, alternating sides) with a grid of its own: two cards per row at
+     desktop, one from tablet down, copy above the photos, and every photo
+     supplied for a project shown — see .card-stack in style.css.
      All copy lives in assets/js/content.js under the proj.* keys. -->
 <body data-page="projects" data-meta="project-ireland" data-header="overlay">
 
@@ -52,7 +53,7 @@
           </div>
         </article>
 
-        <article class="card card--media-left">
+        <article class="card">
           <div class="card__body">
             <h3 class="card__title">
               <span data-i18n="proj.friarspark.title">Friarspark</span>
@@ -105,7 +106,7 @@
 
 <div id="site-footer"></div>
 
-<script src="assets/js/content.js?v=096c3685"></script>
+<script src="assets/js/content.js?v=aa9fad80"></script>
 <script src="assets/js/i18n.js?v=a9a08aae"></script>
 <script src="assets/js/layout.js?v=a9ca7609"></script>
 

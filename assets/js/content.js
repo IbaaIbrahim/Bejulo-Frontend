@@ -109,7 +109,7 @@ window.BEJULO_CONTENT = {
     'home.scrollcue': 'Scroll down to the introduction',
     'home.backtotop': 'Back to top',
     'home.h1': 'PV and BESS –<br>Reliable. Sustainable. Profitable.',
-    'home.lede': '<span class="be">be</span><span class="be-lead"> ready.</span> The future is renewable. As a trusted partner for photovoltaic and battery energy storage projects, we develop sustainable energy solutions with long-term commercial benefits. Together with landowners and investors, we create lasting value – for local businesses, communities and the environment. Ready for the future?  We’re here to help you make it happen.',
+    'home.lede': '<span class="be">be</span><span class="be-lead"> ready.</span> The future is renewable. As a trusted partner for PV and BESS projects, we develop sustainable energy solutions with long-term commercial benefits. Together with landowners and investors, we create lasting value – for local businesses, communities and the environment. Ready for the future?  We’re here to help you make it happen.',
 
     /* --- services --- */
     'services.hero.alt': 'Aerial view of a bejulo solar park in an arid landscape',
@@ -121,7 +121,7 @@ window.BEJULO_CONTENT = {
     'services.c1.body2': 'For us, working in partnership means acting transparently, reliably and with commercial foresight. Through clear contractual structures, early stakeholder engagement and regional value creation, we build trusting partnerships with businesses, municipal utilities, local authorities and investors. Our independently financed projects deliver stable returns, long-term operational performance and sustainable energy solutions built to last.',
     'services.c1.body3': '<span class="be">be</span><span class="be-lead"> in touch.</span> We purchase PV and BESS project rights at every stage of development – from early pipeline opportunities to shovel-ready projects. Our fast and collaborative decision-making processes are complemented by fair and reliable business terms. Our independent financing creates commercially robust energy projects that drive the energy transition while delivering long-term value, reliable returns and lasting benefits for local communities.',
     'services.c2.title': 'PV and BESS project construction',
-    'services.c2.sub': 'Built for success',
+    'services.c2.sub': 'Built for high performance',
     'services.c2.alt': 'Battery energy storage containers installed at a solar park',
     'services.c2.body': '<span class="be">be</span><span class="be-lead"> successful.</span> As your trusted PV and BESS project partner, we draw on many years of experience in renewable energy infrastructure. We deliver tailored solutions to meet a wide range of project requirements. Every PV plant is engineered for quality, reliability and long-term performance.',
     'services.c3.title': 'Operations and maintenance',
@@ -131,7 +131,7 @@ window.BEJULO_CONTENT = {
     'services.c4.title': 'IPP energy marketing',
     'services.c4.sub': 'Greater independence. Greater flexibility.',
     'services.c4.alt': 'Solar modules bordered by a wildflower meadow',
-    'services.c4.body': '<span class="be">be</span><span class="be-lead"> independent.</span> Energy is at the heart of a sustainable future. As an independent power producer, we’re building our own portfolio of PV and BESS assets, enabling us to market electricity flexibly and feed it into the grid in line with demand. By combining renewable power generation with direct marketing, we’re helping to build a more independent, diversified and resilient energy supply.',
+    'services.c4.body': '<span class="be">be</span><span class="be-lead"> independent.</span> Energy is a foundational element of the future. As an independent power producer, we’re building our own portfolio of PV and BESS assets, enabling us to market electricity flexibly and feed it into the grid in line with demand. By combining renewable power generation with direct marketing, we’re helping to build a more independent, diversified and resilient energy supply.',
     /* client review 2026-08-24 §2b — split into two sentences, period + line break */
     'services.cta.line1': 'Whether you’re a landowner, looking to sell project rights or seeking a trusted delivery partner.',
     'services.cta.line2': 'bejulo is here to help.',
@@ -189,7 +189,7 @@ window.BEJULO_CONTENT = {
     'contact.email.label': 'E-Mail:',
     'contact.email': 'info@bejulo.de',
     'contact.email.intl': 'international@bejulo.de',
-    'contact.follow': 'Follow us and<br>never miss an update!',
+    'contact.follow': 'Follow us on LinkedIn',
     'contact.linkedin.alt': 'bejulo on LinkedIn',
     'contact.photo.alt': 'The bejulo head office in Mainz, Germany',
     'contact.pending': 'Content for the international contact page is still to be confirmed by bejulo.',
@@ -201,7 +201,7 @@ window.BEJULO_CONTENT = {
     'projects.map.label': 'Map of bejulo project locations worldwide',
     'projects.map.insetLabel': 'Detail map of bejulo project locations in Europe',
     'projects.map.hint': 'Hover a marker for project details',
-    'projects.map.note': 'The orange markers show a selection of the projects we have delivered. They are a cross-section of our international project activities.',
+    'projects.map.note': 'The countries with orange markers represent a selection of our successfully completed projects.',
     'projects.customers.h2': 'Satisfied customers are our greatest success',
     'projects.customers.body': '<span class="be">be</span><span class="be-lead"> happy.</span> We work with customers across a broad range of industries, with many placing their trust in our expertise and commercial performance for years. They choose bejulo because we combine technical expertise, commercial efficiency and a fully integrated approach to project delivery. Built on quality, transparency and fairness, our partnerships are designed to create lasting value for everyone involved.',
     'project.back': 'Back to all projects',
@@ -340,7 +340,7 @@ window.BEJULO_CONTENT = {
     'about.h2': 'The people behind sustainable energy',
     'about.body1': '<span class="be">be</span><span class="be-lead"> passionate. be with us.</span>',
     'about.body2': 'Since 2012, bejulo has been creating a more sustainable future through expert PV solutions and a genuine passion for renewable energy. Responsibility, reliability, quality and teamwork are the values that shape our culture and define the way we work.',
-    'about.body3': 'Our people bring together technical excellence, international experience and a shared ambition to make a difference. With personal commitment, technical expertise and a long-term perspective, we help our customers achieve sustainable success.',
+    'about.body3': 'Our people bring together technical excellence, international experience and a shared ambition to make a difference. With personal commitment, expertise and a long-term perspective, we help our customers achieve sustainable success.',
     'about.body4': 'What matters most to us? Building partnerships based on trust and mutual respect. We believe in working openly, fairly and respectfully. We see our customers not simply as clients, but as long-term partners.',
     'about.body5': 'When you choose bejulo, you choose a partner you can rely on.',
 
@@ -431,7 +431,7 @@ window.BEJULO_CONTENT = {
     'btn.services': 'Leistungsspektrum',
     'btn.intlprojects': 'International',
     /* client review 2026-08-24 §1b */
-    'btn.international': 'Unsere internationale Kompetenz entdecken',
+    'btn.international': 'Entdecken Sie unsere internationale Kompetenz',
     /* NOTE: the DE Figma file shows no button for these two — the wording below
        is a placeholder and still needs the client's German. */
     'btn.projects': 'Projekte',
@@ -466,7 +466,7 @@ window.BEJULO_CONTENT = {
     'services.c4.title': 'Stromvermarktung IPP',
     'services.c4.sub': 'In Zukunft unabhängig und noch flexibler',
     'services.c4.alt': 'Solarmodule am Rand einer Blühwiese',
-    'services.c4.body': '<span class="be">be</span><span class="be-lead"> independent.</span> Energie ist ein zentraler Baustein einer nachhaltigen Zukunft. Deshalb bauen wir als IPP ein eigenes Portfolio aus PV- und BESS-Anlagen auf, um erzeugten Strom flexibel zu vermarkten und bedarfsgerecht ins Netz einzuspeisen. Die Kombination aus Stromerzeugung und Stromvermarktung schafft wirtschaftliche Stabilität und stärkt eine diversifizierte sowie unabhängige Energieversorgung.',
+    'services.c4.body': '<span class="be">be</span><span class="be-lead"> independent.</span> Energie ist ein fundamentaler Baustein einer nachhaltigen Zukunft. Deshalb bauen wir als IPP ein eigenes Portfolio aus PV- und BESS-Anlagen auf, um erzeugten Strom flexibel zu vermarkten und bedarfsgerecht ins Netz einzuspeisen. Die Kombination aus Stromerzeugung und Stromvermarktung schafft wirtschaftliche Stabilität und stärkt eine diversifizierte sowie unabhängige Energieversorgung.',
     /* client review 2026-08-24 §2b — wording taken from the CTA screenshot the
        client supplied, which supersedes the DE Figma text for this section
        ("Ganz gleich ob Sie Flächeneigentümer sind, … bejulo ist Ihr
@@ -527,7 +527,7 @@ window.BEJULO_CONTENT = {
     'contact.email.label': 'E-Mail:',
     'contact.email': 'info@bejulo.de',
     'contact.email.intl': 'international@bejulo.de',
-    'contact.follow': 'Jetzt folgen und<br>nichts verpassen!',
+    'contact.follow': 'Folgen Sie uns auf LinkedIn',
     'contact.linkedin.alt': 'bejulo auf LinkedIn',
     'contact.photo.alt': 'Der Hauptsitz von bejulo in Mainz',
     'contact.pending': 'Die Inhalte der internationalen Kontaktseite sind noch mit bejulo abzustimmen.',
@@ -539,7 +539,7 @@ window.BEJULO_CONTENT = {
     'projects.map.label': 'Karte der bejulo-Projektstandorte weltweit',
     'projects.map.insetLabel': 'Detailkarte der bejulo-Projektstandorte in Europa',
     'projects.map.hint': 'Marker ansteuern für Projektdetails',
-    'projects.map.note': 'Die orange markierten Standorte zeigen eine Auswahl unserer umgesetzten Projekte. Sie bilden einen Auszug unserer internationalen Projektaktivitäten.',
+    'projects.map.note': 'Die orangefarbenen Marker zeigen eine Auswahl unserer erfolgreich realisierten Projekte in den verschiedenen Ländern.',
     'projects.customers.h2': 'Zufriedene Kunden sind unser größter Erfolg',
     'projects.customers.body': '<span class="be">be</span><span class="be-lead"> happy.</span> Unsere Kunden stammen aus den unterschiedlichsten Branchen und vertrauen zum Teil bereits seit vielen Jahren auf unsere Leistungsfähigkeit und Wirtschaftlichkeit. Dabei schätzen sie uns als zuverlässigen und kompetenten Komplettdienstleister, der Projekte ganzheitlich und effizient umsetzt. Qualität, Transparenz und Fairness bilden die Grundlage für unseren nachhaltigen gemeinsamen Erfolg.',
     'project.back': 'Zurück zu allen Projekten',
@@ -566,7 +566,7 @@ window.BEJULO_CONTENT = {
     'proj.merbitz.alt': 'Luftaufnahme des Solarparks Merbitz zwischen Feldern und Ortsrand',
 
     'proj.gerbstedt.title': 'Gerbstedt, Sachsen-Anhalt',
-    'proj.gerbstedt.body': 'Ein 53 MWp großer PV-Park, geplant und errichtet auf teilweise hügligem Untergrund.',
+    'proj.gerbstedt.body': 'Ein 53 MWp großer PV-Park, geplant und auf teilweise sehr ungleichmäßigem Untergrund errichtet.',
     'proj.gerbstedt.specs': '<dt>Anlagenleistung:</dt><dd>52,9 MWp</dd><dt>Realisierung:</dt><dd>März 2026 – Nov 2026</dd>',
     'proj.gerbstedt.alt': 'Luftaufnahme des Solarparks Gerbstedt in offener Feldflur, am Horizont Windräder',
 
@@ -590,7 +590,7 @@ window.BEJULO_CONTENT = {
     'proj.ireland.stats2': 'Weitere Anlagen aktuell im Bau und in der Angebotsphase.',
 
     'proj.lehinch.title': 'Lehinch',
-    'proj.lehinch.body': 'Ein 6,3 MWp großer PV-Park, den wir auf hügligem und inhomogenen Untergrund in den Wintermonaten errichtet haben; teilweise mit großflächigen Wasseransammlungen nach Regenfall',
+    'proj.lehinch.body': 'Ein 6,3 MWp großer PV-Park, geplant und auf sehr ungleichmäßigem und inhomogenem Untergrund in den Wintermonaten errichtet; teilweise mit großflächigen Wasseransammlungen nach Regenfall',
     'proj.lehinch.specs': '<dt>Anlagenleistung:</dt><dd>6,3 MWp</dd><dt>Realisierung:</dt><dd>Sep 2023 – Jun 2024</dd>',
     'proj.lehinch.alt': 'Montage der Unterkonstruktion auf nassem Untergrund in Lehinch',
 

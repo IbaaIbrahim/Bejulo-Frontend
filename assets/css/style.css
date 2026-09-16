@@ -720,10 +720,14 @@ body[data-header='overlay'] #site-header {
   min-height: 351px;
 }
 
+/* Client review 2026-09-15 — the Operations photo on Services was visibly
+   stretched: the media column is a fixed 401×351+ box and `fill` squeezed a
+   3:2 photo into it. Crop instead of distorting, everywhere a card carries a
+   photo. */
 .card__media img {
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
+  object-fit: cover;
 }
 
 .card__body>*+* {
@@ -794,29 +798,48 @@ body[data-header='overlay'] #site-header {
 
 /* ==========================================================================
    Project detail cards (project-<country>.html)
-   The Services card is the layout template the client asked for, so these
-   only add what a project entry needs on top of it: the figures table, a
-   two-photo media column for the entries that cover two sites, and a card
-   with no photo at all for the one still under construction.
+   Client review 2026-09-15 replaced the Services-style card (copy beside an
+   alternating photo column) with a grid of its own: two cards per row at
+   desktop, one from tablet down, and inside each card the copy sits above
+   the photos, which stack. Every photo supplied for a project is shown, so
+   an entry covering two sites shows both.
    ========================================================================== */
 
-/* `.card__media img` is `object-fit: fill` site-wide, which stretches a photo
-   to whatever shape the card row ends up. The project photos are 4:3 and 16:9
-   aerials and the distortion is obvious on them, so they crop instead. Scoped
-   to these pages so the already-signed-off Services cards are left as they are
-   — that page shows the same stretch and is worth raising separately. */
-[data-meta^="project-"] .card__media img {
-  object-fit: cover;
+[data-meta^="project-"] .card-stack {
+  grid-template-columns: 1fr 1fr;
+  /* cards size to their own content — a two-photo entry is taller than the
+     one beside it, as in the client's screenshot */
+  align-items: start;
 }
 
+/* A group heading ("Challenging soil conditions") introduces the cards below
+   it, so it runs the full width rather than sitting in one column. */
+[data-meta^="project-"] .card-stack__heading {
+  grid-column: 1 / -1;
+}
+
+/* Copy above, photos below. (No project card carries .card--media-left any
+   more — alternating sides is a Services-page idea.) */
+[data-meta^="project-"] .card {
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+/* A common 16:9 crop, so the photo in one card lines up with the photo in the
+   card beside it whatever shape the original is (the set runs 16:9 to 4:3). */
+[data-meta^="project-"] .card__media {
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+}
+
+
 /* Figures table — <dl> of label/value pairs from the client's document.
-   Two columns at desktop so the values line up as they do in the document;
-   one column on narrow screens, where a 2-column grid would leave the longer
-   labels ("Construction time, both projects:") with nowhere to go. */
+   Label above value: at half a row's width the longer labels ("Construction
+   time, both projects:") leave no room for a figure beside them, and the
+   client's screenshot shows them stacked. */
 .specs {
   display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 2px 24px;
+  grid-template-columns: 1fr;
   margin-top: 16px;
 }
 
@@ -825,34 +848,38 @@ body[data-header='overlay'] #site-header {
 }
 
 .specs dd {
-  margin: 0;
+  margin: 0 0 12px;
   font-weight: 700;
 }
 
-/* Both photos of a two-site entry (Odell + Glebe, Ehyaei + Eslamieh) share
-   the media column, so the pair reads as one project the way the client's
-   document presents it. */
+.specs dd:last-child {
+  margin-bottom: 0;
+}
+
+/* Both photos of a two-site entry (Odell + Glebe, Ehyaei + Eslamieh) sit in
+   the card's media area, stacked, so the pair reads as one project the way
+   the client's document presents it. */
+[data-meta^="project-"] .card__media--pair,
 .card__media--pair {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 12px;
   overflow: visible;
-  /* A definite height, so a pair takes about as much room as one single-photo
-     card. Left to size itself, two 4:3 photos in a 401px column come to ~615px
-     and the card ends up mostly empty grey beside two lines of figures. */
-  height: 420px;
-  align-self: start;
+  /* sized by the two photos rather than one 16:9 box — the card is free to
+     run taller than the single-photo one beside it */
+  aspect-ratio: auto;
 }
 
 .card__media--pair img {
   border-radius: var(--radius);
-  height: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
   min-height: 0;
   object-fit: cover;
 }
 
-/* Ballinaclough has figures but no photo yet — let the text run the full
-   width rather than leaving an empty 401px column. */
+/* Ballinaclough has figures but no photo yet. Every project card is a single
+   column now, so this only needs to keep the Services cards' behaviour. */
 .card--no-media {
   grid-template-columns: 1fr;
 }
@@ -1523,11 +1550,10 @@ body[data-header='overlay'] #site-header {
     min-height: 260px;
   }
 
-  /* Stacked, the pair is two photos above the copy — cap them so the card
-     does not open with 520px of imagery before a word of text. */
-  .card__media--pair {
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
+  /* Project photos are sized by their 16:9 box, not a floor — a min-height
+     here would stretch the crop on a narrow card. */
+  [data-meta^="project-"] .card__media {
+    min-height: 0;
   }
 
   .contact-grid {
@@ -1558,6 +1584,11 @@ body[data-header='overlay'] #site-header {
   /* NB: do not force position:relative here. It outranks
      .site-header--overlay, drops the bar out of the hero, and leaves the white
      logo sitting on the white page background — invisible. */
+
+  /* Tablet and below: one project card per row (client review 2026-09-15). */
+  [data-meta^="project-"] .card-stack {
+    grid-template-columns: 1fr;
+  }
 
   .nav-toggle {
     display: inline-flex;
@@ -1613,21 +1644,6 @@ body[data-header='overlay'] #site-header {
 @media (max-width: 900px) {
   .card {
     padding: 28px 24px;
-  }
-
-  /* The longer labels ("Construction time, both projects:") no longer leave
-     room for a value beside them — run label over value instead. */
-  .specs {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .specs dd {
-    margin-bottom: 10px;
-  }
-
-  .specs dd:last-child {
-    margin-bottom: 0;
   }
 
   .panel,

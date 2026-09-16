@@ -37,7 +37,9 @@
   'use strict';
 
   /* scope: 'europe' renders on the inset, 'world' on the background map
-     href:  the country's project page, opened from the popup */
+     href:  the country's project page, opened from the popup. Omitted where
+            bejulo has supplied no project detail for the country yet — the
+            popup then carries no "Read more…" link (client review 2026-09-15). */
   var PROJECTS = [
     { id: 'ireland', scope: 'europe', lat: 53.05, lng: -7.75,
       href: 'project-ireland.html',
@@ -87,8 +89,9 @@
       stats:   { en: '3 PV Plants installed and commissioned, with a total capacity of 22 MWp.',
                  de: '3 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von 22 MWp.' } },
 
+    /* No project detail supplied for South Africa yet, so no href and no
+       "Read more…" link — client review 2026-09-15. */
     { id: 'south-africa', scope: 'world', lat: -29.20, lng: 24.60,
-      href: 'project-south-africa.html',
       country: { en: 'South Africa', de: 'Südafrika' },
       stats:   { en: '2 PV Plants installed and commissioned, with a total capacity of 443 kWp.',
                  de: '2 Anlagen installiert und in Betrieb genommen mit einer Gesamtkapazität von 443 kWp.' } }
@@ -191,8 +194,10 @@
         '<p class="pin-card__country">' + txt(p.country, l) + '</p>' +
         '<p class="pin-card__text">' + txt(p.stats, l) + '</p>' +
         (note ? '<p class="pin-card__text">' + note + '</p>' : '') +
-        '<a class="pin-card__more" href="' + p.href + '">' +
-          t('btn.readmore', 'Read more…') + '</a>';
+        (p.href
+          ? '<a class="pin-card__more" href="' + p.href + '">' +
+              t('btn.readmore', 'Read more…') + '</a>'
+          : '');
       card.classList.add('is-open');
       position(marker, map);
     }
