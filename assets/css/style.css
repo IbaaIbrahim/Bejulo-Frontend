@@ -639,10 +639,11 @@ html[lang="en"] [data-lang="de"] {
   gap: 24px;
 }
 
-/* International landing page: Figma (Content 1) spaces the four CTAs 53px
-   apart — the row reads spread out, not packed. */
+/* International landing page: the client's 2026-09-23 screenshot spaces the
+   four CTAs 56px apart (40px at the screenshot's 1.41× scale) — the row reads
+   spread out, not packed. */
 .btn-row--wide {
-  gap: 53px;
+  gap: 56px;
 }
 
 .btn-row--center {
@@ -963,8 +964,10 @@ html[lang="en"] [data-lang="de"] {
 .panel {
   background: var(--surface-panel);
   border-radius: var(--radius);
-  /* Roomier under the copy than above the title, as in the client's design */
-  padding: 32px 48px 48px;
+  /* Client design 2026-09-23 (measured off the screenshot at 1.41×):
+     ~38px above the title, ~44px under the copy — roomier than the old
+     32/32 and slightly asymmetric. */
+  padding: 40px 48px 44px;
 }
 
 .panel__title {
@@ -981,17 +984,26 @@ html[lang="en"] [data-lang="de"] {
 }
 
 .panel>*+* {
-  margin-top: 40px;
+  /* Title centre → first body line centre measures ~82px in the client
+     design (2026-09-23); the 40px title line box + this margin hits it. */
+  margin-top: 42px;
 }
 
-/* International landing page — desktop vertical rhythm from the Figma frame
-   "International / Content 1" (67885:86): headline block (2×50) ends 861,
-   first panel starts 904 → 43px; last panel ends 1829, buttons start 1876 →
-   47px. One ~44px stack step covers both; panel-to-panel gaps stay on the
-   shared 48px (frame rects: 39 / 47). */
+/* International landing page — desktop vertical rhythm from the client's
+   2026-09-23 screenshot (911×876, ×1.41 to CSS px): headline → first panel
+   ~52px visual (≈56 box gap), panels ~40/48 apart (44 splits the difference),
+   last panel → buttons ~50px (56 stack step − 6px nudge). */
 @media (min-width: 901px) {
   body[data-page="international"] .stack {
-    --stack-gap: 44px;
+    --stack-gap: 56px;
+  }
+
+  body[data-page="international"] .card-stack {
+    gap: 44px;
+  }
+
+  body[data-page="international"] .btn-row {
+    margin-top: -6px;
   }
 }
 
