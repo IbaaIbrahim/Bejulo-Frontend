@@ -182,16 +182,11 @@ page carries the figures and `proj.southafrica.pending`.
 
 ### Project photos
 
-`assets/img/projects/` — 19 files, 6.5 MB total. The originals are 2–21 MB
-each; they are resized to 1600px on the long edge at quality 82, which is
-roughly 4× the 401px column the cards render them in. Every `<img>` carries the
-resulting intrinsic `width`/`height`.
-
-Six supplied photos are **not** used, because the client asked for one image per
-project and these are second views of a project that already has one:
-`Kahsel Linkedin`, `UW Merbitz` (the substation), `Friarspark mit Schafen`,
-`Horsepasture Schrägpfosten`, `Lehinch Bauphase`, `Hall Gestell`. They are still
-in the delivery folder if any should be swapped in.
+`assets/img/projects/` — 26 files total. All supplied images from the client archive
+are displayed across country pages:
+- Paired entries (`.card__media--pair`): *Kahsel Süd*, *Merbitz*, *Hall*, *Lehinch*, *Friarspark*, *Horsepasture*, *Odell and Glebe*, *Ehyaei and Eslamieh*.
+- Single entries: *Ballinaclough* (now equipped with photo), *Gerbstedt*, *Sennewitz*, *Almelo*, *Heerenveen*, *Stadskanaal*, *Mercurius*, *Bükkabrany*, *Caswell*, *Vian*.
+All project photos are downsampled to max 1600px width using PIL Lanczos filtering at quality 85. Service cards on `services.html` are pre-sampled to 2× retina dimensions (802px width) to eliminate runtime browser downscaling artifacts and jagged diagonal lines.
 
 ## Home hero video
 

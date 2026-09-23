@@ -47,6 +47,7 @@ window.BEJULO_CONTENT = {
     'footer.legal': 'Legal Notice',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms & Conditions',
+    'footer.terms.href': 'assets/docs/2022-04-bejulo-Mustervertrag-AEB-mit-SPV_EN-1.pdf',
     'footer.cookies': 'Cookies',
     /* client review 2026-09-08 §2 — ISO 9001:2015 badge in the footer, linked
        to the certificate in the language the visitor is reading. The href is a
@@ -233,11 +234,15 @@ window.BEJULO_CONTENT = {
     'proj.kahsel.body': 'With the commissioning of this project, bejulo has achieved a major milestone: the planning, construction and commissioning of our first PV Plant with BESS',
     'proj.kahsel.specs': '<dt>Installed capacity PV Plant:</dt><dd>38.4 MWp</dd><dt>Installed capacity BESS:</dt><dd>70 MWh</dd><dt>Construction time:</dt><dd>Feb – Jun 2026</dd><dt>Commissioning:</dt><dd>Aug 2026</dd>',
     'proj.kahsel.alt': 'Aerial view of the battery storage containers being installed alongside the Kahsel Süd solar park',
+    'proj.kahsel.alt1': 'Aerial view of the battery storage containers being installed alongside the Kahsel Süd solar park',
+    'proj.kahsel.alt2': 'Completed solar park with battery storage containers at Kahsel Süd',
 
     'proj.merbitz.title': 'Merbitz, Saxony-Anhalt',
     'proj.merbitz.body': 'A 71.5 MWp PV plant - planned, constructed, and commissioned by bejulo. Undercrossing of the motorway and railway line: Realised via HDD.',
     'proj.merbitz.specs': '<dt>Installed capacity:</dt><dd>71.5 MWp</dd><dt>Construction time:</dt><dd>Oct 2025 – Mar 2026</dd><dt>Commissioning:</dt><dd>Apr 2026</dd>',
     'proj.merbitz.alt': 'Aerial view of the Merbitz solar park between farmland and a village',
+    'proj.merbitz.alt1': 'Aerial view of the Merbitz solar park between farmland and a village',
+    'proj.merbitz.alt2': 'Wide landscape view of the Merbitz solar park installation',
 
     'proj.gerbstedt.title': 'Gerbstedt, Saxony-Anhalt',
     'proj.gerbstedt.body': 'A 53 MWp PV farm, planned and constructed on rolling terrain.',
@@ -267,18 +272,25 @@ window.BEJULO_CONTENT = {
     'proj.lehinch.body': 'A 6.3 MWp PV plant, constructed in winter on undulating, inhomogeneous terrain with extensive surface water accumulation after heavy rain',
     'proj.lehinch.specs': '<dt>Installed capacity:</dt><dd>6.3 MWp</dd><dt>Construction time:</dt><dd>Sep 2023 – Jun 2024</dd>',
     'proj.lehinch.alt': 'Site team assembling mounting structures on wet ground at Lehinch',
+    'proj.lehinch.alt1': 'Site team assembling mounting structures on wet ground at Lehinch',
+    'proj.lehinch.alt2': 'Aerial view of the Lehinch solar park installation',
 
     'proj.friarspark.title': 'Friarspark',
     'proj.friarspark.specs': '<dt>Installed capacity:</dt><dd>6.5 MWp</dd><dt>Construction time:</dt><dd>Jul 2023 – Jun 2024</dd>',
     'proj.friarspark.alt': 'A grass track running between the module rows at Friarspark, with an oak tree beyond',
+    'proj.friarspark.alt1': 'A grass track running between the module rows at Friarspark, with an oak tree beyond',
+    'proj.friarspark.alt2': 'Aerial view of the Friarspark solar installation',
 
     'proj.horsepasture.title': 'Horsepasture',
     'proj.horsepasture.body': 'A 12.7 MWp PV plant constructed on inhomogeneous soil; Piling foundation via pre-drilling and root posts; approx. 1-year project suspension due to archaeological finds on site',
     'proj.horsepasture.specs': '<dt>Installed capacity:</dt><dd>12.7 MWp</dd><dt>Construction time:</dt><dd>Jul 2023 – Mar 2025</dd>',
     'proj.horsepasture.alt': 'Module rows at Horsepasture under a rainbow after rainfall',
+    'proj.horsepasture.alt1': 'Module rows at Horsepasture under a rainbow after rainfall',
+    'proj.horsepasture.alt2': 'Completed solar panels on undulating ground at Horsepasture',
 
     'proj.ballinaclough.title': 'Ballinaclough',
     'proj.ballinaclough.specs': '<dt>Installed capacity:</dt><dd>15.5 MWp</dd><dt>Construction time:</dt><dd>under construction (start: Jul 2026)</dd>',
+    'proj.ballinaclough.alt': 'Aerial view of the Ballinaclough solar park site',
 
     /* The Netherlands */
     'proj.netherlands.h1': 'The Netherlands',
@@ -291,6 +303,8 @@ window.BEJULO_CONTENT = {
     'proj.hall.title': 'Hall',
     'proj.hall.specs': '<dt>Installed capacity:</dt><dd>36.1 MWp</dd><dt>Construction time:</dt><dd>Jul 2022 – Apr 2023</dd>',
     'proj.hall.alt': 'The Hall solar park seen from a wooden viewing platform',
+    'proj.hall.alt1': 'The Hall solar park seen from a wooden viewing platform',
+    'proj.hall.alt2': 'Aerial view of the Hall solar park installation',
 
     'proj.heerenveen.title': 'Heerenveen',
     'proj.heerenveen.specs': '<dt>Installed capacity:</dt><dd>7.3 MWp</dd><dt>Construction time:</dt><dd>Jun 2020 – Sep 2020</dd>',
@@ -380,6 +394,7 @@ window.BEJULO_CONTENT = {
     'footer.legal': 'Impressum',
     'footer.privacy': 'Datenschutzerklärung',
     'footer.terms': 'AGB',
+    'footer.terms.href': 'assets/docs/2022-04-bejulo-Mustervertrag-AEB-mit-SPV.pdf',
     'footer.cookies': 'Cookies',
     /* client review 2026-09-08 §2 — siehe EN */
     'footer.iso.href': 'assets/certificates/bejulo-iso-9001-de.pdf',
@@ -559,11 +574,15 @@ window.BEJULO_CONTENT = {
     'proj.kahsel.body': 'Mit der Inbetriebnahme dieses Projekts hat bejulo einen wichtigen Meilenstein erreicht: die Planung, Errichtung und Inbetriebnahme unseres ersten PV-Parks mit Batteriespeicher.',
     'proj.kahsel.specs': '<dt>Installierte Leistung PV-Park:</dt><dd>38,4 MWp</dd><dt>Installierte Kapazität BESS:</dt><dd>70 MWh</dd><dt>Realisierung:</dt><dd>Feb – Jun 2026</dd><dt>Inbetriebnahme:</dt><dd>Aug 2026</dd>',
     'proj.kahsel.alt': 'Luftaufnahme der Batteriespeicher-Container neben dem Solarpark Kahsel Süd',
+    'proj.kahsel.alt1': 'Luftaufnahme der Batteriespeicher-Container neben dem Solarpark Kahsel Süd',
+    'proj.kahsel.alt2': 'Fertiggestellter Solarpark mit Batteriespeichern in Kahsel Süd',
 
     'proj.merbitz.title': 'Merbitz, Sachsen-Anhalt',
     'proj.merbitz.body': 'Ein 71,5 MWp großer PV-Park, den wir geplant, errichtet und in Betrieb genommen haben. Unterquerung der Autobahn und Bahntrasse: Realisiert durch Spülbohrung.',
     'proj.merbitz.specs': '<dt>Anlagenleistung:</dt><dd>71,5 MWp</dd><dt>Realisierung:</dt><dd>Okt 2025 – März 2026</dd><dt>Inbetriebnahme:</dt><dd>Apr 2026</dd>',
     'proj.merbitz.alt': 'Luftaufnahme des Solarparks Merbitz zwischen Feldern und Ortsrand',
+    'proj.merbitz.alt1': 'Luftaufnahme des Solarparks Merbitz zwischen Feldern und Ortsrand',
+    'proj.merbitz.alt2': 'Weite Landschaftsansicht des Solarparks Merbitz',
 
     'proj.gerbstedt.title': 'Gerbstedt, Sachsen-Anhalt',
     'proj.gerbstedt.body': 'Ein 53 MWp großer PV-Park, geplant und auf teilweise sehr ungleichmäßigem Untergrund errichtet.',
@@ -593,18 +612,25 @@ window.BEJULO_CONTENT = {
     'proj.lehinch.body': 'Ein 6,3 MWp großer PV-Park, geplant und auf sehr ungleichmäßigem und inhomogenem Untergrund in den Wintermonaten errichtet; teilweise mit großflächigen Wasseransammlungen nach Regenfall',
     'proj.lehinch.specs': '<dt>Anlagenleistung:</dt><dd>6,3 MWp</dd><dt>Realisierung:</dt><dd>Sep 2023 – Jun 2024</dd>',
     'proj.lehinch.alt': 'Montage der Unterkonstruktion auf nassem Untergrund in Lehinch',
+    'proj.lehinch.alt1': 'Montage der Unterkonstruktion auf nassem Untergrund in Lehinch',
+    'proj.lehinch.alt2': 'Luftaufnahme des Solarparks Lehinch',
 
     'proj.friarspark.title': 'Friarspark',
     'proj.friarspark.specs': '<dt>Anlagenleistung:</dt><dd>6,5 MWp</dd><dt>Realisierung:</dt><dd>Jul 2023 – Jun 2024</dd>',
     'proj.friarspark.alt': 'Grasweg zwischen den Modulreihen in Friarspark, dahinter eine Eiche',
+    'proj.friarspark.alt1': 'Grasweg zwischen den Modulreihen in Friarspark, dahinter eine Eiche',
+    'proj.friarspark.alt2': 'Luftaufnahme der Solaranlage Friarspark',
 
     'proj.horsepasture.title': 'Horsepasture',
     'proj.horsepasture.body': 'Ein 12,7 MWp großer PV-Park, errichtet auf inhomogenem Boden; Gründung der Pfosten mittels Vorbohrens und Anbringen von Querpfosten („root posts“). Aufgrund archäologischer Funde auf dem Baufeld, Unterbrechung der Arbeiten von ca. 1 Jahr.',
     'proj.horsepasture.specs': '<dt>Anlagenleistung:</dt><dd>12,7 MWp</dd><dt>Realisierung:</dt><dd>Jul 2023 – März 2025</dd>',
     'proj.horsepasture.alt': 'Modulreihen in Horsepasture unter einem Regenbogen nach dem Regen',
+    'proj.horsepasture.alt1': 'Modulreihen in Horsepasture unter einem Regenbogen nach dem Regen',
+    'proj.horsepasture.alt2': 'Fertig installierte Solarmodule im Solarpark Horsepasture',
 
     'proj.ballinaclough.title': 'Ballinaclough',
     'proj.ballinaclough.specs': '<dt>Anlagenleistung:</dt><dd>15,5 MWp</dd><dt>Realisierung:</dt><dd>Im Bau (Baustart Jul 2026)</dd>',
+    'proj.ballinaclough.alt': 'Luftaufnahme des Geländes für den Solarpark Ballinaclough',
 
     /* Niederlande */
     'proj.netherlands.h1': 'Niederlande',
@@ -617,6 +643,8 @@ window.BEJULO_CONTENT = {
     'proj.hall.title': 'Hall',
     'proj.hall.specs': '<dt>Anlagenleistung:</dt><dd>36,1 MWp</dd><dt>Realisierung:</dt><dd>Jul 2022 – Apr 2023</dd>',
     'proj.hall.alt': 'Blick von einer hölzernen Aussichtsplattform über den Solarpark Hall',
+    'proj.hall.alt1': 'Blick von einer hölzernen Aussichtsplattform über den Solarpark Hall',
+    'proj.hall.alt2': 'Luftaufnahme des Solarparks Hall',
 
     'proj.heerenveen.title': 'Heerenveen',
     'proj.heerenveen.specs': '<dt>Anlagenleistung:</dt><dd>7,3 MWp</dd><dt>Realisierung:</dt><dd>Jun 2020 – Sep 2020</dd>',

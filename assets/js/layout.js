@@ -30,11 +30,10 @@
   ];
 
   var FOOTER_LINKS = [
-    // Legal targets are placeholders in the design; awaiting real pages.
-    { href: '#', i18n: 'footer.legal' },
-    { href: '#', i18n: 'footer.privacy' },
-    { href: '#', i18n: 'footer.terms' },
-    { href: '#', i18n: 'footer.cookies' }
+    { href: 'imprint.html', i18n: 'footer.legal' },
+    { href: 'privacy.html', i18n: 'footer.privacy' },
+    { href: 'assets/docs/2022-04-bejulo-Mustervertrag-AEB-mit-SPV_EN-1.pdf', i18n: 'footer.terms', attr: 'href:footer.terms.href', target: '_blank', rel: 'noopener' },
+    { href: 'cookies.html', i18n: 'footer.cookies' }
   ];
 
   var body = document.body;
@@ -101,7 +100,11 @@
         certHTML +
         '<nav class="site-footer__nav" data-i18n-attr="aria-label:footer.legalnav">' +
           FOOTER_LINKS.map(function (l) {
-            return '<a href="' + l.href + '" data-i18n="' + l.i18n + '"></a>';
+            var extra = '';
+            if (l.attr) extra += ' data-i18n-attr="' + l.attr + '"';
+            if (l.target) extra += ' target="' + l.target + '"';
+            if (l.rel) extra += ' rel="' + l.rel + '"';
+            return '<a href="' + l.href + '" data-i18n="' + l.i18n + '"' + extra + '></a>';
           }).join('') +
         '</nav>' +
       '</div>' +
