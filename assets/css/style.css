@@ -1003,7 +1003,7 @@ html[lang="en"] [data-lang="de"] {
   }
 
   body[data-page="international"] .btn-row {
-    margin-top: -6px;
+    margin-top: 25px;
   }
 }
 
@@ -1115,6 +1115,78 @@ html[lang="en"] [data-lang="de"] {
 .accordion__figure img {
   width: 100%;
   height: auto;
+}
+
+/* Job posting inside careers accordion */
+.job-posting {
+  text-align: left;
+}
+
+.job-posting h4 {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.job-posting h4:first-child {
+  margin-top: 0;
+}
+
+.job-posting .job-subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 20px;
+}
+
+.job-posting p {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0;
+  margin-bottom: 12px;
+}
+
+.job-posting ul {
+  padding-left: 1.5em;
+  list-style: disc;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.job-posting li {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0;
+}
+
+.job-posting li+li {
+  margin-top: 6px;
+}
+
+.job-posting .job-footer {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--hairline);
+  font-size: 15px;
+  line-height: 22px;
+  color: #555;
+}
+
+.job-posting .job-footer p {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.job-posting a {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+.job-posting a:hover {
+  color: var(--orange-hover);
 }
 
 /* ==========================================================================
