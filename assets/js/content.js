@@ -143,11 +143,11 @@ window.BEJULO_CONTENT = {
 
     /* --- international landing --- */
     'intl.p1.title': 'From planning to operation &amp; maintenance – we’re with you every step of the way.',
-    'intl.p1.body': '<span class="be">be</span><span class="be-lead"> committed.</span> We deliver turnkey solar PV, battery energy storage and revamping projects around the world. For you, that means maximum reliability, minimal complexity and sustainable returns.',
+    'intl.p1.body': '<span class="be">be</span><span class="be-lead"> committed.</span> We deliver turnkey solar PV, battery energy storage and revamping<br class="br-desktop">projects around the world. For you, that means maximum reliability, minimal<br class="br-desktop">complexity and sustainable returns.',
     'intl.p2.title': 'One partner for every project phase.',
-    'intl.p2.body': '<span class="be">be</span><span class="be-lead"> integrated.</span> You’ll have one dedicated partner coordinating every aspect of your project. We coordinate all processes, interfaces and project partners, allowing you to focus on what matters most – your investment.',
+    'intl.p2.body': '<span class="be">be</span><span class="be-lead"> integrated.</span> You’ll have one dedicated partner coordinating every aspect of<br class="br-desktop">your project. We coordinate all processes, interfaces and project partners,<br class="br-desktop">allowing you to focus on what matters most – your investment.',
     'intl.p3.title': 'Your project. Our responsibility.',
-    'intl.p3.body': '<span class="be">be</span><span class="be-lead"> responsible.</span> We believe the best projects are built on long-term partnerships. That’s why we stay committed beyond completion, helping your investment deliver lasting technical performance, commercial value and operational reliability.',
+    'intl.p3.body': '<span class="be">be</span><span class="be-lead"> responsible.</span> We believe the best projects are built on long-term partnerships.<br class="br-desktop">That’s why we stay committed beyond completion, helping your investment deliver<br class="br-desktop">lasting technical performance, commercial value and operational reliability.',
 
     /* --- international experience --- */
     'intl.exp.a1': '<span class="be">be</span> expert – International experience. Local expertise.',
@@ -494,11 +494,11 @@ window.BEJULO_CONTENT = {
 
     /* --- international landing --- */
     'intl.p1.title': 'Von der Planung bis zur Betriebsführung – wir übernehmen.',
-    'intl.p1.body': '<span class="be">be</span><span class="be-lead"> committed.</span> Wir realisieren Freiflächen-Photovoltaikanlagen, integrierte Batteriespeicher und Revamping-Projekte weltweit – schlüsselfertig und aus einer Hand. Für Sie bedeutet das: maximale Sicherheit, minimale Komplexität und nachhaltige Erträge.',
+    'intl.p1.body': '<span class="be">be</span><span class="be-lead"> committed.</span> Wir realisieren Freiflächen-Photovoltaikanlagen, integrierte<br class="br-desktop">Batteriespeicher und Revamping-Projekte weltweit – schlüsselfertig und aus<br class="br-desktop">einer Hand. Für Sie bedeutet das: maximale Sicherheit, minimale Komplexität<br class="br-desktop">und nachhaltige Erträge.',
     'intl.p2.title': 'Alles aus einer Hand – sorgenfrei zum erfolgreichen Projekt.',
-    'intl.p2.body': '<span class="be">be</span><span class="be-lead"> integrated.</span> Mit uns haben Sie einen zentralen Ansprechpartner für alle Projektphasen. Wir koordinieren sämtliche Prozesse, Schnittstellen und Partner, sodass Sie sich auf das Wesentliche konzentrieren können: Ihre Investition.',
+    'intl.p2.body': '<span class="be">be</span><span class="be-lead"> integrated.</span> Mit uns haben Sie einen zentralen Ansprechpartner für alle<br class="br-desktop">Projektphasen. Wir koordinieren sämtliche Prozesse, Schnittstellen und Partner,<br class="br-desktop">sodass Sie sich auf das Wesentliche konzentrieren können: Ihre Investition.',
     'intl.p3.title': 'Ihr Projekt. Unsere Verantwortung.',
-    'intl.p3.body': '<span class="be">be</span><span class="be-lead"> responsible.</span> Wir verstehen uns nicht nur als Dienstleister, sondern als langfristiger Partner. Unser Ziel ist es, Ihre Projekte nicht nur erfolgreich zu realisieren, sondern nachhaltig zum Erfolg zu führen – technisch, wirtschaftlich und operativ.',
+    'intl.p3.body': '<span class="be">be</span><span class="be-lead"> responsible.</span> Wir verstehen uns nicht nur als Dienstleister, sondern als langfristiger<br class="br-desktop">Partner. Unser Ziel ist es, Ihre Projekte nicht nur erfolgreich zu realisieren, sondern<br class="br-desktop">nachhaltig zum Erfolg zu führen – technisch, wirtschaftlich und operativ.',
 
     /* --- international experience --- */
     'intl.exp.a1': '<span class="be">be</span> expert – internationale Erfahrung, lokale Kompetenz',
