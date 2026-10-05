@@ -27,7 +27,10 @@
 
   function pick() {
     var fromQuery = new URLSearchParams(w.location.search).get('lang');
-    if (fromQuery && SUPPORTED.indexOf(fromQuery) > -1) return fromQuery;
+    if (fromQuery && SUPPORTED.indexOf(fromQuery) > -1) {
+      try { w.localStorage.setItem(STORE_KEY, fromQuery); } catch (e) { /* private mode */ }
+      return fromQuery;
+    }
 
     var saved;
     try { saved = w.localStorage.getItem(STORE_KEY); } catch (e) { /* private mode */ }
