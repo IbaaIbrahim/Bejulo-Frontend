@@ -861,18 +861,18 @@ html[lang="en"] [data-lang="de"] {
 
 /* ==========================================================================
    Project detail cards (project-<country>.html)
-   Client review 2026-09-15 replaced the Services-style card (copy beside an
-   alternating photo column) with a grid of its own: two cards per row at
-   desktop, one from tablet down, and inside each card the copy sits above
-   the photos, which stack. Every photo supplied for a project is shown, so
-   an entry covering two sites shows both.
+   Client review / Option 3 (2026-10-01):
+   - Side-by-side card containers are set to equal height (align-items: stretch).
+   - Case A (1 image vs 2 images): single image is centered vertically within
+     its card in the available space below the text.
+   - Case B (2 images on both cards): images in both cards align at the exact
+     same height (at the bottom); for the card with shorter text/description,
+     the text block is centered vertically within the remaining space above.
    ========================================================================== */
 
 [data-meta^="project-"] .card-stack {
   grid-template-columns: 1fr 1fr;
-  /* cards size to their own content — a two-photo entry is taller than the
-     one beside it, as in the client's screenshot */
-  align-items: start;
+  align-items: stretch;
 }
 
 /* A group heading ("Challenging soil conditions") introduces the cards below
@@ -881,11 +881,18 @@ html[lang="en"] [data-lang="de"] {
   grid-column: 1 / -1;
 }
 
-/* Copy above, photos below. (No project card carries .card--media-left any
-   more — alternating sides is a Services-page idea.) */
+/* Copy above, photos below. Flex column ensures equal-height cards can
+   distribute free space to center media or text according to Option 3. */
 [data-meta^="project-"] .card {
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   gap: 28px;
+}
+
+[data-meta^="project-"] .card__body {
+  display: flex;
+  flex-direction: column;
 }
 
 /* A common 16:9 crop, so the photo in one card lines up with the photo in the
@@ -893,6 +900,37 @@ html[lang="en"] [data-lang="de"] {
 [data-meta^="project-"] .card__media {
   min-height: 0;
   aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+[data-meta^="project-"] .card__media img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+}
+
+/* Case A: In a card with 1 image, center the image vertically in the available space */
+[data-meta^="project-"] .card__media:not(.card__media--pair) {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Case B: In a card with 2 images, images align at the bottom at the exact same
+   height, and the text block for the card with shorter description is centered
+   vertically within the remaining space above the images. */
+[data-meta^="project-"] .card:has(.card__media--pair) .card__body,
+[data-meta^="project-"] .card--pair .card__body {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+[data-meta^="project-"] .card__media--pair {
+  margin-top: auto;
 }
 
 
@@ -962,10 +1000,7 @@ html[lang="en"] [data-lang="de"] {
 .panel {
   background: var(--surface-panel);
   border-radius: var(--radius);
-  /* Client design 2026-09-23 (measured off the screenshot at 1.41×):
-     ~38px above the title, ~44px under the copy — roomier than the old
-     32/32 and slightly asymmetric. */
-  padding: 40px 48px 44px;
+  padding: 40px 48px;
 }
 
 .panel__title {
@@ -973,12 +1008,15 @@ html[lang="en"] [data-lang="de"] {
   line-height: var(--lh-h3);
   font-weight: 700;
   letter-spacing: 0;
+  text-wrap: balance;
 }
 
 .panel p {
-  font-size: var(--fs-h3);
-  line-height: var(--lh-h3);
+  font-size: 20px;
+  line-height: var(--lh-body);
   letter-spacing: 0;
+  margin-top: 16px;
+  text-wrap: pretty;
 }
 
 .br-desktop {
@@ -992,9 +1030,7 @@ html[lang="en"] [data-lang="de"] {
 }
 
 .panel>*+* {
-  /* Title centre → first body line centre measures ~82px in the client
-     design (2026-09-23); the 40px title line box + this margin hits it. */
-  margin-top: 42px;
+  margin-top: 16px;
 }
 
 /* International landing page — desktop vertical rhythm from the client's
@@ -1772,6 +1808,25 @@ html[lang="en"] [data-lang="de"] {
     grid-template-columns: 1fr;
   }
 
+  [data-meta^="project-"] .card {
+    height: auto;
+  }
+
+  [data-meta^="project-"] .card__media:not(.card__media--pair) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  [data-meta^="project-"] .card:has(.card__media--pair) .card__body,
+  [data-meta^="project-"] .card--pair .card__body {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  [data-meta^="project-"] .card__media--pair {
+    margin-top: 0;
+  }
+
   .nav-toggle {
     display: inline-flex;
   }
@@ -1833,9 +1888,8 @@ html[lang="en"] [data-lang="de"] {
     padding: 24px;
   }
 
-  /* Tighter internal spacing than the desktop design on small screens */
   .panel>*+* {
-    margin-top: 24px;
+    margin-top: 16px;
   }
 
   .panel p {

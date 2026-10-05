@@ -47,13 +47,20 @@
     return value;
   }
 
+  /* Typography rule (especially for German localization): ensure no line can start
+     with a hyphen or en-dash by binding it to the preceding word with a non-breaking space. */
+  function preventLeadingDash(str) {
+    if (typeof str !== 'string') return str;
+    return str.replace(/(\S)\s+([–—-])\s+/g, '$1\u00a0$2 ');
+  }
+
   function apply(lang) {
     d.documentElement.setAttribute('lang', lang);
 
     var textNodes = d.querySelectorAll('[data-i18n]');
     Array.prototype.forEach.call(textNodes, function (el) {
       var v = lookup(el.getAttribute('data-i18n'), lang);
-      if (v !== undefined) el.textContent = v;
+      if (v !== undefined) el.textContent = preventLeadingDash(v);
     });
 
     // Dictionary values are first-party content authored in this repo, so the
@@ -61,7 +68,7 @@
     var htmlNodes = d.querySelectorAll('[data-i18n-html]');
     Array.prototype.forEach.call(htmlNodes, function (el) {
       var v = lookup(el.getAttribute('data-i18n-html'), lang);
-      if (v !== undefined) el.innerHTML = v;
+      if (v !== undefined) el.innerHTML = preventLeadingDash(v);
     });
 
     var attrNodes = d.querySelectorAll('[data-i18n-attr]');
@@ -106,7 +113,7 @@
     apply: apply,
     set: set,
     get: function () { return w.BEJULO_LANG || pick(); },
-    t: function (key) { return lookup(key, w.BEJULO_LANG || pick()); },
+    t: function (key) { return preventLeadingDash(lookup(key, w.BEJULO_LANG || pick())); },
     supported: SUPPORTED
   };
 

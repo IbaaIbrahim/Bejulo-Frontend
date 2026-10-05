@@ -163,5 +163,12 @@
       if (!btn || !window.BejuloI18n) return;
       window.BejuloI18n.set(btn.getAttribute('data-lang-choice'));
     });
+
+    // Ensure project cards with paired media have helper class .card--pair
+    var pairs = document.querySelectorAll('.card__media--pair');
+    for (var i = 0; i < pairs.length; i++) {
+      var card = pairs[i].closest('.card');
+      if (card) card.classList.add('card--pair');
+    }
   });
 })();
